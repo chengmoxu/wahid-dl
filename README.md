@@ -12,7 +12,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 ### Third. Instructions for use
 #### For Windows
 1. Create folder "wahid-dl" in C:\
-2. Copy "yt-dlp.exe", "ffmpeg.exe", "ffplay.exe" and "ffprobe.exe" bwlow C:\wahid-dl
+2. Copy "yt-dlp.exe", "ffmpeg.exe", "ffplay.exe" and "ffprobe.exe" below C:\wahid-dl
 3. Choose the function which you want to use
 
 #### For Google Colab
