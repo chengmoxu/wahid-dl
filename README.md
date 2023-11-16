@@ -8,6 +8,8 @@ wahid-dl是一個以yt-dlp為基礎的影音下載工具，分別支援Windows�
 ### 二、 適用平台
 * Windows 10
 
+* Windows 11
+
 * Google Colab
 
 ### 三、 使用說明
