@@ -1,19 +1,23 @@
 # wahid-dl
-讓下載變得簡單
+Make downloading easy
 
-### 一、 說明
-wahid-dl是一個以yt-dlp為基礎的影音下載工具，分別支援Windows環境以及Google Colab雲端環境。
-而wahid-dl的命名來自阿拉伯語的واحد，用意在於期望這個專案如同數字1一樣容易接觸、容易上手。
+### First. About
+wahid-dl is an audio and video download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
+The name wahid-dl comes from Arabic واحد, the intention is to hope that this project is as accessible and easy to use as the number 1.
 
-### 二、 適用平台
-* Windows 10
-
-* Windows 11
-
+### Second. Applicable operating system
+* Windows
 * Google Colab
 
-### 三、 使用說明
+### Third. Instructions for use
+#### For Windows
+1. Create folder "wahid-dl" in C:\
+2. Copy "yt-dlp.exe", "ffmpeg.exe", "ffplay.exe" and "ffprobe.exe" bwlow C:\wahid-dl
+3. Choose the function which you want to use
 
+#### For Google Colab
+1. Open the file wahid-dl.ipynb using button "Open in Colab"
+2. Choose the function which you want to use
 
-### 四、 Future outlook
+### Fourth. Future outlook
 * Cookies support.
