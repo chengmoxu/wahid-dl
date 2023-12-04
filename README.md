@@ -21,3 +21,5 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 
 ### Fourth. Future outlook
 * Cookies support.
+* Download list support.
+* Specific websites download via aria2 support.
