@@ -1,5 +1,5 @@
 # wahid-dl
-Make downloading easy
+Making download easily
 
 ### First. About
 wahid-dl is an audio and video download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
