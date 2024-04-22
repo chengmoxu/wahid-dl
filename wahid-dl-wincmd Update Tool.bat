@@ -10,7 +10,7 @@ mkdir updates
 tar -zxvf updates.zip -C C:\wahid-dl\updates
 move C:\wahid-dl\updates\wahid-dl-main\*.bat C:\wahid-dl\
 del updates.zip
-rd C:\wahid-dl\updates
+rd /s/q C:\wahid-dl\updates
 echo ------------------------------------------------------------
 echo 更新完成
 echo ------------------------------------------------------------
