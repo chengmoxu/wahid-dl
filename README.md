@@ -36,7 +36,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 > Using this package make yt-dlp command available in wahid-dl.
 
 5. wahid-dl-wincmd Update Tool.bat
-> The yt-dlp update function have been combined into wahid-dl-wincmd.bat, wahid-dl-wincmd for Audio.bat, wahid-dl-wincmd Format Checking Tool.bat and wahid-dl-wincmd Dev Mode.bat. Generally you don't need to using this package to update yt-dlp. 
+> This package will download the file from Github to update the overall wahid-dl. yt-dlp will be updated also.
 
 ### Fifth.  Future outlook
 * Cookies support.

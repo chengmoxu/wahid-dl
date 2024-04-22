@@ -1,11 +1,16 @@
 @echo off
 echo wahid-dl 更新工具
 echo ------------------------------------------------------------
-echo 更新開始，本更新工具僅更新yt-dlp
+echo 開始更新
 echo ------------------------------------------------------------
 cd C:\wahid-dl
 yt-dlp -U
+curl -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main
+mkdir updates
+tar -zxvf updates.zip -C C:\wahid-dl\updates
+move C:\wahid-dl\updates\wahid-dl-main\*.* C:\wahid-dl\
+del updates.zip
 echo ------------------------------------------------------------
-echo 執行完成
+echo 更新完成
 echo ------------------------------------------------------------
 pause
