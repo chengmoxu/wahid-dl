@@ -1,6 +1,10 @@
 # wahid-dl
 Making video and audio download easily
 
+Stable Version Number: 
+> Windows: wahid-dl.v3.1.20240524.windows-cmd.1
+> Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
+
 ### First. About
 wahid-dl is a video and audio download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
 The name wahid-dl comes from Arabic واحد, the intention is to hope that this project is as accessible and easy to use as the number 1.
