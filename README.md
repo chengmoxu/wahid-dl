@@ -2,9 +2,10 @@
 Making video and audio download easily
 
 Stable Version Number: 
-> Windows: wahid-dl.v3.1.20240524.windows-cmd.1
+* Windows: wahid-dl.v3.2.20240611.windows-cmd.1
+> Now, wahid-dl v3.2 can be installed using the wahid-dl-wincmd Install.bat. Furthermore, the update function is capable of updating ffmpeg.
 
-> Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
+* Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
 
 ### First. About
 wahid-dl is a video and audio download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
@@ -44,7 +45,10 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 > Using this package make yt-dlp command available in wahid-dl.
 
 6. wahid-dl-wincmd Update Tool.bat
-> This package will download the file from Github to update the overall wahid-dl. yt-dlp will be updated also.
+> This package will download the file from GitHub to update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be updated.
+
+7. wahid-dl-wincmd Install.bat
+> This package will download the file from GitHub to install the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be installed.
 
 ### Fifth.  Future outlook
 * Download list support.
