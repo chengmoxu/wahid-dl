@@ -12,7 +12,7 @@ cd C:\wahid-dl
 curl -o ffmpeg.zip https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
 mkdir ffmpeg
 tar -zxvf ffmpeg.zip -C C:\wahid-dl\ffmpeg
-move C:\wahid-dl\ffmpeg\*.exe C:\wahid-dl\
+move C:\wahid-dl\ffmpeg\ffmpeg-master-latest-win64-gpl\bin\*.exe C:\wahid-dl\
 del ffmpeg.zip
 rd /s/q C:\wahid-dl\ffmpeg
 echo ------------------------------------------------------------
