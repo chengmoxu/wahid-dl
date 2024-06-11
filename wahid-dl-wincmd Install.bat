@@ -18,16 +18,16 @@ mkdir ffmpeg
 tar -zxvf ffmpeg.zip -C "C:\wahid-dl\ffmpeg"
 move "C:\wahid-dl\ffmpeg\ffmpeg-master-latest-win64-gpl\bin\*.exe" "C:\wahid-dl\" -Force
 del ffmpeg.zip
-rd /s/q "C:\wahid-dl\ffmpeg"
+rd /s/q C:\wahid-dl\ffmpeg
 echo ------------------------------------------------------------
 echo 安裝 wahid-dl
 cd "C:\wahid-dl"
 curl -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main
 mkdir updates
 tar -zxvf updates.zip -C "C:\wahid-dl\updates"
-move "C:\wahid-dl\updates\wahid-dl-main\*.bat" "C:\wahid-dl\" -Force
+move "C:\wahid-dl\updates\wahid-dl-main\*.bat" "C:\wahid-dl\"
 del updates.zip
-rd /s/q "C:\wahid-dl\updates"
+rd /s/q C:\wahid-dl\updates
 echo ------------------------------------------------------------
 echo 執行完成
 echo ------------------------------------------------------------
