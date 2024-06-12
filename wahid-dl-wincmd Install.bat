@@ -9,7 +9,7 @@ mkdir wahid-dl
 echo ------------------------------------------------------------
 echo ¤U¸ü yt-dlp
 cd "C:\wahid-dl"
-curl -L -o https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe
+curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe
 echo ------------------------------------------------------------
 echo ¤U¸ü ffmpeg
 cd "C:\wahid-dl"
