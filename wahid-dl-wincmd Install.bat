@@ -25,7 +25,7 @@ cd "C:\wahid-dl"
 curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main
 mkdir updates
 tar -zxvf updates.zip -C "C:\wahid-dl\updates"
-move "C:\wahid-dl\updates\wahid-dl-main\*.bat" "C:\wahid-dl\" -Force
+move "C:\wahid-dl\updates\wahid-dl-main\*.bat" "C:\wahid-dl\"
 del updates.zip
 rd /s /q "C:\wahid-dl\updates"
 echo ------------------------------------------------------------
