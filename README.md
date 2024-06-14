@@ -2,7 +2,7 @@
 Making video and audio download easily
 
 Stable Version Number: 
-* Windows: wahid-dl.v3.2.20240614.windows-cmd.1
+* Windows: wahid-dl.v3.2.20240614.windows-cmd.2
 > Now, wahid-dl v3.2 can be installed using the wahid-dl-wincmd Install.bat. Furthermore, the update function is capable of updating ffmpeg.
 
 * Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
