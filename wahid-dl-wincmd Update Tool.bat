@@ -3,10 +3,6 @@ echo wahid-dl 更新工具
 echo ------------------------------------------------------------
 echo 開始執行
 echo ------------------------------------------------------------
-echo 更新 yt-dlp
-cd "C:\wahid-dl"
-yt-dlp -U
-echo ------------------------------------------------------------
 echo 更新 wahid-dl
 cd "C:\wahid-dl"
 curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main
@@ -15,6 +11,10 @@ tar -zxvf updates.zip -C "C:\wahid-dl\updates"
 move "C:\wahid-dl\updates\wahid-dl-main\*.bat" "C:\wahid-dl\"
 del "C:\wahid-dl\updates.zip"
 rd /s /q "C:\wahid-dl\updates"
+echo ------------------------------------------------------------
+echo 更新 yt-dlp
+cd "C:\wahid-dl"
+yt-dlp -U
 echo ------------------------------------------------------------
 echo 更新 ffmpeg
 cd "C:\wahid-dl"
