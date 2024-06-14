@@ -9,7 +9,7 @@ yt-dlp -U
 echo ------------------------------------------------------------
 echo §ó·s ffmpeg
 cd "C:\wahid-dl"
-curl -L -o ffmpeg.zip https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
+curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip
 mkdir "C:\wahid-dl\ffmpeg"
 tar -zxvf ffmpeg.zip -C "C:\wahid-dl\ffmpeg"
 move "C:\wahid-dl\ffmpeg\ffmpeg-master-latest-win64-gpl\bin\*.exe" "C:\wahid-dl\"
