@@ -29,25 +29,25 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 ### Fourth.  Instructions for functions
 #### For Windows
 1. wahid-dl-wincmd.bat
-> This package can download video.
+> This batch file can download video.
 
 2. wahid-dl-wincmd Cookies Support
-> Using this package can download video using Cookies (Default = Chrome).
+> Using this packagebatch file can download video using Cookies (Default = Chrome).
 
 3. wahid-dl-wincmd for Audio.bat
-> This package can download audio.
+> This batch file can download audio.
 
 4. wahid-dl-wincmd Format Checking Tool.bat
-> Using this package to check the format of video or audio.
+> Using this batch file to check the format of video or audio.
 
 5. wahid-dl-wincmd Dev Mode.bat
-> Using this package make yt-dlp command available in wahid-dl.
+> Using this batch file make yt-dlp command available in wahid-dl.
 
 6. wahid-dl-wincmd Update Tool.bat
-> This package will download the file from GitHub to update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be updated.
+> This batch file will download the file from GitHub to update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be updated.
 
 7. wahid-dl-wincmd Install.bat
-> This package will download the file from GitHub to install the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be installed.
+> This batch file will download the file from GitHub to install the complete wahid-dl. Additionally, yt-dlp and ffmpeg will also be installed.
 
 ### Fifth.  Future outlook
 * Download list support.
