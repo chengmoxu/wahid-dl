@@ -29,6 +29,6 @@ move "C:\wahid-dl\ffmpeg\ffmpeg-7.0.1-full_build\bin\*.exe" "C:\wahid-dl\"
 del "C:\wahid-dl\ffmpeg.zip"
 rd /s /q "C:\wahid-dl\ffmpeg"
 echo ------------------------------------------------------------
-echo 執行完成
+echo 執行完成，請至資料夾內確認安裝
 echo ------------------------------------------------------------
 pause
