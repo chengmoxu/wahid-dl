@@ -1,9 +1,10 @@
 # wahid-dl
 Making video and audio download easily
 
-Stable Version Number: 
-* Windows: wahid-dl.v3.3.20240623.windows-cmd.1
-> Now, wahid-dl v3.2 can be installed using the wahid-dl-wincmd Install.bat. Furthermore, the update function is capable of updating ffmpeg.
+Stable Version Number: wahid-dl.v3.4.20240624
+> Now, wahid-dl v3.4 has officially added native Python functionality to support cross-platform operations.
+> Different from the old version of win-cmd yt-dlp installation method, wahid-dl Python-Based uses pip method to install yt-dlp.
+> In addition, the file name, version number naming method and more detailed functions will be announced in future updates.
 
 * Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
 
