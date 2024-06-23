@@ -16,14 +16,19 @@ echo 更新 yt-dlp
 cd "C:\wahid-dl"
 yt-dlp -U
 echo ------------------------------------------------------------
-echo 更新 ffmpeg
+echo 下載 FFmpeg
 cd "C:\wahid-dl"
+del ffmpeg.exe ffplay.exe ffprobe.exe
+mkdir "C:\FFmpeg"
+cd "C:\FFmpeg"
+del ffmpeg.exe ffplay.exe ffprobe.exe
 curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip
-mkdir "C:\wahid-dl\ffmpeg"
-tar -zxvf ffmpeg.zip -C "C:\wahid-dl\ffmpeg"
-move "C:\wahid-dl\ffmpeg\ffmpeg-7.0.1-full_build\bin\*.exe" "C:\wahid-dl\"
-del "C:\wahid-dl\ffmpeg.zip"
-rd /s /q "C:\wahid-dl\ffmpeg"
+mkdir "C:\FFmpeg\FFmpeg-unzip"
+tar -zxvf ffmpeg.zip -C "C:\FFmpeg\FFmpeg-unzip"
+move "C:\FFmpeg\FFmpeg-unzip\ffmpeg-7.0.1-full_build\bin\*.exe" "C:\FFmpeg\"
+setx PATH "FFmpeg;C:\FFmpeg\"
+del "C:\FFmpeg\ffmpeg.zip"
+rd /s /q "C:\FFmpeg\ffmpeg-unzip"
 echo ------------------------------------------------------------
 echo 執行完成，請至資料夾內確認更新
 echo ------------------------------------------------------------

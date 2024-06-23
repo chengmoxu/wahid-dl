@@ -7,7 +7,7 @@ echo 執行開始
 echo ------------------------------------------------------------
 cd C:\wahid-dl
 yt-dlp -U
-yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" %var%
+yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" --ffmpeg-location "C:\FFmpeg" %var%
 echo ------------------------------------------------------------
 echo 執行結束，請至資料夾內確認您的下載
 echo ------------------------------------------------------------
