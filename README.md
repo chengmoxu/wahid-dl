@@ -1,19 +1,19 @@
 # wahid-dl
 Making video and audio download easily
 
-Stable Version Number: wahid-dl.v3.4.20240624
+* For Windows/Linux/macOS Version Number: wahid-dl.v3.4.20240624
 > Now, wahid-dl v3.4 has officially added native Python functionality to support cross-platform operations.
 > Different from the old version of win-cmd yt-dlp installation method, wahid-dl Python-Based uses pip method to install yt-dlp.
 > In addition, the file name, version number naming method and more detailed functions will be announced in future updates.
 
-* Google Colab: wahid-dl.v2.2.20240225.googlecolab.1
+* For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
 
 ### First. About
 wahid-dl is a video and audio download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
 The name wahid-dl comes from Arabic واحد, the intention is to hope that this project is as accessible and easy to use as the number 1.
 
 ### Second. Applicable operating environment
-* Windows
+* Windows/Linux/macOS
 * Google Colab
 
 ### Third. Instructions for use
