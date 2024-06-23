@@ -21,7 +21,7 @@ if sys.platform == "win32":
     subprocess.getoutput (downloadcommand)
     os.system ('pause')
 elif sys.platform == "linux":
-    print ("Linux Mode")
+    print ("wahid-dl Python-Based [Linux Mode]")
     print ("------------------------------------------------------------")
     downloadlink = str (input (r'請輸入欲下載影片之網址:'))
     print ("------------------------------------------------------------")
