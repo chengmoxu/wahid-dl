@@ -1,6 +1,6 @@
 # wahid-dl Python-Based
 # Version: 3.4
-# Build: wahid-dl.v3.4.20240624.Python.1
+# Build: wahid-dl.v3.4.20240624.Python.2
 
 # Library import
 import os
@@ -11,11 +11,11 @@ import subprocess
 if sys.platform == "win32":
     print ("wahid-dl Python-Based [Windows Mode]")
     print ("------------------------------------------------------------")
-    downloadlink = str (input (r'請輸入欲下載影片之網址:'))
+    downloadlink = str (input ('請輸入欲下載影片之網址:'))
     print ("------------------------------------------------------------")
     print ("執行開始")
     print ("------------------------------------------------------------")
-    os.system (r'cd C:\wahid-dl') # 使用r"字串"以避免反斜線被視為跳脫字元之情形
+    os.system ('cd C:\\wahid-dl')
     subprocess.getoutput ('pip install -U "yt-dlp[default]"')
     downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + downloadlink)
     subprocess.getoutput (downloadcommand)
@@ -23,7 +23,7 @@ if sys.platform == "win32":
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based [Linux Mode]")
     print ("------------------------------------------------------------")
-    downloadlink = str (input (r'請輸入欲下載影片之網址:'))
+    downloadlink = str (input ('請輸入欲下載影片之網址:'))
     print ("------------------------------------------------------------")
     print ("執行開始")
     print ("------------------------------------------------------------")
