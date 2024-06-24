@@ -5,7 +5,6 @@
 # Library import
 import os
 import sys
-import subprocess
 
 # Download Function within OS judge
 if sys.platform == "win32":
@@ -16,9 +15,9 @@ if sys.platform == "win32":
     print ("執行開始")
     print ("------------------------------------------------------------")
     os.system ('cd C:\\wahid-dl')
-    subprocess.getoutput ('pip install -U "yt-dlp[default]"')
+    os.system ('pip install -U "yt-dlp[default]"')
     downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + downloadlink)
-    subprocess.getoutput (downloadcommand)
+    os.system (downloadcommand)
     os.system ('pause')
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based [Linux Mode]")
@@ -27,9 +26,9 @@ elif sys.platform == "linux":
     print ("------------------------------------------------------------")
     print ("執行開始")
     print ("------------------------------------------------------------")
-    subprocess.getoutput ('pip install -U "yt-dlp[default]"')
+    os.system ('pip install -U "yt-dlp[default]"')
     downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + downloadlink)
-    subprocess.getoutput (downloadcommand)
+    os.system (downloadcommand)
 
 #elif sys.platform == "darwin":
 #    print ("macOS Mode")

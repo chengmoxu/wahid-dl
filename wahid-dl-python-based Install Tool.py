@@ -1,11 +1,10 @@
 # wahid-dl Python-Based Install Tool
 # Version: 3.4
-# Build: wahid-dl.v3.4.20240624.Python.2
+# Build: wahid-dl.v3.4.20240624.Python.3
 
 # Library import
 import os
 import sys
-import subprocess
 
 # Install Function within OS judge
 print ("wahid-dl Python-Based Install Tool")
@@ -14,13 +13,13 @@ if sys.platform == "win32":
     print ("開始執行")
     print ("------------------------------------------------------------")
     print ("建立資料夾")
-    os.system ('cd C:\\') #待處理
-    os.system ('mkdir "C:\\wahid-dl"')
+    os.chdir ('C:\\')
+    os.mkdir ('wahid-dl')
     print ("------------------------------------------------------------")
     print ("安裝 wahid-dl")
-    os.system ('cd C:\\wahid-dl')
+    os.chdir ('C:\\wahid-dl')
     os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
-    os.system ('mkdir "C:\\wahid-dl\\updates"')
+    os.mkdir ('updates')
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl\\updates"')
     os.system ('move "C:\\wahid-dl\\updates\\wahid-dl-main\\*.bat" "C:\\wahid-dl\\"')
     os.system ('move "C:\\wahid-dl\\updates\\wahid-dl-main\\*.py" "C:\\wahid-dl\\"')
@@ -28,17 +27,22 @@ if sys.platform == "win32":
     os.system ('rd /s /q "C:\\wahid-dl\\updates"')
     print ("------------------------------------------------------------")
     print ("下載 yt-dlp")
-    os.system ('cd "C:\\wahid-dl"')
+    os.chdir ('C:\\wahid-dl')
     os.system ('curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe')
     print ("------------------------------------------------------------")
+    print ("下載 yt-dlp PiP Version")
+    os.system ('pip install -U "yt-dlp[default]"')
+    print ("------------------------------------------------------------")
     print ("下載 FFmpeg")
-    os.system ('cd "C:\\wahid-dl"')
+    os.chdir ('C:\\wahid-dl')
     os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
-    os.system ('mkdir "C:\\FFmpeg"')
-    os.system ('cd "C:\\FFmpeg"')
+    os.chdir ('C:\\')
+    os.system ('rd /s /q "C:\\FFmpeg"')
+    os.mkdir ('FFmpeg')
+    os.chdir ('C:\\FFmpeg')
     os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
     os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip')
-    os.system ('mkdir "C:\\FFmpeg\\FFmpeg-unzip"')
+    os.mkdir ('FFmpeg-unzip')
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     os.system ('move "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\*.exe" "C:\\FFmpeg\\"')
     os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
