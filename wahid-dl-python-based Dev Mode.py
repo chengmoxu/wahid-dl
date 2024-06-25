@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Dev Mode
 # Version: 3.4
-# Build: wahid-dl.v3.4.20240625.Python.1
+# Build: wahid-dl.v3.4.20240625.Python.2
 
 # Library import
 import os
