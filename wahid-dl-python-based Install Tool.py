@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Install Tool
 # Version: 3.4
-# Build: wahid-dl.v3.4.20240624.Python.4
+# Build: wahid-dl.v3.4.20240625.Python.1
 
 # Library import
 import os
