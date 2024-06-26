@@ -7,13 +7,10 @@ Making video and audio download easily
 > In addition, the file name, version number naming method and more detailed functions will be announced in future updates.
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
-> Fixed video wrong format issues.
->
-> Change the yt-dlp installation method to avoid outdated versions.
->
-> Added instructions to remove completed videos.
->
-> Description correction.
+> Fixed video wrong format issues. 
+> Change the yt-dlp installation method to avoid outdated versions. 
+> Added instructions to remove completed videos. 
+> Description correction. 
 
 ### First. About
 wahid-dl is a video and audio download tool based on yt-dlp, which supports Windows environment and Google Colab cloud environment respectively.
