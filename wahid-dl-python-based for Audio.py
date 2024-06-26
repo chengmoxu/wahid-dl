@@ -17,7 +17,7 @@ if sys.platform == "win32":
     print ("------------------------------------------------------------")
     os.chdir ('C:\\wahid-dl')
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-    downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" ') + downloadlink)
+    downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" --ffmpeg-location "C:\FFmpeg" ') + downloadlink)
     os.system (downloadcommand)
     print ("------------------------------------------------------------")
     print ("執行結束，請至資料夾內確認您的下載")

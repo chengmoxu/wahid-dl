@@ -17,7 +17,7 @@ if sys.platform == "win32":
     print ("------------------------------------------------------------")
     os.chdir ('C:\\wahid-dl')
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-    downloadcommand = str (('yt-dlp --cookies-from-browser chrome -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + downloadlink)
+    downloadcommand = str (('yt-dlp --cookies-from-browser chrome -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\FFmpeg" ') + downloadlink)
     os.system (downloadcommand)
     print ("------------------------------------------------------------")
     print ("執行結束，請至資料夾內確認您的下載")
