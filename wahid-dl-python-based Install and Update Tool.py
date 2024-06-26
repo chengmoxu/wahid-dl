@@ -23,9 +23,9 @@ if sys.platform == "win32":
     wahiddl_folder_name = 'wahid-dl'
     if not os.path.exists(wahiddl_folder_name):
         os.mkdir(wahiddl_folder_name)
-        print(f"'{wahiddl_folder_name}'資料夾已建立")
+        print(f"{wahiddl_folder_name}資料夾已建立")
     else:
-        print(f"'{wahiddl_folder_name}'資料夾已存在。本工具將進行更新wahid-dl以及附屬依賴工具。")
+        print(f"{wahiddl_folder_name}資料夾已存在，本工具將進行更新wahid-dl以及附屬依賴工具")
         os.chdir ('C:\\wahid-dl')
         # 移除舊版*.bat
         #os.system ('del *.bat')
@@ -33,7 +33,7 @@ if sys.platform == "win32":
         for bat_file in wahiddl_old_bat_files:
             if os.path.exists(bat_file):
                 os.remove(bat_file)
-                print(f"已刪除舊版的 {bat_file}.")
+                print(f"已刪除舊版的{bat_file}")
             else:
                 print(f"已不存在舊版.bat檔案")
         # 移除舊版*.py
@@ -43,7 +43,7 @@ if sys.platform == "win32":
         for py_file in wahiddl_old_py_files:
             if os.path.exists(py_file):
                 os.remove(py_file)
-                print(f"已刪除舊版的 {py_file}.")
+                print(f"已刪除舊版的{py_file}")
             else:
                 print(f"已不存在舊版.py檔案")
     print ("------------------------------------------------------------")
@@ -51,7 +51,13 @@ if sys.platform == "win32":
     print ("安裝/更新 wahid-dl")
     os.chdir ('C:\\wahid-dl')
     os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
-    os.mkdir ('updates')
+    #os.mkdir ('updates')
+    updates_folder_name = 'updates'
+    if not os.path.exists(updates_folder_name):
+        os.mkdir(updates_folder_name)
+        print(f"{updates_folder_name}資料夾已建立")
+    else:
+        print(f"{updates_folder_name}資料夾已存在")
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl\\updates"')
     #os.system ('move "C:\\wahid-dl\\updates\\wahid-dl-main\\*.bat" "C:\\wahid-dl\\"')
     #os.system ('move "C:\\wahid-dl\\updates\\wahid-dl-main\\*.py" "C:\\wahid-dl\\"')
@@ -91,13 +97,23 @@ if sys.platform == "win32":
     print ("下載/更新 FFmpeg")
     os.chdir ('C:\\wahid-dl')
     # 移除舊有ffmpeg安裝方式之檔案
+    # 移除舊式FFmpeg安裝之舊版
     #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
-    wahiddl_old_ffmpeg_del = ["ffmpeg.exe", "ffplay.exe", "ffprobe.exe"]
-    for file_name in wahiddl_old_ffmpeg_del:
-        if os.path.exists(file_name):
-            os.remove(file_name)
-        else:
-            print(f"已不存在舊版FFmpeg檔案")
+    if os.path.isfile('ffmpeg.exe') == True:
+        os.remove('ffmpeg.exe')
+        print(f"已刪除舊式舊版的ffmpeg.exe")
+    else:
+        print(f"已不存在舊式舊版ffmpeg.exe")
+    if os.path.isfile('ffplay.exe') == True:
+        os.remove('ffplay.exe')
+        print(f"已刪除舊式舊版的ffplay.exe")
+    else:
+        print(f"已不存在舊式舊版ffplay.exe")
+    if os.path.isfile('ffprobe.exe') == True:
+        os.remove('ffprobe.exe')
+        print(f"已刪除舊式舊版的ffprobe.exe")
+    else:
+        print(f"已不存在舊式舊版ffprobe.exe")
     # 新式FFmpeg安裝，包括系統環境變數設定
     os.chdir ('C:\\')
     # 移除新式FFmpeg安裝之舊版
@@ -106,20 +122,36 @@ if sys.platform == "win32":
     ffmpeg_folder_name = 'FFmpeg'
     if not os.path.exists(ffmpeg_folder_name):
         os.mkdir(ffmpeg_folder_name)
-        print(f"'{ffmpeg_folder_name}'資料夾已建立")
+        print(f"{ffmpeg_folder_name}資料夾已建立")
     else:
-        print(f"'{ffmpeg_folder_name}'資料夾已存在")
-        #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')    
-        ffmpeg_old_ffmpeg_del = ["ffmpeg.exe", "ffplay.exe", "ffprobe.exe"]
-        for file_name in ffmpeg_old_ffmpeg_del:
-            if os.path.exists(file_name):
-                os.remove(file_name)
-            else:
-                print(f"已不存在舊版FFmpeg檔案")
+        print(f"{ffmpeg_folder_name}資料夾已存在")
+        #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
+        # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
+        if os.path.isfile('ffmpeg.exe') == True:
+            os.remove('ffmpeg.exe')
+            print(f"已刪除新式舊版的ffmpeg.exe")
+        else:
+            print(f"已不存在新式舊版ffmpeg.exe")
+        if os.path.isfile('ffplay.exe') == True:
+            os.remove('ffplay.exe')
+            print(f"已刪除新式舊版的ffplay.exe")
+        else:
+            print(f"已不存在新式舊版ffplay.exe")
+        if os.path.isfile('ffprobe.exe') == True:
+            os.remove('ffprobe.exe')
+            print(f"已刪除新式舊版的ffprobe.exe")
+        else:
+            print(f"已不存在新式舊版ffprobe.exe")
     # 安裝/更新新版FFmpeg主程式
     os.chdir ('C:\\FFmpeg')
     os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip')
-    os.mkdir ('FFmpeg-unzip')
+    #os.mkdir ('FFmpeg-unzip')
+    FFmpegunzip_folder_name = 'FFmpeg-unzip'
+    if not os.path.exists(FFmpegunzip_folder_name):
+        os.mkdir(FFmpegunzip_folder_name)
+        print(f"'{FFmpegunzip_folder_name}'資料夾已建立")
+    else:
+        print(f"'{FFmpegunzip_folder_name}'資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     #os.system ('move "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\*.exe" "C:\\FFmpeg\\"')
     ffmpeg_src_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\"
