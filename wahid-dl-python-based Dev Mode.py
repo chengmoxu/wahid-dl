@@ -16,10 +16,9 @@ if sys.platform == "win32":
     commandinput = str (input ('yt-dlp命令模式，請直接輸入yt-dlp命令:'))
     print ("------------------------------------------------------------")
     os.chdir ('C:\\wahid-dl')
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+    subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
     command = str (('yt-dlp ') + commandinput)
     os.system (command)
-    os.system ('pause')
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based Dev Mode [Linux]")
     print ("Version: 3.4")
@@ -27,9 +26,9 @@ elif sys.platform == "linux":
     print ("------------------------------------------------------------")
     commandinput = str (input ('yt-dlp命令模式，請直接輸入yt-dlp命令:'))
     print ("------------------------------------------------------------")
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+    subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
     command = str (('yt-dlp ') + commandinput)
     os.system (command)
-
 #elif sys.platform == "darwin":
 #    print ("macOS Mode")
+os.system ('pause')

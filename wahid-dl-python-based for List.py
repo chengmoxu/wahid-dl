@@ -53,7 +53,7 @@ elif sys.platform == "linux":
     print ("------------------------------------------------------------")
     print ("執行開始")
     print ("------------------------------------------------------------")
-    os.system ('pip install -U "yt-dlp[default]"')
+    subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
     downloadcommand = str (('yt-dlp --batch-file url_list.txt -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg"'))
     os.system (downloadcommand)
     print ("------------------------------------------------------------")
