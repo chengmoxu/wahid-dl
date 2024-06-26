@@ -1,8 +1,8 @@
 # wahid-dl
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: wahid-dl.v3.4.20240626
-> Now, wahid-dl v3.4 has officially added native Python functionality to support cross-platform operations.
+* For Windows/Linux/macOS Version Number: wahid-dl.v4.0.20240626
+> Now, wahid-dl v4.0 has officially added native Python functionality to support cross-platform operations.
 >
 > Different from the old version of win-cmd yt-dlp installation method, wahid-dl Python-Based uses pip method to install yt-dlp.
 >

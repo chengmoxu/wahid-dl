@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Cookies Support
-# Version: 3.4
-# Build: wahid-dl.v3.4.20240625.Python.1
+# Version: 4.0
+# Build: wahid-dl.v4.0.20240626.Python.1
 
 # Library import
 import os

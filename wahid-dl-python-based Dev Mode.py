@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Dev Mode
-# Version: 3.4
-# Build: wahid-dl.v3.4.20240626.Python.1
+# Version: 4.0
+# Build: wahid-dl.v4.0.20240626.Python.1
 
 # Library import
 import os
@@ -10,8 +10,8 @@ import subprocess
 # Download Function within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("Version: 3.4")
-    print ("Build: wahid-dl.v3.4.20240625.Python.1")
+    print ("Version: 4.0")
+    print ("Build: wahid-dl.v4.0.20240626.Python.1")
     print ("------------------------------------------------------------")
     commandinput = str (input ('yt-dlp命令模式，請直接輸入yt-dlp命令:'))
     print ("------------------------------------------------------------")
