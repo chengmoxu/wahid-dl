@@ -2,11 +2,7 @@
 Making video and audio download easily
 
 * For Windows/Linux/macOS Version Number: wahid-dl.v4.0.20240626
-> Now, wahid-dl v4.0 has officially added native Python functionality to support cross-platform operations.
->
-> Different from the old version of win-cmd yt-dlp installation method, wahid-dl Python-Based uses pip method to install yt-dlp.
->
-> In addition, the file name, version number naming method and more detailed functions will be announced in future updates.
+> Now, wahid-dl v4.0 has been refactored with Python, significantly enhancing code extensibility. Additionally, the installation and update functionalities, also based on Python, have been consolidated into a single .py file. New features include support for live video downloads and the url_list.txt file.
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
 > Fixed video wrong format issues. 
