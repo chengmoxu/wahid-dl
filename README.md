@@ -8,8 +8,11 @@ Making video and audio download easily
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
 > Fixed video wrong format issues.
+>
 > Change the yt-dlp installation method to avoid outdated versions.
+>
 > Added instructions to remove completed videos.
+>
 > Description correction.
 
 ### First. About
