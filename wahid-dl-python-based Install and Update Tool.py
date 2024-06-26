@@ -99,18 +99,18 @@ if sys.platform == "win32":
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
     #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
-    if os.path.isfile('ffmpeg.exe') == True:
-        os.remove('ffmpeg.exe')
+    if os.path.isfile('C:\\wahid-dl\\ffmpeg.exe') == True:
+        os.remove('C:\\wahid-dl\\ffmpeg.exe')
         print(f"已刪除舊式舊版的ffmpeg.exe")
     else:
         print(f"已不存在舊式舊版ffmpeg.exe")
-    if os.path.isfile('ffplay.exe') == True:
-        os.remove('ffplay.exe')
+    if os.path.isfile('C:\\wahid-dl\\ffplay.exe') == True:
+        os.remove('C:\\wahid-dl\\ffplay.exe')
         print(f"已刪除舊式舊版的ffplay.exe")
     else:
         print(f"已不存在舊式舊版ffplay.exe")
-    if os.path.isfile('ffprobe.exe') == True:
-        os.remove('ffprobe.exe')
+    if os.path.isfile('C:\\wahid-dl\\ffprobe.exe') == True:
+        os.remove('C:\\wahid-dl\\ffprobe.exe')
         print(f"已刪除舊式舊版的ffprobe.exe")
     else:
         print(f"已不存在舊式舊版ffprobe.exe")
@@ -127,18 +127,18 @@ if sys.platform == "win32":
         print(f"{ffmpeg_folder_name}資料夾已存在")
         #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
         # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
-        if os.path.isfile('ffmpeg.exe') == True:
-            os.remove('ffmpeg.exe')
+        if os.path.isfile('C:\\FFmpeg\\ffmpeg.exe') == True:
+            os.remove('C:\\FFmpeg\\ffmpeg.exe')
             print(f"已刪除新式舊版的ffmpeg.exe")
         else:
             print(f"已不存在新式舊版ffmpeg.exe")
-        if os.path.isfile('ffplay.exe') == True:
-            os.remove('ffplay.exe')
+        if os.path.isfile('C:\\FFmpeg\\ffplay.exe') == True:
+            os.remove('C:\\FFmpeg\\ffplay.exe')
             print(f"已刪除新式舊版的ffplay.exe")
         else:
             print(f"已不存在新式舊版ffplay.exe")
-        if os.path.isfile('ffprobe.exe') == True:
-            os.remove('ffprobe.exe')
+        if os.path.isfile('C:\\FFmpeg\\ffprobe.exe') == True:
+            os.remove('C:\\FFmpeg\\ffprobe.exe')
             print(f"已刪除新式舊版的ffprobe.exe")
         else:
             print(f"已不存在新式舊版ffprobe.exe")
