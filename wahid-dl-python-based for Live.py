@@ -1,6 +1,6 @@
 # wahid-dl Python-Based for Live
-# Version: 4.0
-# Build: wahid-dl.v4.0.20240626.Python.1
+# Version: 4.1
+# Build: wahid-dl.v4.1.20240628.Python.1
 
 # Library import
 import os
@@ -11,30 +11,68 @@ import subprocess
 if sys.platform == "win32":
     print ("wahid-dl Python-Based for Live")
     print ("------------------------------------------------------------")
-    downloadlink = str (input ('請輸入欲下載影片之網址:'))
-    print ("------------------------------------------------------------")
-    print ("執行開始")
-    print ("------------------------------------------------------------")
-    os.chdir ('C:\\wahid-dl')
-    subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-    downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + downloadlink)
-    os.system (downloadcommand)
-    print ("------------------------------------------------------------")
-    print ("執行結束，請至資料夾內確認您的下載")
-    print ("------------------------------------------------------------")
+    mode = ""
+    while mode != "0":
+        print ("請輸入欲下載直播影片之網址")
+        print ("或者，想要結束程式請輸入0\n")
+        userinput = input ("請輸入：")
+        userinput_judge = str.isdigit(userinput)
+        if userinput_judge == True: 
+            if  userinput == "0":
+                mode = "0"
+            else:
+               print ("請重新輸入正確選項！")
+        elif userinput_judge == False:
+            if userinput.startswith("http") == True:
+                print ("------------------------------------------------------------")
+                print ("執行開始")
+                print ("------------------------------------------------------------")
+                os.chdir ('C:\\wahid-dl')
+                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+                downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
+                os.system (downloadcommand)
+                print ("------------------------------------------------------------")
+                print ("執行結束，請至資料夾內確認您的下載")
+                print ("------------------------------------------------------------")
+            elif userinput.startswith("http") == False:
+                print ("請重新輸入正確網址！")
+            else:
+                print ("請重新輸入正確網址！")
+    while mode == "0":
+        print("即將結束程式")
+        break
 elif sys.platform == "linux":
-    print ("wahid-dl Python-Based")
+    print ("wahid-dl Python-Based for Live")
     print ("------------------------------------------------------------")
-    downloadlink = str (input ('請輸入欲下載影片之網址:'))
-    print ("------------------------------------------------------------")
-    print ("執行開始")
-    print ("------------------------------------------------------------")
-    subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-    downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + downloadlink)
-    os.system (downloadcommand)
-    print ("------------------------------------------------------------")
-    print ("執行結束，請至資料夾內確認您的下載")
-    print ("------------------------------------------------------------")
+    mode = ""
+    while mode != "0":
+        print ("請輸入欲下載直播影片之網址")
+        print ("或者，想要結束程式請輸入0\n")
+        userinput = input ("請輸入：")
+        userinput_judge = str.isdigit(userinput)
+        if userinput_judge == True: 
+            if  userinput == "0":
+                mode = "0"
+            else:
+               print ("請重新輸入正確選項！")
+        elif userinput_judge == False:
+            if userinput.startswith("http") == True:
+                print ("------------------------------------------------------------")
+                print ("執行開始")
+                print ("------------------------------------------------------------")
+                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+                downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
+                os.system (downloadcommand)
+                print ("------------------------------------------------------------")
+                print ("執行結束，請至資料夾內確認您的下載")
+                print ("------------------------------------------------------------")
+            elif userinput.startswith("http") == False:
+                print ("請重新輸入正確網址！")
+            else:
+                print ("請重新輸入正確網址！")
+    while mode == "0":
+        print("即將結束程式")
+        break
 #elif sys.platform == "darwin":
 #    print ("wahid-dl Python-Based")
 os.system ('pause')
