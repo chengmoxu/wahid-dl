@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Dev Mode
 # Version: 4.1
-# Build: wahid-dl.v4.1.20240703.Python.1
+# Build: wahid-dl.v4.1.20240706.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Stable] v4.1.20240703.Python.1
+[Stable] v4.1.20240706.Python.1
 
 '''
 
@@ -22,7 +22,7 @@ import subprocess
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
     print ("Version: 4.1")
-    print ("Build: wahid-dl.v4.1.20240703.Python.1")
+    print ("Build: wahid-dl.v4.1.20240706.Python.1")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":

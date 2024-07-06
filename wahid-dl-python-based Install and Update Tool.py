@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Install and Update Tool
 # Version: 4.1
-# Build: wahid-dl.v4.1.20240703.Python.1
+# Build: wahid-dl.v4.1.20240706.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Stable] v4.1.20240703.Python.1
+[Stable] v4.1.20240706.Python.1
 
 '''
 
@@ -104,6 +104,7 @@ if sys.platform == "win32":
     print ("下載/更新 yt-dlp PiP Version")
     #os.system ('pip install -U "yt-dlp[default]"')
     subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+    print ("下載/更新 yt-dlp PiP Version 完成")
     print ("------------------------------------------------------------")
     print ("下載/更新 FFmpeg")
     os.chdir ('C:\\wahid-dl')
