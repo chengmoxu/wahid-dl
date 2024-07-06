@@ -84,7 +84,7 @@ if sys.platform == "win32":
     #os.system ('del "C:\\wahid-dl\\updates.zip"')
     wahiddl_updates_file_path = "C:\\wahid-dl\\updates.zip"
     if os.path.isfile (wahiddl_updates_file_path) == True:
-        os.remove ("C:\\wahid-dl\\updates.zip")
+        os.remove (wahiddl_updates_file_path)
         print (f"更新資料 '{wahiddl_updates_file_path}' 已刪除")
     else:
         print (f"更新資料 '{wahiddl_updates_file_path}' 已不存在")
@@ -141,9 +141,9 @@ if sys.platform == "win32":
     ffmpeg_folder_name = 'FFmpeg'
     if not os.path.exists (ffmpeg_folder_name):
         os.mkdir (ffmpeg_folder_name)
-        print (f"{ffmpeg_folder_name} 資料夾已建立")
+        print (f"新式 {ffmpeg_folder_name} 資料夾已建立")
     else:
-        print (f"{ffmpeg_folder_name} 資料夾已存在")
+        print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
         #os.system ('del ffmpeg.exe ffplay.exe ffprobe.exe')
         # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
         if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe') == True:
@@ -173,18 +173,20 @@ if sys.platform == "win32":
         print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     #os.system ('move "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\*.exe" "C:\\FFmpeg\\"')
-    ffmpeg_src_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\"
+    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\"
     ffmpeg_dst_folder = "C:\\FFmpeg\\"
-    ffmpeg_exe_files = glob.glob (ffmpeg_src_folder + "*.exe")
+    ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
     for ffmpeg_exe_file in ffmpeg_exe_files:
         shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
     # FFmpeg系統環境變數設定
     os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
     #os.system ('del "C:\\FFmpeg\\ffmpeg.zip"')
-    ffmpeg_update_del = ["ffmpeg.zip"]
-    for file_name in ffmpeg_update_del:
-        if os.path.exists (file_name):
-            os.remove (file_name)
+    ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
+    if os.path.isfile (ffmpeg_updates_file_path) == True:
+        os.remove (ffmpeg_updates_file_path)
+        print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
+    else:
+        print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
     #os.system ('rd /s /q "C:\\FFmpeg\\ffmpeg-unzip"')
     ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
     if os.path.exists (ffmpeg_unzip_folder_path):
