@@ -72,7 +72,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 > Using this file can download video using Cookies (Default = Chrome).
 
 3. wahid-dl-python-based for Audio.py
-> This batch file can download audio.
+> This file can download audio.
 
 4. wahid-dl-python-based Format Checking Tool.py
 > Using this file to check the format of video or audio.
