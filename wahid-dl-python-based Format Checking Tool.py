@@ -18,7 +18,7 @@ import os
 import sys
 import subprocess
 
-# Download Function within OS judge
+# Checking Function within OS judge
 if sys.platform == "win32":
     print ("wahid-dl-python-based Format Checking Tool")
     print ("------------------------------------------------------------")

@@ -18,7 +18,7 @@ import os
 import sys
 import subprocess
 
-# Download Function within OS judge
+# Dev Mode within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
     print ("Version: 4.1")
