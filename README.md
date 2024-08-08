@@ -10,7 +10,7 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: wahid-dl.v4.1.20240706
+* For Windows/Linux/macOS Version Number: wahid-dl.v4.2.20240808
 > Now, wahid-dl v4.0 has been refactored with Python, significantly enhancing code extensibility. Additionally, the installation and update functionalities, also based on Python, have been consolidated into a single .py file. New features include support for live video downloads and the url_list.txt file.
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
@@ -66,28 +66,31 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 
 #### For Windows based on Python
 1. wahid-dl-python-based.py
-> This file can download video.
+> This function can download video.
 
 2. wahid-dl-python-based Cookies Support.py
-> Using this file can download video using Cookies (Default = Chrome).
+> Using this function can download video using Cookies (Default = Chrome).
 
 3. wahid-dl-python-based for Audio.py
-> This file can download audio.
+> This function can download audio.
 
 4. wahid-dl-python-based Format Checking Tool.py
-> Using this file to check the format of video or audio.
+> Using this function to check the format of video or audio.
 
 5. wahid-dl-python-based Dev Mode.py
-> Using this file make yt-dlp command available in wahid-dl.
+> Using this function make yt-dlp command available in wahid-dl.
 
 6. wahid-dl-python-based for Live.py
-> Using this file can download live video.
+> Using this function can download live video.
 
 7. wahid-dl-python-based for List.py
-> Using this file can download video using "url_list.txt".
+> Using this function can download video using "url_list.txt".
 
-8. wahid-dl-python-based Install and Update Tool.py
-> This file will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.
+8. wahid-dl-python-based for Quality Selection.py
+> Using this function to download videos with specified image quality.
+
+9. wahid-dl-python-based Install and Update Tool.py
+> This function will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.
 
 ### Fifth.  Future outlook
 * Specific websites download via aria2 support.

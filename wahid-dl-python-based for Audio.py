@@ -1,6 +1,6 @@
 # wahid-dl Python-Based for Audio
-# Version: 4.1
-# Build: wahid-dl.v4.1.20240706.Python.1
+# Version: 4.2
+# Build: wahid-dl.v4.2.20240808.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Stable] v4.1.20240706.Python.1
+[Stable] v4.2.20240808.Python.1
 
 '''
 
@@ -25,7 +25,7 @@ if sys.platform == "win32":
     mode = ""
     while mode != "0":
         print ("請輸入欲下載音訊之網址")
-        print ("或者，想要結束程式請輸入0\n")
+        print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
@@ -58,7 +58,7 @@ elif sys.platform == "linux":
     mode = ""
     while mode != "0":
         print ("請輸入欲下載音訊之網址")
-        print ("或者，想要結束程式請輸入0\n")
+        print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 

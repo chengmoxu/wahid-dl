@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Dev Mode
-# Version: 4.1
-# Build: wahid-dl.v4.1.20240706.Python.1
+# Version: 4.2
+# Build: wahid-dl.v4.2.20240808.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Stable] v4.1.20240706.Python.1
+[Stable] v4.2.20240808.Python.1
 
 '''
 
@@ -21,13 +21,13 @@ import subprocess
 # Dev Mode within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("Version: 4.1")
-    print ("Build: wahid-dl.v4.1.20240706.Python.1")
+    print ("Version: 4.2")
+    print ("Build: wahid-dl.v4.2.20240808.Python.1")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
         print ("yt-dlp命令模式，請直接輸入yt-dlp命令")
-        print ("或者，想要結束程式請輸入0\n")
+        print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
@@ -59,7 +59,7 @@ elif sys.platform == "linux":
     mode = ""
     while mode != "0":
         print ("yt-dlp命令模式，請直接輸入yt-dlp命令")
-        print ("或者，想要結束程式請輸入0\n")
+        print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
