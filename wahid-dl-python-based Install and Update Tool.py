@@ -163,7 +163,7 @@ if sys.platform == "win32":
             print ("已不存在新式舊版 ffprobe.exe")
     # 安裝/更新新版FFmpeg主程式
     os.chdir ('C:\\FFmpeg')
-    os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip')
+    os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
     #os.mkdir ('FFmpeg-unzip')
     FFmpegunzip_folder_name = 'FFmpeg-unzip'
     if not os.path.exists (FFmpegunzip_folder_name):
