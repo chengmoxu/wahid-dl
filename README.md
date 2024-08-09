@@ -10,7 +10,7 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: wahid-dl.v4.2.20240808
+* For Windows/Linux/macOS Version Number: wahid-dl.v4.3.20240809
 > Now, wahid-dl v4.0 has been refactored with Python, significantly enhancing code extensibility. Additionally, the installation and update functionalities, also based on Python, have been consolidated into a single .py file. New features include support for live video downloads and the url_list.txt file.
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
@@ -89,7 +89,10 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 8. wahid-dl-python-based for Quality Selection.py
 > Using this function to download videos with specified image quality.
 
-9. wahid-dl-python-based Install and Update Tool.py
+9. wahid-dl-python-based for Subtitle.py
+> Using this function to download subtitle of videos.
+
+10. wahid-dl-python-based Install and Update Tool.py
 > This function will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.
 
 ### Fifth.  Future outlook
