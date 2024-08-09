@@ -1,4 +1,4 @@
-# wahid-dl Python-Based for Audio
+# wahid-dl-python-based for Subtitle
 # Version: 4.3
 # Build: wahid-dl.v4.3.20240809.Python.1
 '''
@@ -18,13 +18,13 @@ import os
 import sys
 import subprocess
 
-# Download Function within OS judge
+# Subtitle Download within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based for Audio")
+    print ("wahid-dl-python-based for Quality Selection")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
-        print ("請輸入欲下載音訊之網址")
+        print ("請輸入欲下載影片字幕之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -40,10 +40,16 @@ if sys.platform == "win32":
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
                 subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-                downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" ') + userinput)
-                os.system (downloadcommand)
+                testcommand = str (('yt-dlp --list-subs ') + userinput)
+                os.system (testcommand)
+                print ('請記下您想要下載的影片字幕Language，並於下方輸入')
+                print ('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
+                video_sub_id = str(input('請輸入影片字幕Language:'))
+                command = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
+                print (command)
+                #os.system (command)
                 print ("------------------------------------------------------------")
-                print ("執行結束，請至資料夾內確認您的下載")
+                print ("執行結束")
                 print ("------------------------------------------------------------")
             elif userinput.startswith("http") == False:
                 print ("請重新輸入正確網址！")
@@ -53,11 +59,11 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
-    print ("wahid-dl Python-Based for Audio")
+    print ("wahid-dl-python-based for Quality Selection")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
-        print ("請輸入欲下載音訊之網址")
+        print ("請輸入欲下載影片字幕之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -71,12 +77,16 @@ elif sys.platform == "linux":
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
-                os.chdir ('C:\\wahid-dl')
                 subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-                downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" ') + userinput)
-                os.system (downloadcommand)
+                testcommand = str (('yt-dlp --list-subs ') + userinput)
+                os.system (testcommand)
+                print ('請記下您想要下載的影片字幕Language，並於下方輸入')
+                print ('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
+                video_sub_id = str(input('請輸入影片字幕Language:'))
+                command = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
+                os.system (command)
                 print ("------------------------------------------------------------")
-                print ("執行結束，請至資料夾內確認您的下載")
+                print ("執行結束")
                 print ("------------------------------------------------------------")
             elif userinput.startswith("http") == False:
                 print ("請重新輸入正確網址！")
