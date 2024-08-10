@@ -1,6 +1,6 @@
 # wahid-dl-python-based for Subtitle
 # Version: 4.3
-# Build: wahid-dl.v4.3.20240809.Python.1
+# Build: wahid-dl.v4.3.20240810.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Stable] v4.3.20240809.Python.1
+[Stable] v4.3.20240810.Python.1
 
 '''
 
@@ -46,8 +46,7 @@ if sys.platform == "win32":
                 print ('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_sub_id = str(input('請輸入影片字幕Language:'))
                 command = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
-                print (command)
-                #os.system (command)
+                os.system (command)
                 print ("------------------------------------------------------------")
                 print ("執行結束")
                 print ("------------------------------------------------------------")
