@@ -20,7 +20,7 @@ import subprocess
 import shutil
 import glob
 
-# Install Function within OS judge
+# Install/Update Function within OS judge
 print ("wahid-dl Python-Based Install and Update Tool")
 if sys.platform == "win32":
     mode = "Start"
@@ -68,7 +68,6 @@ if sys.platform == "win32":
         # wahid-dl 主程式安裝/更新判斷
         print ("正在確認 wahid-dl 資料夾存在與否")
         os.chdir ('C:\\')
-        # 判斷wahid-dl資料夾存在與否
         wahiddl_folder_name = 'wahid-dl'
         if not os.path.exists (wahiddl_folder_name):
             os.mkdir (wahiddl_folder_name)
@@ -95,7 +94,6 @@ if sys.platform == "win32":
                     print ("不存在 wahid-dl 舊版之 .py 檔案")
         print ("------------------------------------------------------------")
         print ("開始下載最新版本 wahid-dl 主程式")
-        # 安裝/更新新版 wahid-dl 主程式
         os.chdir ('C:\\wahid-dl')
         os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
         updates_folder_name = 'updates'
@@ -201,7 +199,6 @@ if sys.platform == "win32":
                 print ("已刪除新式舊版的 ffprobe.exe")
             else:
                 print ("已不存在新式舊版 ffprobe.exe")
-        # 安裝/更新新版FFmpeg主程式
         print ("開始下載最新版本 FFmpeg")
         os.chdir ('C:\\FFmpeg')
         os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
@@ -240,7 +237,6 @@ if sys.platform == "win32":
         # wahid-dl DEV 主程式安裝/更新判斷
         print ("正在確認 wahid-dl DEV 資料夾存在與否")
         os.chdir ('C:\\')
-        # 判斷wahid-dl資料夾存在與否
         wahiddl_folder_name = 'wahid-dl DEV'
         if not os.path.exists (wahiddl_folder_name):
             os.mkdir (wahiddl_folder_name)
