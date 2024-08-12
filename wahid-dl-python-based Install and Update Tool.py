@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Install and Update Tool
 # Version: 4.4
-# Build: wahid-dl.v4.4.20240811.Python.4
+# Build: wahid-dl.v4.4.20240812.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Dev] v4.4.20240811.Python.4
+[Dev] v4.4.20240812.Python.1
 
 '''
 
@@ -55,70 +55,8 @@ if sys.platform == "win32":
                 print ("請重新輸入正確選項！")
         elif userinput_judge == False:
             if userinput == "DEVINSTALL":
-                # wahid-dl DEV 主程式安裝/更新判斷
-                print ("正在確認 wahid-dl DEV 資料夾存在與否")
-                os.chdir ('C:\\')
-                # 判斷wahid-dl資料夾存在與否
-                wahiddl_folder_name = 'wahid-dl DEV'
-                if not os.path.exists (wahiddl_folder_name):
-                    os.mkdir (wahiddl_folder_name)
-                    print (f"{wahiddl_folder_name} 資料夾已建立")
-                else:
-                    print (f"{wahiddl_folder_name} 資料夾已存在，本工具將進行更新 wahid-dl DEV")
-                    os.chdir ('C:\\wahid-dl DEV')
-                    # 移除舊版*.bat
-                    wahiddl_old_bat_files = glob.glob ("*.bat")
-                    for bat_file in wahiddl_old_bat_files:
-                        if os.path.exists (bat_file):
-                            os.remove (bat_file)
-                            print (f"已刪除 wahid-dl DEV 舊版的{bat_file}")
-                        else:
-                            print ("不存在 wahid-dl DEV 舊版之 .bat 檔案")
-                    # 移除舊版*.py
-                    os.chdir ('C:\\wahid-dl')
-                    wahiddl_old_py_files = glob.glob ("*.py")
-                    for py_file in wahiddl_old_py_files:
-                        if os.path.exists (py_file):
-                            os.remove (py_file)
-                            print (f"已刪除 wahid-dl DEV 舊版的{py_file}")
-                        else:
-                            print ("不存在 wahid-dl DEV 舊版之 .py 檔案")
-                print ("------------------------------------------------------------")
-                # 安裝/更新新版wahid-dl DEV 主程式
-                print ("安裝/更新 wahid-dl DEV")
-                os.chdir ('C:\\wahid-dl DEV')
-                os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/dev')
-                updates_folder_name = 'updates'
-                if not os.path.exists (updates_folder_name):
-                    os.mkdir (updates_folder_name)
-                    print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
-                else:
-                    print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
-                print ('解壓縮 wahid-dl DEV 更新資料')
-                os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
-                wahiddl_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-main\\"
-                wahiddl_dst_folder = "C:\\wahid-dl DEV\\"
-                wahiddl_bat_files = glob.glob (wahiddl_updatesfiles_folder + "*.bat")
-                for wahiddl_bat_file in wahiddl_bat_files:
-                    shutil.move (wahiddl_bat_file, wahiddl_dst_folder)
-                wahiddl_py_files = glob.glob (wahiddl_updatesfiles_folder + "*.py")
-                for wahiddl_py_file in wahiddl_py_files:
-                    shutil.move (wahiddl_py_file, wahiddl_dst_folder)
-                wahiddl_updates_file_path = "C:\\wahid-dl DEV\\updates.zip"
-                if os.path.isfile (wahiddl_updates_file_path) == True:
-                    os.remove (wahiddl_updates_file_path)
-                    print (f"更新資料 '{wahiddl_updates_file_path}' 已刪除")
-                else:
-                    print (f"更新資料 '{wahiddl_updates_file_path}' 已不存在")
-                wahiddl_updates_folder_path = "C:\\wahid-dl DEV\\updates"
-                if os.path.exists (wahiddl_updates_folder_path):
-                    shutil.rmtree (wahiddl_updates_folder_path)
-                    print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
-                else:
-                    print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
-                print ("安裝/更新 wahid-dl DEV完成")
-            else:
-                print ("請重新輸入正確選項！")
+                mode = "DEVINSTALL"
+                mode_con = "0"
     while mode == "1":
         if mode_con == "0":
             mode = "0"
@@ -292,6 +230,75 @@ if sys.platform == "win32":
             mode = "0"
         elif mode_con == "1":
             mode = "0"
+    while mode == "DEVINSTALL":
+        # wahid-dl DEV 主程式安裝/更新判斷
+        print ("正在確認 wahid-dl DEV 資料夾存在與否")
+        os.chdir ('C:\\')
+        # 判斷wahid-dl資料夾存在與否
+        wahiddl_folder_name = 'wahid-dl DEV'
+        if not os.path.exists (wahiddl_folder_name):
+            os.mkdir (wahiddl_folder_name)
+            print (f"{wahiddl_folder_name} 資料夾已建立")
+        else:
+            print (f"{wahiddl_folder_name} 資料夾已存在，本工具將進行更新 wahid-dl DEV")
+            os.chdir ('C:\\wahid-dl DEV')
+            # 移除舊版*.bat
+            wahiddl_old_bat_files = glob.glob ("*.bat")
+            for bat_file in wahiddl_old_bat_files:
+                if os.path.exists (bat_file):
+                    os.remove (bat_file)
+                    print (f"已刪除 wahid-dl DEV 舊版的{bat_file}")
+                else:
+                    print ("不存在 wahid-dl DEV 舊版之 .bat 檔案")
+            # 移除舊版*.py
+            os.chdir ('C:\\wahid-dl')
+            wahiddl_old_py_files = glob.glob ("*.py")
+            for py_file in wahiddl_old_py_files:
+                if os.path.exists (py_file):
+                    os.remove (py_file)
+                    print (f"已刪除 wahid-dl DEV 舊版的{py_file}")
+                else:
+                    print ("不存在 wahid-dl DEV 舊版之 .py 檔案")
+        print ("------------------------------------------------------------")
+        # 安裝/更新新版wahid-dl DEV 主程式
+        print ("安裝/更新 wahid-dl DEV")
+        os.chdir ('C:\\wahid-dl DEV')
+        os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/dev')
+        updates_folder_name = 'updates'
+        if not os.path.exists (updates_folder_name):
+            os.mkdir (updates_folder_name)
+            print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
+        else:
+            print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
+        print ('解壓縮 wahid-dl DEV 更新資料')
+        os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
+        wahiddl_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-main\\"
+        wahiddl_dst_folder = "C:\\wahid-dl DEV\\"
+        wahiddl_bat_files = glob.glob (wahiddl_updatesfiles_folder + "*.bat")
+        for wahiddl_bat_file in wahiddl_bat_files:
+            shutil.move (wahiddl_bat_file, wahiddl_dst_folder)
+        wahiddl_py_files = glob.glob (wahiddl_updatesfiles_folder + "*.py")
+        for wahiddl_py_file in wahiddl_py_files:
+            shutil.move (wahiddl_py_file, wahiddl_dst_folder)
+        wahiddl_updates_file_path = "C:\\wahid-dl DEV\\updates.zip"
+        if os.path.isfile (wahiddl_updates_file_path) == True:
+            os.remove (wahiddl_updates_file_path)
+            print (f"更新資料 '{wahiddl_updates_file_path}' 已刪除")
+        else:
+            print (f"更新資料 '{wahiddl_updates_file_path}' 已不存在")
+        wahiddl_updates_folder_path = "C:\\wahid-dl DEV\\updates"
+        if os.path.exists (wahiddl_updates_folder_path):
+            shutil.rmtree (wahiddl_updates_folder_path)
+            print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
+        else:
+            print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
+        print ("安裝/更新 wahid-dl DEV完成")
+        if mode_con == "0":
+            mode = "0"
+        elif mode_con == "1":
+            mode = "0"
+    else:
+        print ("請重新輸入正確選項！")
     while mode == "0":
         print ("------------------------------------------------------------")
         print ("執行完成，即將結束程式")
