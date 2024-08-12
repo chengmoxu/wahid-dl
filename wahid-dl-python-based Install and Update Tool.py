@@ -1,6 +1,6 @@
 # wahid-dl Python-Based Install and Update Tool
 # Version: 4.4
-# Build: wahid-dl.v4.4.20240812.Python.1
+# Build: wahid-dl.v4.4.20240812.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -9,7 +9,7 @@
   ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-[Dev] v4.4.20240812.Python.1
+[Dev] v4.4.20240812.Python.2
 
 '''
 
@@ -26,14 +26,13 @@ if sys.platform == "win32":
     mode = "Start"
     mode_con = ""
     while mode == "Start":
-        print ("請選擇執行項目")
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
         print ("2: 更新 wahid-dl 主程式")
         print ("3: 更新 yt-dlp")
         print ("4: 更新 FFmpeg")
-        #print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
+        print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
         print ("0: 離開程式")
-        userinput = input ("請輸入: ")
+        userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
             if userinput == "0":
@@ -63,9 +62,8 @@ if sys.platform == "win32":
         elif mode_con == "1":
             mode = "2"
     while mode == "2":
-        print ("更新wahid-dl主程式")
         print ("------------------------------------------------------------")
-        print ("開始執行")
+        print ("開始安裝/更新wahid-dl主程式")
         print ("------------------------------------------------------------")
         # wahid-dl 主程式安裝/更新判斷
         print ("正在確認 wahid-dl 資料夾存在與否")
@@ -96,7 +94,8 @@ if sys.platform == "win32":
                 else:
                     print ("不存在 wahid-dl 舊版之 .py 檔案")
         print ("------------------------------------------------------------")
-        # 安裝/更新新版wahid-dl主程式
+        print ("開始下載最新版本 wahid-dl 主程式")
+        # 安裝/更新新版 wahid-dl 主程式
         os.chdir ('C:\\wahid-dl')
         os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
         updates_folder_name = 'updates'
@@ -127,16 +126,16 @@ if sys.platform == "win32":
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
         else:
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
-        print ("更新 wahid-dl 完成")
+        print ("安裝/更新 wahid-dl 完成")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
             mode = "3"
     while mode == "3":
-        print ("更新yt-dlp")
         print ("------------------------------------------------------------")
-        print ("開始執行")
+        print ("開始安裝/更新 yt-dlp")
         print ("------------------------------------------------------------")
+        print ("開始下載最新版本 yt-dlp")
         os.chdir ('C:\\wahid-dl')
         yt_dlp_path = 'C:\\wahid-dl\\yt-dlp.exe'
         if not os.path.exists (yt_dlp_path):
@@ -145,16 +144,19 @@ if sys.platform == "win32":
         else:
             print ("yt-dlp已存在，開始更新 yt-dlp")
             os.system ('yt-dlp -U')
-        print ("更新 yt-dlp 完成")
+        print ("安裝/更新 yt-dlp 完成")
         print ("------------------------------------------------------------")
+        print ("開始下載最新版本 yt-dlp Pip Version")
         subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-        print ("更新 yt-dlp Pip Version 完成")
+        print ("安裝/更新 yt-dlp Pip Version 完成")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
             mode = "4"
     while mode == "4":
-        print ("更新FFmpeg")
+        print ("------------------------------------------------------------")
+        print ("開始安裝/更新 FFmpeg")
+        print ("------------------------------------------------------------")
         os.chdir ('C:\\wahid-dl')
         # 移除舊有ffmpeg安裝方式之檔案
         # 移除舊式FFmpeg安裝之舊版
@@ -200,6 +202,7 @@ if sys.platform == "win32":
             else:
                 print ("已不存在新式舊版 ffprobe.exe")
         # 安裝/更新新版FFmpeg主程式
+        print ("開始下載最新版本 FFmpeg")
         os.chdir ('C:\\FFmpeg')
         os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
         FFmpegunzip_folder_name = 'FFmpeg-unzip'
@@ -231,6 +234,9 @@ if sys.platform == "win32":
         elif mode_con == "1":
             mode = "0"
     while mode == "DEVINSTALL":
+        print ("------------------------------------------------------------")
+        print ("開始安裝/更新wahid-dl DEV主程式")
+        print ("------------------------------------------------------------")
         # wahid-dl DEV 主程式安裝/更新判斷
         print ("正在確認 wahid-dl DEV 資料夾存在與否")
         os.chdir ('C:\\')
@@ -292,7 +298,7 @@ if sys.platform == "win32":
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
         else:
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
-        print ("安裝/更新 wahid-dl DEV完成")
+        print ("安裝/更新 wahid-dl DEV 完成")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
