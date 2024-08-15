@@ -130,16 +130,16 @@ if sys.platform == "win32":
             wahiddl_py_files = glob.glob ("*.py")
             for py_file in wahiddl_py_files:
                 if os.path.exists (py_file):
-                    py_insatll_checking = '1'
+                    wahiddl_py_insatll_checking = '1'
                 else:
-                    py_insatll_checking = '0'
+                    wahiddl_py_insatll_checking = '0'
             wahiddl_bat_files = glob.glob ("*.bat")
             for bat_file in wahiddl_bat_files:
                 if os.path.exists (bat_file):
-                    bat_insatll_checking = '1'
+                    wahiddl_bat_insatll_checking = '1'
                 else:
-                    bat_insatll_checking = '0'
-            if py_insatll_checking == '1' and bat_insatll_checking == '1':
+                    wahiddl_bat_insatll_checking = '0'
+            if wahiddl_py_insatll_checking == '1' and wahiddl_bat_insatll_checking == '1':
                 print ("安裝/更新 wahid-dl 完成")
             else:
                 print ("安裝/更新 wahid-dl 失敗")
@@ -251,7 +251,7 @@ if sys.platform == "win32":
         ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
         if os.path.exists (ffmpeg_unzip_folder_path):
             shutil.rmtree (ffmpeg_unzip_folder_path)
-        print ("下載/更新 FFmpeg 完成")
+        print ("安裝/更新 FFmpeg 完成")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
