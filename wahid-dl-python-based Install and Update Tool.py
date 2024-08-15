@@ -121,7 +121,30 @@ if sys.platform == "win32":
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
         else:
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
-        print ("安裝/更新 wahid-dl 完成")
+        print ("------------------------------------------------------------")
+        # Install Checking
+        os.chdir ('C:\\')
+        wahiddl_folder_name = 'wahid-dl'
+        if os.path.exists (wahiddl_folder_name):
+            os.chdir ('C:\\wahid-dl')
+            wahiddl_py_files = glob.glob ("*.py")
+            for py_file in wahiddl_py_files:
+                if os.path.exists (py_file):
+                    py_insatll_checking = '1'
+                else:
+                    py_insatll_checking = '0'
+            wahiddl_bat_files = glob.glob ("*.bat")
+            for bat_file in wahiddl_bat_files:
+                if os.path.exists (bat_file):
+                    bat_insatll_checking = '1'
+                else:
+                    bat_insatll_checking = '0'
+            if py_insatll_checking == '1' and bat_insatll_checking == '1':
+                print ("安裝/更新 wahid-dl 完成")
+            else:
+                print ("安裝/更新 wahid-dl 失敗")
+        else:
+            print ("安裝/更新 wahid-dl 失敗")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
@@ -296,11 +319,9 @@ if sys.platform == "win32":
             mode = "0"
         elif mode_con == "1":
             mode = "0"
-    else:
-        print ("請重新輸入正確選項！")
     while mode == "0":
         print ("------------------------------------------------------------")
-        print ("執行完成，即將結束程式")
+        print ("即將結束程式")
         print ("------------------------------------------------------------")
         break
 #elif sys.platform == "linux":
