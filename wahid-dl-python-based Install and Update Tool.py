@@ -122,7 +122,7 @@ if sys.platform == "win32":
         else:
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
         print ("------------------------------------------------------------")
-        # Install Checking
+        # wahid-dl Installation Check
         os.chdir ('C:\\')
         wahiddl_folder_name = 'wahid-dl'
         if os.path.exists (wahiddl_folder_name):
@@ -340,7 +340,30 @@ if sys.platform == "win32":
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已刪除")
         else:
             print (f"更新資料之暫存資料夾 '{updates_folder_name}' 已不存在")
-        print ("安裝/更新 wahid-dl DEV 完成")
+        print ("------------------------------------------------------------")
+        # wahid-dl DEV Installation Check
+        os.chdir ('C:\\')
+        wahiddl_DEV_folder_name = 'wahid-dl DEV'
+        if os.path.exists (wahiddl_DEV_folder_name):
+            os.chdir ('C:\\wahid-dl DEV')
+            wahiddl_DEV_py_files = glob.glob ("*.py")
+            for DEV_py_file in wahiddl_DEV_py_files:
+                if os.path.exists (DEV_py_file):
+                    wahiddl_DEV_py_insatll_checking = '1'
+                else:
+                    wahiddl_DEV_py_insatll_checking = '0'
+            wahiddl_DEV_bat_files = glob.glob ("*.bat")
+            for DEV_bat_file in wahiddl_DEV_bat_files:
+                if os.path.exists (DEV_bat_file):
+                    wahiddl_DEV_bat_insatll_checking = '1'
+                else:
+                    wahiddl_DEV_bat_insatll_checking = '0'
+            if wahiddl_DEV_py_insatll_checking == '1' and wahiddl_DEV_bat_insatll_checking == '1':
+                print ("安裝/更新 wahid-dl DEV 完成")
+            else:
+                print ("安裝/更新 wahid-dl DEV 失敗")
+        else:
+            print ("安裝/更新 wahid-dl DEV 失敗")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
