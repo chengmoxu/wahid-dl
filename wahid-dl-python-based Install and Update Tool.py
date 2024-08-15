@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Install and Update Tool
-# [Dev] v4.4.20240812.Python.2
+# [Dev] v4.4.20240815.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -227,6 +227,7 @@ if sys.platform == "win32":
                 print ("已不存在新式舊版 ffprobe.exe")
         print ("開始下載最新版本 FFmpeg")
         os.chdir ('C:\\FFmpeg')
+        # FFmpeg Version Number，變動需要更新
         os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
         FFmpegunzip_folder_name = 'FFmpeg-unzip'
         if not os.path.exists (FFmpegunzip_folder_name):
@@ -235,7 +236,8 @@ if sys.platform == "win32":
         else:
             print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
         os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
-        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.1-full_build\\bin\\"
+        # FFmpeg Version Number，變動需要更新
+        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.2-full_build\\bin\\"
         ffmpeg_dst_folder = "C:\\FFmpeg\\"
         ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
         for ffmpeg_exe_file in ffmpeg_exe_files:
