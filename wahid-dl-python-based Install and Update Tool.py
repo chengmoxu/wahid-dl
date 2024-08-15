@@ -251,7 +251,25 @@ if sys.platform == "win32":
         ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
         if os.path.exists (ffmpeg_unzip_folder_path):
             shutil.rmtree (ffmpeg_unzip_folder_path)
-        print ("安裝/更新 FFmpeg 完成")
+        print ("------------------------------------------------------------")
+        # FFmpeg Installation Check
+        os.chdir ('C:\\FFmpeg\\')
+        if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe') == True:
+            ffmpeg_exist = '1'
+        else: 
+            ffmpeg_exist = '0'
+        if os.path.isfile ('C:\\FFmpeg\\ffplay.exe') == True:
+            ffplay_exist = '1'
+        else: 
+            ffplay_exist = '0'
+        if os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
+            ffprobe_exist = '1'
+        else: 
+            ffprobe_exist = '0'
+        if ffmpeg_exist == '1' and ffplay_exist == '1' and ffprobe_exist == '1':
+            print ("安裝/更新 FFmpeg 完成")
+        else:
+            print ("安裝/更新 FFmpeg 失敗")
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
