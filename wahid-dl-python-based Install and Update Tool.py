@@ -162,7 +162,13 @@ if sys.platform == "win32":
         else:
             print ("yt-dlp已存在，開始更新 yt-dlp")
             os.system ('yt-dlp -U')
-        print ("安裝/更新 yt-dlp 完成")
+        print ("------------------------------------------------------------")
+        # yt-dlp Install Checking
+        os.chdir ('C:\\wahid-dl')
+        if os.path.exists (yt_dlp_path):
+            print ("安裝/更新 yt-dlp 完成")
+        else:
+            print ("安裝/更新 yt-dlp 失敗")
         print ("------------------------------------------------------------")
         print ("開始下載最新版本 yt-dlp Pip Version")
         subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
