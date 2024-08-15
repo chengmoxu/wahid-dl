@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Install and Update Tool
-# [Dev] v4.4.20240815.Python.2
+# [Stable] v4.4.20240815.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###

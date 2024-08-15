@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Dev] v4.4.20240812.Python.2
+# [Stable] v4.4.20240815.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -18,7 +18,7 @@ import subprocess
 # Dev Mode within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("[DEV] v4.4.20240812.Python.2")
+    print ("[DEV] v4.4.20240815.Python.2")
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
@@ -62,7 +62,7 @@ if sys.platform == "win32":
         break
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based Dev Mode [Linux]")
-    print ("[DEV] v4.4.20240812.Python.2")
+    print ("[DEV] v4.4.20240815.Python.2")
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""

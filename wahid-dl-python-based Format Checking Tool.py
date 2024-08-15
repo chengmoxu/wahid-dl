@@ -1,5 +1,5 @@
 # wahid-dl-python-based Format Checking Tool
-# [Dev] v4.4.20240812.Python.2
+# [Stable] v4.4.20240815.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
