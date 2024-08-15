@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Install and Update Tool
-# [Dev] v4.4.20240815.Python.1
+# [Dev] v4.4.20240815.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -16,6 +16,7 @@ import sys
 import subprocess
 import shutil
 import glob
+import re
 
 # Install/Update Function within OS judge
 print ("wahid-dl Python-Based Install and Update Tool")
@@ -204,74 +205,92 @@ if sys.platform == "win32":
         # 移除新式FFmpeg安裝之舊版
         ffmpeg_old_ver_folder_path = "C:\\FFmpeg"
         ffmpeg_folder_name = 'FFmpeg'
-        if not os.path.exists (ffmpeg_folder_name):
-            os.mkdir (ffmpeg_folder_name)
-            print (f"新式 {ffmpeg_folder_name} 資料夾已建立")
-        else:
-            print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
-            # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
+        ffmpeg_download_need = ''
+        while ffmpeg_download_need == '':
+            if not os.path.exists (ffmpeg_folder_name):
+                os.mkdir (ffmpeg_folder_name)
+                print (f"新式 {ffmpeg_folder_name} 資料夾已建立")
+                ffmpeg_download_need = '1'
+            else:
+                print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
+                # 檢查 FFmpeg 版本
+                # FFmpeg Version Number，變動需要更新
+                ffmpeg_exact_version_number = '7.0.2'
+                ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
+                ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
+                if ffmpeg_version_detail:
+                    ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
+                if ffmpeg_check_version == ffmpeg_exact_version_number:
+                    print ("FFmpeg 已是最新版本，不需要更新")
+                    ffmpeg_download_need = '0'
+                else:
+                    # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
+                    if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe') == True:
+                        os.remove ('C:\\FFmpeg\\ffmpeg.exe')
+                        print ("已刪除新式舊版的 ffmpeg.exe")
+                    else:
+                        print ("已不存在新式舊版 ffmpeg.exe")
+                    if os.path.isfile ('C:\\FFmpeg\\ffplay.exe') == True:
+                        os.remove ('C:\\FFmpeg\\ffplay.exe')
+                        print ("已刪除新式舊版的 ffplay.exe")
+                    else:
+                        print ("已不存在新式舊版 ffplay.exe")
+                    if os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
+                        os.remove ('C:\\FFmpeg\\ffprobe.exe')
+                        print ("已刪除新式舊版的 ffprobe.exe")
+                    else:
+                        print ("已不存在新式舊版 ffprobe.exe")
+                    ffmpeg_download_need = '1'
+        while ffmpeg_download_need == '1':
+            print ("開始下載最新版本 FFmpeg")
+            os.chdir ('C:\\FFmpeg')
+            # FFmpeg Version Number，變動需要更新
+            os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
+            FFmpegunzip_folder_name = 'FFmpeg-unzip'
+            if not os.path.exists (FFmpegunzip_folder_name):
+                os.mkdir (FFmpegunzip_folder_name)
+                print (f"'{FFmpegunzip_folder_name}' 資料夾已建立")
+            else:
+                print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
+            os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
+            # FFmpeg Version Number，變動需要更新
+            ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.2-full_build\\bin\\"
+            ffmpeg_dst_folder = "C:\\FFmpeg\\"
+            ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
+            for ffmpeg_exe_file in ffmpeg_exe_files:
+                shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
+            # FFmpeg系統環境變數設定
+            os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
+            ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
+            if os.path.isfile (ffmpeg_updates_file_path) == True:
+                os.remove (ffmpeg_updates_file_path)
+                print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
+            else:
+                print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
+            ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
+            if os.path.exists (ffmpeg_unzip_folder_path):
+                shutil.rmtree (ffmpeg_unzip_folder_path)
+            print ("------------------------------------------------------------")
+            # FFmpeg Installation Check
+            os.chdir ('C:\\FFmpeg\\')
             if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe') == True:
-                os.remove ('C:\\FFmpeg\\ffmpeg.exe')
-                print ("已刪除新式舊版的 ffmpeg.exe")
-            else:
-                print ("已不存在新式舊版 ffmpeg.exe")
+                ffmpeg_exist = '1'
+            else: 
+                ffmpeg_exist = '0'
             if os.path.isfile ('C:\\FFmpeg\\ffplay.exe') == True:
-                os.remove ('C:\\FFmpeg\\ffplay.exe')
-                print ("已刪除新式舊版的 ffplay.exe")
-            else:
-                print ("已不存在新式舊版 ffplay.exe")
+                ffplay_exist = '1'
+            else: 
+                ffplay_exist = '0'
             if os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
-                os.remove ('C:\\FFmpeg\\ffprobe.exe')
-                print ("已刪除新式舊版的 ffprobe.exe")
+                ffprobe_exist = '1'
+            else: 
+                ffprobe_exist = '0'
+            if ffmpeg_exist == '1' and ffplay_exist == '1' and ffprobe_exist == '1':
+                print ("安裝/更新 FFmpeg 完成")
             else:
-                print ("已不存在新式舊版 ffprobe.exe")
-        print ("開始下載最新版本 FFmpeg")
-        os.chdir ('C:\\FFmpeg')
-        # FFmpeg Version Number，變動需要更新
-        os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
-        FFmpegunzip_folder_name = 'FFmpeg-unzip'
-        if not os.path.exists (FFmpegunzip_folder_name):
-            os.mkdir (FFmpegunzip_folder_name)
-            print (f"'{FFmpegunzip_folder_name}' 資料夾已建立")
-        else:
-            print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
-        os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
-        # FFmpeg Version Number，變動需要更新
-        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.2-full_build\\bin\\"
-        ffmpeg_dst_folder = "C:\\FFmpeg\\"
-        ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
-        for ffmpeg_exe_file in ffmpeg_exe_files:
-            shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
-        # FFmpeg系統環境變數設定
-        os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
-        ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
-        if os.path.isfile (ffmpeg_updates_file_path) == True:
-            os.remove (ffmpeg_updates_file_path)
-            print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
-        else:
-            print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
-        ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
-        if os.path.exists (ffmpeg_unzip_folder_path):
-            shutil.rmtree (ffmpeg_unzip_folder_path)
-        print ("------------------------------------------------------------")
-        # FFmpeg Installation Check
-        os.chdir ('C:\\FFmpeg\\')
-        if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe') == True:
-            ffmpeg_exist = '1'
-        else: 
-            ffmpeg_exist = '0'
-        if os.path.isfile ('C:\\FFmpeg\\ffplay.exe') == True:
-            ffplay_exist = '1'
-        else: 
-            ffplay_exist = '0'
-        if os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
-            ffprobe_exist = '1'
-        else: 
-            ffprobe_exist = '0'
-        if ffmpeg_exist == '1' and ffplay_exist == '1' and ffprobe_exist == '1':
-            print ("安裝/更新 FFmpeg 完成")
-        else:
-            print ("安裝/更新 FFmpeg 失敗")
+                print ("安裝/更新 FFmpeg 失敗")
+        while ffmpeg_download_need == '0':
+            break
         if mode_con == "0":
             mode = "0"
         elif mode_con == "1":
