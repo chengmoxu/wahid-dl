@@ -10,7 +10,7 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: wahid-dl.v4.4.20240815
+* For Windows/Linux/macOS Version Number: v4.4.20240815
 > Now, wahid-dl v4.0 has been refactored with Python, significantly enhancing code extensibility. Additionally, the installation and update functionalities, also based on Python, have been consolidated into a single .py file. New features include support for live video downloads and the url_list.txt file.
 
 * For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
