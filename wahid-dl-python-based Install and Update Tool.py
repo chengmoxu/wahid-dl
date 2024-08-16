@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Install and Update Tool
-# [Stable] v4.5.20240816.Python.1
+# [Dev] v4.6.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -128,10 +128,6 @@ if sys.platform == "win32":
             print ("安裝/更新 yt-dlp 完成")
         else:
             print ("安裝/更新 yt-dlp 失敗")
-        print ("------------------------------------------------------------")
-        print ("開始下載最新版本 yt-dlp Pip Version")
-        subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-        print ("安裝/更新 yt-dlp Pip Version 完成")
     def ffmpeg_installer():
         print ("------------------------------------------------------------")
         print ("開始安裝/更新 FFmpeg")
