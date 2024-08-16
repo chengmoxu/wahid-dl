@@ -268,7 +268,7 @@ if sys.platform == "win32":
                 else:
                     print ("不存在 wahid-dl DEV 舊版之 .bat 檔案")
             # 移除舊版*.py
-            os.chdir ('C:\\wahid-dl')
+            os.chdir ('C:\\wahid-dl DEV')
             wahiddl_old_py_files = glob.glob ("*.py")
             for py_file in wahiddl_old_py_files:
                 if os.path.exists (py_file):
