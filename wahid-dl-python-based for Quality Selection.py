@@ -1,5 +1,5 @@
 # wahid-dl-python-based for Quality Selection
-# [Stable] v4.5.20240816.Python.1
+# [Stable] v4.6.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -36,7 +36,6 @@ if sys.platform == "win32":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
                 testcommand = str (('yt-dlp -F ') + userinput)
                 os.system (testcommand)
                 print ('請記下您想要下載的影片畫質ID，並於下方輸入')

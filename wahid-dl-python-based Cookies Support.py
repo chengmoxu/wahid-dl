@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Cookies Support
-# [Stable] v4.5.20240816.Python.1
+# [Stable] v4.6.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -35,7 +35,6 @@ if sys.platform == "win32":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
                 downloadcommand = str (('yt-dlp --cookies-from-browser chrome -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
                 os.system (downloadcommand)
                 print ("------------------------------------------------------------")

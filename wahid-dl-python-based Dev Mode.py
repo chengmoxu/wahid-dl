@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Stable] v4.5.20240816.Python.1
+# [Stable] v4.6.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -18,7 +18,7 @@ import subprocess
 # Dev Mode within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("[Stable] v4.5.20240816.Python.1")
+    print ("[Stable] v4.6.20240816.Python.1")
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
@@ -41,7 +41,6 @@ if sys.platform == "win32":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
                 command = str (('yt-dlp ') + userinput)
                 os.system (command)
                 print ("------------------------------------------------------------")
@@ -50,7 +49,7 @@ if sys.platform == "win32":
         else:
             print ("請重新輸入正確命令！")
     while mode == "versioninfo":
-        versioninfo_detail = str ("[DEV] v4.4.20240812.Python.2")
+        versioninfo_detail = str ("[Stable] v4.6.20240816.Python.1")
         print (versioninfo_detail)
         mode_con = "0"
         if mode_con == "0":
@@ -62,7 +61,7 @@ if sys.platform == "win32":
         break
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based Dev Mode [Linux]")
-    print ("[Stable] v4.5.20240816.Python.1")
+    print ("[Stable] v4.6.20240816.Python.1")
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
