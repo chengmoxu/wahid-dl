@@ -1,5 +1,5 @@
 # wahid-dl Python-Based for Audio
-# [Stable] v4.5.20240816.Python.1
+# [Dev] v4.6.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -36,7 +36,6 @@ if sys.platform == "win32":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
                 downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" ') + userinput)
                 os.system (downloadcommand)
                 print ("------------------------------------------------------------")
