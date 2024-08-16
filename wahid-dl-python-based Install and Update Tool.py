@@ -338,7 +338,6 @@ if sys.platform == "win32":
         print ("即將結束程式")
         print ("------------------------------------------------------------")
     mode = ""
-    mode_con = ""
     while mode == "":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
         print ("2: 更新 wahid-dl 主程式")
