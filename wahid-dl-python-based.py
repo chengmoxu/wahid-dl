@@ -1,5 +1,5 @@
 # wahid-dl Python-Based
-# [Stable] v4.4.20240815.Python.2
+# [Stable] v4.5.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -20,7 +20,7 @@ if sys.platform == "win32":
     print ("wahid-dl Python-Based")
     print ("------------------------------------------------------------")
     mode = ""
-    while mode != "0":
+    while mode == "":
         print ("請輸入欲下載影片之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
@@ -53,7 +53,7 @@ elif sys.platform == "linux":
     print ("wahid-dl Python-Based")
     print ("------------------------------------------------------------")
     mode = ""
-    while mode != "0":
+    while mode == "":
         print ("請輸入欲下載影片之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")

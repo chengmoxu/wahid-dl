@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Install and Update Tool
-# [Stable] v4.4.20240815.Python.2
+# [Stable] v4.5.20240816.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -21,45 +21,7 @@ import re
 # Install/Update Function within OS judge
 print ("wahid-dl Python-Based Install and Update Tool")
 if sys.platform == "win32":
-    mode = "Start"
-    mode_con = ""
-    while mode == "Start":
-        print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
-        print ("2: 更新 wahid-dl 主程式")
-        print ("3: 更新 yt-dlp")
-        print ("4: 更新 FFmpeg")
-        print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
-        print ("0: 離開程式")
-        userinput = input ("請選擇執行項目: ")
-        userinput_judge = str.isdigit(userinput)
-        if userinput_judge == True: 
-            if userinput == "0":
-                mode = "0"
-            elif userinput == "1":
-                mode = "1"
-                mode_con = "1"
-                print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
-            elif userinput == "2":
-                mode = "2"
-                mode_con = "0"
-            elif userinput == "3":
-                mode = "3"
-                mode_con = "0"
-            elif userinput == "4":
-                mode = "4"
-                mode_con = "0"
-            else:
-                print ("請重新輸入正確選項！")
-        elif userinput_judge == False:
-            if userinput == "DEVINSTALL":
-                mode = "DEVINSTALL"
-                mode_con = "0"
-    while mode == "1":
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "2"
-    while mode == "2":
+    def wahiddl_installer():
         print ("------------------------------------------------------------")
         print ("開始安裝/更新wahid-dl主程式")
         print ("------------------------------------------------------------")
@@ -146,11 +108,7 @@ if sys.platform == "win32":
                 print ("安裝/更新 wahid-dl 失敗")
         else:
             print ("安裝/更新 wahid-dl 失敗")
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "3"
-    while mode == "3":
+    def ytdlp_intstaller():
         print ("------------------------------------------------------------")
         print ("開始安裝/更新 yt-dlp")
         print ("------------------------------------------------------------")
@@ -174,11 +132,7 @@ if sys.platform == "win32":
         print ("開始下載最新版本 yt-dlp Pip Version")
         subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
         print ("安裝/更新 yt-dlp Pip Version 完成")
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "4"
-    while mode == "4":
+    def ffmpeg_installer():
         print ("------------------------------------------------------------")
         print ("開始安裝/更新 FFmpeg")
         print ("------------------------------------------------------------")
@@ -291,11 +245,7 @@ if sys.platform == "win32":
                 print ("安裝/更新 FFmpeg 失敗")
         while ffmpeg_download_need == '0':
             break
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "0"
-    while mode == "DEVINSTALL":
+    def wahiddl_DEV_installer():
         print ("------------------------------------------------------------")
         print ("開始安裝/更新wahid-dl DEV主程式")
         print ("------------------------------------------------------------")
@@ -318,7 +268,7 @@ if sys.platform == "win32":
                 else:
                     print ("不存在 wahid-dl DEV 舊版之 .bat 檔案")
             # 移除舊版*.py
-            os.chdir ('C:\\wahid-dl')
+            os.chdir ('C:\\wahid-dl DEV')
             wahiddl_old_py_files = glob.glob ("*.py")
             for py_file in wahiddl_old_py_files:
                 if os.path.exists (py_file):
@@ -330,7 +280,7 @@ if sys.platform == "win32":
         # 安裝/更新新版wahid-dl DEV 主程式
         print ("安裝/更新 wahid-dl DEV")
         os.chdir ('C:\\wahid-dl DEV')
-        os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/dev')
+        os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/develop')
         updates_folder_name = 'updates'
         if not os.path.exists (updates_folder_name):
             os.mkdir (updates_folder_name)
@@ -339,7 +289,7 @@ if sys.platform == "win32":
             print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
         print ('解壓縮 wahid-dl DEV 更新資料')
         os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
-        wahiddl_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-main\\"
+        wahiddl_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\"
         wahiddl_dst_folder = "C:\\wahid-dl DEV\\"
         wahiddl_bat_files = glob.glob (wahiddl_updatesfiles_folder + "*.bat")
         for wahiddl_bat_file in wahiddl_bat_files:
@@ -383,15 +333,50 @@ if sys.platform == "win32":
                 print ("安裝/更新 wahid-dl DEV 失敗")
         else:
             print ("安裝/更新 wahid-dl DEV 失敗")
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "0"
-    while mode == "0":
+    def exit():
         print ("------------------------------------------------------------")
         print ("即將結束程式")
         print ("------------------------------------------------------------")
-        break
+    mode = ""
+    while mode == "":
+        print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
+        print ("2: 更新 wahid-dl 主程式")
+        print ("3: 更新 yt-dlp")
+        print ("4: 更新 FFmpeg")
+        print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
+        print ("0: 離開程式")
+        userinput = input ("請選擇執行項目: ")
+        userinput_judge = str.isdigit(userinput)
+        if userinput_judge == True: 
+            if userinput == "0":
+                exit()
+                break
+            elif userinput == "1":
+                print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
+                wahiddl_installer()
+                ytdlp_intstaller()
+                ffmpeg_installer()
+                exit()
+                break
+            elif userinput == "2":
+                wahiddl_installer()
+                exit()
+                break
+            elif userinput == "3":
+                ytdlp_intstaller()
+                exit()
+                break
+            elif userinput == "4":
+                ffmpeg_installer()
+                exit()
+                break
+            else:
+                print ("請重新輸入正確選項！")
+        elif userinput_judge == False:
+            if userinput == "DEVINSTALL":
+                wahiddl_DEV_installer()
+                exit()
+                break
 #elif sys.platform == "linux":
 #elif sys.platform == "darwin":
 os.system ('pause')
