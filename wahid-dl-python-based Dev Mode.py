@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Dev] v4.7.20240821.Python.2
+# [Dev] v4.7.20240821.Python.3
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -15,9 +15,13 @@ import os
 import sys
 
 # Dev Mode within OS judge
+def version_info():
+    version_number = '[Dev] v4.7.20240821.Python.3'
+    return version_number
+
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("[Dev] v4.7.20240821.Python.2")
+    print (version_info())
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
@@ -48,8 +52,7 @@ if sys.platform == "win32":
         else:
             print ("請重新輸入正確命令！")
     while mode == "versioninfo":
-        versioninfo_detail = str ("[Dev] v4.7.20240821.Python.2")
-        print (versioninfo_detail)
+        print (version_info())
         mode_con = "0"
         if mode_con == "0":
             mode = "0"
@@ -60,7 +63,7 @@ if sys.platform == "win32":
         break
 elif sys.platform == "linux":
     print ("wahid-dl Python-Based Dev Mode [Linux]")
-    print ("[Dev] v4.7.20240821.Python.2")
+    print (version_info())
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
@@ -90,8 +93,7 @@ elif sys.platform == "linux":
         else:
             print ("請重新輸入正確命令！")
     while mode == "versioninfo":
-        versioninfo_detail = str ("[Dev] v4.7.20240821.Python.2")
-        print (versioninfo_detail)
+        print (version_info())
         mode_con = "0"
         if mode_con == "0":
             mode = "0"
