@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Stable] v4.6.20240816.Python.1
+# [Dev] v4.7.20240821.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -18,12 +18,12 @@ import subprocess
 # Dev Mode within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Python-Based Dev Mode [Windows]")
-    print ("[Stable] v4.6.20240816.Python.1")
+    print ("[Dev] v4.7.20240821.Python.1")
     print ("------------------------------------------------------------")
     mode = "Start"
     mode_con = ""
     while mode == "Start":
-        print ("yt-dlp命令模式，請直接輸入yt-dlp命令")
+        print ("wahid-dl Python-Based Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -44,7 +44,7 @@ if sys.platform == "win32":
                 command = str (('yt-dlp ') + userinput)
                 os.system (command)
                 print ("------------------------------------------------------------")
-                print ("執行結束，請至資料夾內確認您的下載")
+                print ("執行結束")
                 print ("------------------------------------------------------------")
         else:
             print ("請重新輸入正確命令！")
