@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Dev] v4.7.20240822.Python.1
+# [Dev] v4.7.20240822.Python.2
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -16,7 +16,7 @@ import sys
 
 # Dev Mode within OS judge
 def version_info():
-    version_number = '[Dev] v4.7.20240822.Python.1'
+    version_number = '[Dev] v4.7.20240822.Python.2'
     return version_number
 
 def wahiddl_devmode_core():
@@ -63,7 +63,9 @@ def wahiddl_devmode_core():
             print ("請重新輸入正確命令！")
             mode = "start"
     while mode == "end":
+        print ("------------------------------------------------------------")
         print("即將結束程式")
+        print ("------------------------------------------------------------")
         break
 
 wahiddl_devmode_core()
