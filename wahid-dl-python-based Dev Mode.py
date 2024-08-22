@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Dev] v4.7.20240821.Python.3
+# [Dev] v4.7.20240822.Python.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -16,34 +16,44 @@ import sys
 
 # Dev Mode within OS judge
 def version_info():
-    version_number = '[Dev] v4.7.20240821.Python.3'
+    version_number = '[Dev] v4.7.20240822.Python.1'
     return version_number
 
-if sys.platform == "win32":
-    print ("wahid-dl Python-Based Dev Mode [Windows]")
+def wahiddl_devmode_core():
+    system_os = ""
+    if sys.platform  == "win32":
+        system_os = "Windows"
+    elif sys.platform  == "linux":
+        system_os = "Linux"
+    elif sys.platform == "darwin":
+        system_os = "macOS"
+    print("wahid-dl Python-Based Dev Mode [" + system_os + "]")
     print (version_info())
     print ("------------------------------------------------------------")
-    mode = "Start"
-    mode_con = ""
-    while mode == "Start":
+    mode = "start"
+    while mode == "start":
         print ("wahid-dl Python-Based Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
-        if userinput_judge == True: 
+        if userinput_judge == True:
             if  userinput == "0":
-                mode = "0"
-                mode_con = "0"
+                mode = "end"
             else:
-               print ("請重新輸入正確選項！")
+                print ("請重新輸入正確選項！")
+                mode = "start"
         elif userinput_judge == False:
             if userinput == "wahid-dl -V" or "wahid-dl --version":
-                mode = "versioninfo"
+                print (version_info())
+                print ("------------------------------------------------------------")
             else:
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
-                os.chdir ('C:\\wahid-dl')
+                if system_os == "Windows":
+                    os.chdir ('C:\\wahid-dl')
+                else:
+                    continue
                 command = str (('yt-dlp ') + userinput)
                 os.system (command)
                 print ("------------------------------------------------------------")
@@ -51,57 +61,10 @@ if sys.platform == "win32":
                 print ("------------------------------------------------------------")
         else:
             print ("請重新輸入正確命令！")
-    while mode == "versioninfo":
-        print (version_info())
-        mode_con = "0"
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "0"
-    while mode == "0":
+            mode = "start"
+    while mode == "end":
         print("即將結束程式")
         break
-elif sys.platform == "linux":
-    print ("wahid-dl Python-Based Dev Mode [Linux]")
-    print (version_info())
-    print ("------------------------------------------------------------")
-    mode = "Start"
-    mode_con = ""
-    while mode == "Start":
-        print ("wahid-dl Python-Based Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
-        print ("或者，請輸入0結束程式\n")
-        userinput = input ("請輸入：")
-        userinput_judge = str.isdigit(userinput)
-        if userinput_judge == True: 
-            if  userinput == "0":
-                mode = "0"
-                mode_con = "0"
-            else:
-               print ("請重新輸入正確選項！")
-        elif userinput_judge == False:
-            if userinput == "wahid-dl -V" or "wahid-dl --version":
-                mode = "versioninfo"
-            else:
-                print ("------------------------------------------------------------")
-                print ("執行開始")
-                print ("------------------------------------------------------------")
-                command = str (('yt-dlp ') + userinput)
-                os.system (command)
-                print ("------------------------------------------------------------")
-                print ("執行結束")
-                print ("------------------------------------------------------------")
-        else:
-            print ("請重新輸入正確命令！")
-    while mode == "versioninfo":
-        print (version_info())
-        mode_con = "0"
-        if mode_con == "0":
-            mode = "0"
-        elif mode_con == "1":
-            mode = "0"
-    while mode == "0":
-        print("即將結束程式")
-        break
-#elif sys.platform == "darwin":
-#    print ("macOS Mode")
+
+wahiddl_devmode_core()
 os.system ('pause')
