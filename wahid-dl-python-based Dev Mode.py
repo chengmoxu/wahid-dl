@@ -1,5 +1,5 @@
 # wahid-dl Python-Based Dev Mode
-# [Dev] v4.7.20240822.Python.2
+# [Dev] v4.7-20240823.1
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -13,11 +13,7 @@
 # Library import
 import os
 import sys
-
-# Dev Mode within OS judge
-def version_info():
-    version_number = '[Dev] v4.7.20240822.Python.2'
-    return version_number
+from packages.core import version_info
 
 def wahiddl_devmode_core():
     system_os = ""
@@ -28,7 +24,8 @@ def wahiddl_devmode_core():
     elif sys.platform == "darwin":
         system_os = "macOS"
     print("wahid-dl Python-Based Dev Mode [" + system_os + "]")
-    print (version_info())
+    display_version_outline = version_info.get_version_outline()
+    print (display_version_outline)
     print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":
@@ -44,7 +41,8 @@ def wahiddl_devmode_core():
                 mode = "start"
         elif userinput_judge == False:
             if userinput == "wahid-dl -V" or "wahid-dl --version":
-                print (version_info())
+                display_version_outline = version_info.get_version_outline()
+                print (display_version_outline)
                 print ("------------------------------------------------------------")
             else:
                 print ("------------------------------------------------------------")
