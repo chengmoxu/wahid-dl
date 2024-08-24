@@ -1,4 +1,6 @@
 import os
+import subprocess
+import re
 ffmpeg_folder_name = 'FFmpeg'
 def checking_ffmpeg_folder_existed():
     os.chdir ('C:\\')
@@ -42,3 +44,16 @@ def checking_ffmpeg_files_existed():
         ffprobe_exe_existed = 'Internal Error'
         error_location = 'checking_ffmpeg_files_existed()'
     return ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed, error_location
+def checking_ffmpeg_version():
+    ffmpeg_exact_version_number = '7.0.2'
+    ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
+    ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
+    if ffmpeg_version_detail:
+        ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
+    if ffmpeg_check_version == ffmpeg_exact_version_number:
+        print ("FFmpeg 已是最新版本，不需要更新")
+        ffmpeg_download_need = 'unnecessary'
+        return ffmpeg_download_need
+    else:
+        ffmpeg_download_need = 'need'
+        return ffmpeg_download_need
