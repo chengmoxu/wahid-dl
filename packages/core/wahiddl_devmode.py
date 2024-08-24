@@ -21,8 +21,8 @@ def wahiddl_devmode_windows():
                 mode = "start"
         elif userinput_judge == False:
             if userinput == "wahid-dl -V" or "wahid-dl --version":
-                display_version_outline = version_info.get_version_outline()
-                print (display_version_outline)
+                display_version_detail = version_info.get_version_detail()
+                print (display_version_detail)
                 print ("------------------------------------------------------------")
             else:
                 print ("------------------------------------------------------------")
