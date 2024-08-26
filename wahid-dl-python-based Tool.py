@@ -181,8 +181,10 @@ def ffmpeg_installer_without_packages():
             ffprobe_exist = '0'
         if ffmpeg_exist == '1' and ffplay_exist == '1' and ffprobe_exist == '1':
             print ("安裝/更新 FFmpeg 完成")
+            break
         else:
             print ("安裝/更新 FFmpeg 失敗")
+            break
     while ffmpeg_download_need == '0':
         break
 def wahiddl_DEV_installer_without_packages():
