@@ -1,3 +1,4 @@
+import os
 from packages.checking import checking_system_os
 from packages.checking import checking_wahiddl
 from packages.checking import checking_wahiddl_DEV
@@ -45,6 +46,7 @@ def wahiddl_tool_windows():
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
                 elif wahiddl_status == 'Flase':
+                    os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
                 elif error_status != 'False':
                     print (wahiddl_status)
@@ -84,6 +86,7 @@ def wahiddl_tool_windows():
                         print (ffprobe_exe_status)
                         print (error_status)
                 elif ffmpeg_folder_status == 'Flase':
+                    os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
                 exit()
                 break
@@ -96,6 +99,7 @@ def wahiddl_tool_windows():
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
                 elif wahiddl_status == 'Flase':
+                    os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
                 elif error_status != 'False':
                     print (wahiddl_status)
@@ -141,6 +145,7 @@ def wahiddl_tool_windows():
                         print (ffprobe_exe_status)
                         print (error_status)
                 elif ffmpeg_folder_status == 'Flase':
+                    os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
                 exit()
                 break
@@ -156,6 +161,7 @@ def wahiddl_tool_windows():
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
                 elif wahiddl_DEV_status == 'Flase':
+                    os.mkdir ('C:\\wahid-dl DEV')
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
                 elif error_status != 'False':
                     print (wahiddl_DEV_status)
