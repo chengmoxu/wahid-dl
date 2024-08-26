@@ -26,7 +26,11 @@ elif sys.platform == "darwin":
     system_os = "macOS"
 
 def wahiddl_installer_without_packages():
-    os.chdir ('C:\\wahid-dl')
+    if os.path.exists ('C:\\wahid-dl'):
+        os.chdir ('C:\\wahid-dl')
+    if not os.path.exists ('C:\\wahid-dl'):
+        os.mkdir ('C:\\wahid-dl')
+        os.chdir ('C:\\wahid-dl')
     os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
     updates_folder_name = 'updates'
     if not os.path.exists (updates_folder_name):
@@ -182,7 +186,11 @@ def ffmpeg_installer_without_packages():
     while ffmpeg_download_need == '0':
         break
 def wahiddl_DEV_installer_without_packages():
-    os.chdir ('C:\\wahid-dl DEV')
+    if os.path.exists ('C:\\wahid-dl DEV'):
+        os.chdir ('C:\\wahid-dl DEV')
+    if not os.path.exists ('C:\\wahid-dl DEV'):
+        os.mkdir ('C:\\wahid-dl DEV')
+        os.chdir ('C:\\wahid-dl DEV')
     os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/develop')
     updates_folder_name = 'updates'
     if not os.path.exists (updates_folder_name):
