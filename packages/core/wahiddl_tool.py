@@ -56,10 +56,9 @@ def wahiddl_tool_windows():
                 ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[0]
                 error_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[1]
                 if ytdlp_status == 'True' and error_status == 'False':
-                    uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
-                    installer_ytdlp.installer_wahiddl_ytdlp_install()
-                elif ytdlp_status == 'Flase' and error_status == 'False':
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
+                elif ytdlp_status == 'Flase' and error_status == 'False':
+                    installer_ytdlp.installer_wahiddl_ytdlp_install()
                 elif error_status != 'False':
                     print (ytdlp_status)
                     print (error_status)
