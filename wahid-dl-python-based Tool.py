@@ -65,7 +65,7 @@ def ytdlp_installer_without_packages():
     if not os.path.exists (yt_dlp_path):
         print ("yt-dlp不存在，開始下載 yt-dlp")
         os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
-    else:
+    elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
     print ("------------------------------------------------------------")
