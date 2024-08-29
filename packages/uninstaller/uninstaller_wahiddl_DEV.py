@@ -17,9 +17,9 @@ def uninstaller_wahiddl_DEV_uninstall():
             print (f"已刪除 wahid-dl DEV 舊版的{py_file}")
         else:
             print ("不存在 wahid-dl DEV 舊版之 .py 檔案")
-    if os.path.exists ("C:\\wahid-dl\\packages"):
-        shutil.rmtree("C:\\wahid-dl\\packages")
-        print (f"已刪除 wahid-dl 舊版的 packages")
-    elif not os.path.exists ("C:\\wahid-dl\\packages"):
-        shutil.rmtree("C:\\wahid-dl\\packages")
-        print (f"已不存在 wahid-dl 舊版的 packages")
+    if os.path.exists ("C:\\wahid-dl DEV\\packages"):
+        shutil.rmtree("C:\\wahid-dl DEV\\packages")
+        print (f"已刪除 wahid-dl DEV舊版的 packages")
+    elif not os.path.exists ("C:\\wahid-dl DEV\\packages"):
+        shutil.rmtree("C:\\wahid-dl DEV\\packages")
+        print (f"已不存在 wahid-dl DEV舊版的 packages")
