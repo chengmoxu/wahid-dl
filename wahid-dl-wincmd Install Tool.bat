@@ -1,13 +1,13 @@
 @echo off
-echo wahid-dl å®‰è£å·¥å…·
+echo wahid-dl ¦w¸Ë¤u¨ã
 echo ------------------------------------------------------------
-echo é–‹å§‹åŸ·è¡Œ
+echo ¶}©l°õ¦æ
 echo ------------------------------------------------------------
-echo å»ºç«‹è³‡æ–™å¤¾
+echo «Ø¥ß¸ê®Æ§¨
 cd "C:\"
 mkdir wahid-dl
 echo ------------------------------------------------------------
-echo å®‰è£ wahid-dl
+echo ¦w¸Ë wahid-dl
 cd "C:\wahid-dl"
 curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main
 mkdir updates
@@ -17,11 +17,11 @@ move "C:\wahid-dl\updates\wahid-dl-main\*.py" "C:\wahid-dl\"
 del "C:\wahid-dl\updates.zip"
 rd /s /q "C:\wahid-dl\updates"
 echo ------------------------------------------------------------
-echo ä¸‹è¼‰ yt-dlp
+echo ¤U¸ü yt-dlp
 cd "C:\wahid-dl"
 curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe
 echo ------------------------------------------------------------
-echo ä¸‹è¼‰ FFmpeg
+echo ¤U¸ü FFmpeg
 cd "C:\wahid-dl"
 del ffmpeg.exe ffplay.exe ffprobe.exe
 mkdir "C:\FFmpeg"
@@ -35,6 +35,6 @@ setx PATH "FFmpeg;C:\FFmpeg\"
 del "C:\FFmpeg\ffmpeg.zip"
 rd /s /q "C:\FFmpeg\ffmpeg-unzip"
 echo ------------------------------------------------------------
-echo åŸ·è¡Œå®Œæˆï¼Œè«‹è‡³è³‡æ–™å¤¾å…§ç¢ºèªå®‰è£
+echo °õ¦æ§¹¦¨¡A½Ğ¦Ü¸ê®Æ§¨¤º½T»{¦w¸Ë
 echo ------------------------------------------------------------
 pause
