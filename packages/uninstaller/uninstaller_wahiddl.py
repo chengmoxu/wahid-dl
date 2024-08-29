@@ -1,7 +1,8 @@
 import os
 import glob
+import shutil
 def uninstaller_wahiddl_uninstall():
-    os.chdir ('C:\\wahid-dl')
+    os.chdir ("C:\\wahid-dl")
     wahiddl_old_bat_files = glob.glob ("*.bat")
     for bat_file in wahiddl_old_bat_files:
         if os.path.exists (bat_file):
@@ -16,3 +17,9 @@ def uninstaller_wahiddl_uninstall():
             print (f"已刪除 wahid-dl 舊版的{py_file}")
         else:
             print ("不存在 wahid-dl 舊版之 .py 檔案")
+    if os.path.exists ("C:\\wahid-dl\\packages"):
+        shutil.rmtree("C:\\wahid-dl\\packages")
+        print (f"已刪除 wahid-dl 舊版的 packages")
+    elif not os.path.exists ("C:\\wahid-dl\\packages"):
+        shutil.rmtree("C:\\wahid-dl\\packages")
+        print (f"已不存在 wahid-dl 舊版的 packages")
