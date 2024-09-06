@@ -23,10 +23,10 @@ del ffmpeg.exe ffplay.exe ffprobe.exe
 mkdir "C:\FFmpeg"
 cd "C:\FFmpeg"
 del ffmpeg.exe ffplay.exe ffprobe.exe
-curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.1/ffmpeg-7.0.1-full_build.zip
+curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip
 mkdir "C:\FFmpeg\FFmpeg-unzip"
 tar -zxvf ffmpeg.zip -C "C:\FFmpeg\FFmpeg-unzip"
-move "C:\FFmpeg\FFmpeg-unzip\ffmpeg-7.0.1-full_build\bin\*.exe" "C:\FFmpeg\"
+move "C:\FFmpeg\FFmpeg-unzip\ffmpeg-7.0.2-full_build\bin\*.exe" "C:\FFmpeg\"
 setx PATH "FFmpeg;C:\FFmpeg\"
 del "C:\FFmpeg\ffmpeg.zip"
 rd /s /q "C:\FFmpeg\ffmpeg-unzip"
