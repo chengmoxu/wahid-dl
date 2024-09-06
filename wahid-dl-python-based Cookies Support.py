@@ -1,5 +1,4 @@
-# wahid-dl Python-Based Cookies Support
-# [Stable] v4.6.20240816.Python.1
+# wahid-dl Cookies Support
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###

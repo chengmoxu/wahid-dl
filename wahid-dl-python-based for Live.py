@@ -1,5 +1,4 @@
-# wahid-dl Python-Based for Live
-# [Stable] v4.6.20240816.Python.1
+# wahid-dl for Live
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###

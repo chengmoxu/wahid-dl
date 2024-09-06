@@ -1,5 +1,4 @@
-# wahid-dl-python-based for Quality Selection
-# [Stable] v4.6.20240816.Python.1
+# wahid-dl for Quality Selection
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
