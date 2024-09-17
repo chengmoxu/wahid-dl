@@ -218,7 +218,7 @@ def wahiddl_DEV_installer_without_packages():
     shutil.rmtree("C:\\wahid-dl DEV\\updates")
     os.remove("C:\\wahid-dl DEV\\updates.zip")
     os.remove("C:\\wahid-dl DEV\\.gitignore")
-    os.remove("C:\\wahid-dl DEV\\wahid-dl.ipynb")
+    os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
 def exit():
         print ("------------------------------------------------------------")
         print ("即將結束程式")
