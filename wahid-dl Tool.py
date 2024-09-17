@@ -54,7 +54,7 @@ def wahiddl_installer_without_packages():
     shutil.rmtree("C:\\wahid-dl\\updates")
     os.remove("C:\\wahid-dl\\updates.zip")
     os.remove("C:\\wahid-dl\\.gitignore")
-    os.remove("C:\\wahid-dl\\wahid-dl.ipynb")
+    os.remove("C:\\wahid-dl\\wahid-dl-colab.ipynb")
 def ytdlp_installer_without_packages():
     print ("------------------------------------------------------------")
     print ("開始安裝/更新 yt-dlp")
