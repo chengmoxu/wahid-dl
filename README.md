@@ -92,6 +92,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 > Using this function to download subtitle of videos.
 
 10. wahid-dl-python-based Tool.py
+10. wahid-dl-python-based Tool.py
 > This function will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.
 
 ### Fifth.  Future outlook
