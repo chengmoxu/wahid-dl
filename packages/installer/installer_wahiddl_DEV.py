@@ -23,4 +23,4 @@ def installer_wahiddl_DEV_install():
     shutil.rmtree('C:\\wahid-dl DEV\\updates')
     os.remove('C:\\wahid-dl DEV\\updates.zip')
     os.remove('C:\\wahid-dl DEV\\.gitignore')
-    os.remove('C:\\wahid-dl DEV\\wahid-dl.ipynb')
+    os.remove('C:\\wahid-dl DEV\\wahid-dl-colab.ipynb')

@@ -10,9 +10,9 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: v5.0-20240829.3
+* For Windows/Linux/macOS Version Number: v5.1-20240906.1
 
-* For Google Colab Version Number: wahid-dl.v2.2.20240225.googlecolab.1
+* For Google Colab Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > Fixed video wrong format issues. 
 >
 > Change the yt-dlp installation method to avoid outdated versions. 
@@ -91,6 +91,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 9. wahid-dl-python-based for Subtitle.py
 > Using this function to download subtitle of videos.
 
+10. wahid-dl-python-based Tool.py
 10. wahid-dl-python-based Tool.py
 > This function will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.
 

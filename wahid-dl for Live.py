@@ -1,5 +1,4 @@
-# wahid-dl Python-Based
-# [Stable] v4.6.20240816.Python.1
+# wahid-dl for Live
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -17,11 +16,11 @@ import subprocess
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based")
+    print ("wahid-dl Python-Based for Live")
     print ("------------------------------------------------------------")
     mode = ""
-    while mode == "":
-        print ("請輸入欲下載影片之網址")
+    while mode != "0":
+        print ("請輸入欲下載直播影片之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -36,7 +35,7 @@ if sys.platform == "win32":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 os.chdir ('C:\\wahid-dl')
-                downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
+                downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
                 os.system (downloadcommand)
                 print ("------------------------------------------------------------")
                 print ("執行結束，請至資料夾內確認您的下載")
@@ -49,11 +48,11 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
-    print ("wahid-dl Python-Based")
+    print ("wahid-dl Python-Based for Live")
     print ("------------------------------------------------------------")
     mode = ""
-    while mode == "":
-        print ("請輸入欲下載影片之網址")
+    while mode != "0":
+        print ("請輸入欲下載直播影片之網址")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -68,7 +67,7 @@ elif sys.platform == "linux":
                 print ("執行開始")
                 print ("------------------------------------------------------------")
                 subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
-                downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
+                downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
                 os.system (downloadcommand)
                 print ("------------------------------------------------------------")
                 print ("執行結束，請至資料夾內確認您的下載")

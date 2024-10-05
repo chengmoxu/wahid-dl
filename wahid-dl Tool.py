@@ -16,7 +16,7 @@ import shutil
 import glob
 import re
 
-version_outline = "v5.0-20240829.3"
+version_outline = "v5.1-20240918.1"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -54,7 +54,7 @@ def wahiddl_installer_without_packages():
     shutil.rmtree("C:\\wahid-dl\\updates")
     os.remove("C:\\wahid-dl\\updates.zip")
     os.remove("C:\\wahid-dl\\.gitignore")
-    os.remove("C:\\wahid-dl\\wahid-dl.ipynb")
+    os.remove("C:\\wahid-dl\\wahid-dl-colab.ipynb")
 def ytdlp_installer_without_packages():
     print ("------------------------------------------------------------")
     print ("開始安裝/更新 yt-dlp")
@@ -65,6 +65,7 @@ def ytdlp_installer_without_packages():
     if not os.path.exists (yt_dlp_path):
         print ("yt-dlp不存在，開始下載 yt-dlp")
         os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
+    elif os.path.exists (yt_dlp_path):
     elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
@@ -218,7 +219,7 @@ def wahiddl_DEV_installer_without_packages():
     shutil.rmtree("C:\\wahid-dl DEV\\updates")
     os.remove("C:\\wahid-dl DEV\\updates.zip")
     os.remove("C:\\wahid-dl DEV\\.gitignore")
-    os.remove("C:\\wahid-dl DEV\\wahid-dl.ipynb")
+    os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
 def exit():
         print ("------------------------------------------------------------")
         print ("即將結束程式")
