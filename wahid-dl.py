@@ -1,4 +1,3 @@
-# wahid-dl
 '''
       ###       ###        ###         ###     ###         #######      ########             #########       ###
      ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
@@ -13,10 +12,11 @@
 import os
 import sys
 import subprocess
+from packages.core import title
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based")
+    print (title.get_title_wahiddl())
     print ("------------------------------------------------------------")
     mode = ""
     while mode == "":
