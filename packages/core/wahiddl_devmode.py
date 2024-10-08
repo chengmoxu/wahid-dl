@@ -2,14 +2,15 @@ import os
 from packages.checking import checking_system_os
 from packages.core import version_info
 system_os = checking_system_os.get_system_os()
+programming_language = version_info.get_version_programming_language()
 def wahiddl_devmode_windows():
-    print("wahid-dl Dev Mode [" + system_os + "]")
+    print("wahid-dl Dev Mode [" + system_os + "] [" + programming_language + "]")
     display_version_outline = version_info.get_version_outline()
     print (display_version_outline)
     print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":
-        print ("wahid-dl Python-Based Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
+        print ("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
