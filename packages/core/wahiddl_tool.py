@@ -40,7 +40,6 @@ def wahiddl_tool_windows():
                 print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
                 print ("安裝 wahid-dl 主程式")
                 wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
-                error_status = checking_wahiddl.checking_wahiddl_folder_existed()[1]
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
@@ -61,7 +60,6 @@ def wahiddl_tool_windows():
                     ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
                     ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
-                    error_status = checking_ffmpeg.checking_ffmpeg_files_existed()[3]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
                         if ffmpeg_version_status == 'unnecessary':
@@ -77,7 +75,6 @@ def wahiddl_tool_windows():
             elif userinput == "2":
                 print ("安裝 wahid-dl 主程式")
                 wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
-                error_status = checking_wahiddl.checking_wahiddl_folder_existed()[1]
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
@@ -105,7 +102,6 @@ def wahiddl_tool_windows():
                     ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
                     ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
-                    error_status = checking_ffmpeg.checking_ffmpeg_files_existed()[3]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
                         if ffmpeg_version_status == 'unnecessary':
@@ -124,7 +120,6 @@ def wahiddl_tool_windows():
             if userinput == "DEVINSTALL":
                 print ("安裝 wahid-dl DEV 主程式")
                 wahiddl_DEV_status = checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0]
-                error_status = checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1]
                 if wahiddl_DEV_status == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
