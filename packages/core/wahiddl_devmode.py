@@ -19,11 +19,7 @@ def wahiddl_devmode_windows():
                 print ("請重新輸入正確選項！")
                 mode = "start"
         elif userinput_judge == False:
-            if userinput == "wahid-dl -V" or "wahid-dl --version":
-                display_version_detail = version_info.get_version_detail()
-                print (display_version_detail)
-                print ("------------------------------------------------------------")
-            else:
+            if userinput.startswith("yt-dlp") == True:
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
@@ -36,6 +32,12 @@ def wahiddl_devmode_windows():
                 print ("------------------------------------------------------------")
                 print ("執行結束")
                 print ("------------------------------------------------------------")
+            if userinput.startswith("wahid-dl -V") == True:
+                print (version_info.get_version_detail())
+                print ("------------------------------------------------------------")
+            else:
+                print ("請重新輸入正確命令！")
+                mode = "start"    
         else:
             print ("請重新輸入正確命令！")
             mode = "start"
