@@ -16,7 +16,7 @@ import subprocess
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based for Live")
+    print ("wahid-dl for Live")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":

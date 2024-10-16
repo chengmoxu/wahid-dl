@@ -15,7 +15,7 @@ import subprocess
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based Cookies Support")
+    print ("wahid-dl Cookies Support")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":

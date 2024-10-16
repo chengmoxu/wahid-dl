@@ -16,7 +16,7 @@ import subprocess
 
 # Checking Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl-python-based Format Checking Tool")
+    print ("wahid-dl Format Checking Tool")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
