@@ -16,7 +16,7 @@ import shutil
 import glob
 import re
 
-version_outline = "v5.1-20240918.1"
+version_outline = "v5.2-20241020.1"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -66,7 +66,6 @@ def ytdlp_installer_without_packages():
         print ("yt-dlp不存在，開始下載 yt-dlp")
         os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
     elif os.path.exists (yt_dlp_path):
-    elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
     print ("------------------------------------------------------------")
@@ -112,7 +111,7 @@ def ffmpeg_installer_without_packages():
             print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
             # 檢查 FFmpeg 版本
             # FFmpeg Version Number，變動需要更新
-            ffmpeg_exact_version_number = "7.0.2"
+            ffmpeg_exact_version_number = "7.1"
             ffmpeg_version_org_output = subprocess.getoutput ("ffmpeg -version")
             ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
             if ffmpeg_version_detail:
@@ -142,7 +141,7 @@ def ffmpeg_installer_without_packages():
         print ("開始下載最新版本 FFmpeg")
         os.chdir ("C:\\FFmpeg")
         # FFmpeg Version Number，變動需要更新
-        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip")
+        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-full_build.zip")
         FFmpegunzip_folder_name = "FFmpeg-unzip"
         if not os.path.exists (FFmpegunzip_folder_name):
             os.mkdir (FFmpegunzip_folder_name)
@@ -151,7 +150,7 @@ def ffmpeg_installer_without_packages():
             print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
         os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
         # FFmpeg Version Number，變動需要更新
-        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.2-full_build\\bin\\"
+        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1-full_build\\bin\\"
         ffmpeg_dst_folder = "C:\\FFmpeg\\"
         ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
         for ffmpeg_exe_file in ffmpeg_exe_files:

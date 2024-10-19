@@ -13,7 +13,6 @@ import os
 from packages.checking import checking_system_os
 from packages.core import wahiddl_devmode
 system_os = checking_system_os.get_system_os()
-print (system_os)
 if system_os  == "Windows":
     wahiddl_devmode.wahiddl_devmode_windows()
 elif system_os  == "Linux":

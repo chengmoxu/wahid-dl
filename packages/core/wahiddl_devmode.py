@@ -1,15 +1,14 @@
 import os
-from packages.checking import checking_system_os
+from packages.core import title
 from packages.core import version_info
+from packages.checking import checking_system_os
 system_os = checking_system_os.get_system_os()
 def wahiddl_devmode_windows():
-    print("wahid-dl Dev Mode [" + system_os + "]")
-    display_version_outline = version_info.get_version_outline()
-    print (display_version_outline)
+    print(title.get_title_wahiddl_devmode())
     print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":
-        print ("wahid-dl Python-Based Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
+        print ("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
@@ -20,11 +19,7 @@ def wahiddl_devmode_windows():
                 print ("請重新輸入正確選項！")
                 mode = "start"
         elif userinput_judge == False:
-            if userinput == "wahid-dl -V" or "wahid-dl --version":
-                display_version_detail = version_info.get_version_detail()
-                print (display_version_detail)
-                print ("------------------------------------------------------------")
-            else:
+            if userinput.startswith("yt-dlp") == True:
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
@@ -37,6 +32,12 @@ def wahiddl_devmode_windows():
                 print ("------------------------------------------------------------")
                 print ("執行結束")
                 print ("------------------------------------------------------------")
+            if userinput.startswith("wahid-dl -V") == True:
+                print (version_info.get_version_detail())
+                print ("------------------------------------------------------------")
+            else:
+                print ("請重新輸入正確命令！")
+                mode = "start"    
         else:
             print ("請重新輸入正確命令！")
             mode = "start"

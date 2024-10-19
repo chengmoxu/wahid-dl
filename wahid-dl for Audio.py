@@ -16,7 +16,7 @@ import subprocess
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Python-Based for Audio")
+    print ("wahid-dl for Audio")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":

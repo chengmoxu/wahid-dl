@@ -16,7 +16,7 @@ import subprocess
 
 # Subtitle Download within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl-python-based for Quality Selection")
+    print ("wahid-dl for Quality Selection")
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
