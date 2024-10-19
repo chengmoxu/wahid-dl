@@ -3,7 +3,7 @@ import glob
 import shutil
 def installer_ffmpeg():
     os.chdir ('C:\\FFmpeg')
-    os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.0.2/ffmpeg-7.0.2-full_build.zip')
+    os.system ('curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-full_build.zip')
     ffmpegunzip_folder_name = 'FFmpeg-unzip'
     if not os.path.exists (ffmpegunzip_folder_name):
         os.mkdir (ffmpegunzip_folder_name)
@@ -11,7 +11,7 @@ def installer_ffmpeg():
     else:
         print (f"'{ffmpegunzip_folder_name}' 資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
-    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.0.2-full_build\\bin\\"
+    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1-full_build\\bin\\"
     ffmpeg_dst_folder = 'C:\\FFmpeg\\'
     ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
     for ffmpeg_exe_file in ffmpeg_exe_files:
