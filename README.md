@@ -10,7 +10,7 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: v5.1-20240906.1
+* For Windows/Linux/macOS Version Number: v5.2-20241020.1
 
 * For Google Colab Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > Fixed video wrong format issues. 
