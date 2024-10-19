@@ -8,7 +8,7 @@ def checking_ffmpeg_folder_existed():
         ffmpeg_folder_existed = True
         error_location = False
     elif not os.path.exists (ffmpeg_folder_name):
-        ffmpeg_folder_existed = 'Flase'
+        ffmpeg_folder_existed = False
         error_location = False
     else:
         ffmpeg_folder_existed = 'Internal Error'
