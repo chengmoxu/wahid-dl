@@ -20,8 +20,7 @@ def wahiddl_tool_windows():
         print ("即將結束程式")
         print ("------------------------------------------------------------")
     print ("wahid-dl Tool [" + system_os + "]")
-    display_version_outline = version_info.get_version_outline()
-    print (display_version_outline)
+    print (version_info.get_version_outline())
     mode = "start"
     while mode == "start":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
