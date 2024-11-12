@@ -1,10 +1,10 @@
 import os
-from packages.checking import checking_system_os
+from packages.core import system_os
 wahiddl_folder_name = "wahid-dl"
 def checking_wahiddl_folder_existed():
-    if checking_system_os.get_system_os() == "Windows":
+    if system_os.get_system_os() == "Windows":
         path = os.path.join("C:\\", "wahid-dl")
-    elif checking_system_os.get_system_os() == "Linux":
+    elif system_os.get_system_os() == "Linux":
         path = os.path.expanduser("~/wahid-dl")
     else:
         return False, "Unsupported OS"

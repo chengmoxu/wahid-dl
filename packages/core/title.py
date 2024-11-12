@@ -1,6 +1,6 @@
-from packages.checking import checking_system_os
+from packages.core import system_os
 from packages.core import version_info
-system_os = checking_system_os.get_system_os()
+system_os = system_os.get_system_os()
 programming_language = version_info.get_version_programming_language()
 title_wahiddl = "wahid-dl [" + system_os + "] [" + programming_language + "]"
 title_wahiddl_tool = "wahid-dl Tool [" + system_os + "] [" + programming_language + "]"

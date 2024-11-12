@@ -1,5 +1,5 @@
 import os
-from packages.checking import checking_system_os
+from packages.core import system_os
 from packages.checking import checking_wahiddl
 from packages.checking import checking_wahiddl_DEV
 from packages.checking import checking_ytdlp
@@ -13,7 +13,7 @@ from packages.uninstaller import uninstaller_wahiddl_DEV
 from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import version_info
-system_os = checking_system_os.get_system_os()
+system_os = system_os.get_system_os()
 def wahiddl_tool_windows():
     def exit():
         print ("------------------------------------------------------------")
