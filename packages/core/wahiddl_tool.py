@@ -47,10 +47,9 @@ def wahiddl_tool_windows():
                     installer_wahiddl.installer_wahiddl_install()
                 print ("安裝 yt-dlp")
                 ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
-                error_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[1]
-                if ytdlp_status == True and error_status == False:
+                if ytdlp_status == True:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
-                elif ytdlp_status == False and error_status == False:
+                elif ytdlp_status == False:
                     installer_ytdlp.installer_wahiddl_ytdlp_install()
                 print ("安裝 FFmpeg")
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
@@ -85,11 +84,10 @@ def wahiddl_tool_windows():
             elif userinput == "3":
                 print ("安裝 yt-dlp")
                 ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
-                error_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[1]
-                if ytdlp_status == True and error_status == False:
+                if ytdlp_status == True:
                     uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
                     installer_ytdlp.installer_wahiddl_ytdlp_install()
-                elif ytdlp_status == False and error_status == False:
+                elif ytdlp_status == False:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
                 exit()
                 break
