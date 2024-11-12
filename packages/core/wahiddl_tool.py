@@ -46,8 +46,8 @@ def wahiddl_tool_windows():
                     os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
                 print ("安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[0]
-                error_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[1]
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                error_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[1]
                 if ytdlp_status == True and error_status == False:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
                 elif ytdlp_status == False and error_status == False:
@@ -84,8 +84,8 @@ def wahiddl_tool_windows():
                 break
             elif userinput == "3":
                 print ("安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[0]
-                error_status = checking_ytdlp.checking_wahiddl_ytdlp_file_existed()[1]
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                error_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[1]
                 if ytdlp_status == True and error_status == False:
                     uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
                     installer_ytdlp.installer_wahiddl_ytdlp_install()
