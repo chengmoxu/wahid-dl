@@ -66,7 +66,7 @@ elif sys.platform == "linux":
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+                
                 downloadcommand = str (('yt-dlp -c --live-from-start -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
                 os.system (downloadcommand)
                 print ("------------------------------------------------------------")
