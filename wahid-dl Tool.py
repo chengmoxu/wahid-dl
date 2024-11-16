@@ -16,7 +16,7 @@ import shutil
 import glob
 import re
 
-version_outline = "[Dev] v5.3-20241112.1"
+version_outline = "[Dev] v5.3-20241116.1"
 
 if sys.platform == "win32":
     system_os = "Windows"
