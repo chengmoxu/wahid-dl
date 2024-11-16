@@ -11,11 +11,11 @@
 # Library import
 import os
 import sys
-from packages.core import title
+from packages.core import ui
 
 # Download Function within OS judge
 if sys.platform == "win32":
-    print (title.get_title_wahiddl())
+    print (ui.get_title_wahiddl())
     print ("------------------------------------------------------------")
     mode = ""
     while mode == "":
@@ -47,7 +47,7 @@ if sys.platform == "win32":
         print("即將結束程式，稍後再次按下Enter鍵即可退出此程式")
         break
 elif sys.platform == "linux":
-    print (title.get_title_wahiddl())
+    print (ui.get_title_wahiddl())
     print ("------------------------------------------------------------")
     mode = ""
     while mode == "":
