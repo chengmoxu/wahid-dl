@@ -1,9 +1,9 @@
 import os
 from packages.core import system_os
-from packages.checking import checking_wahiddl
-from packages.checking import checking_wahiddl_DEV
-from packages.checking import checking_ytdlp
-from packages.checking import checking_ffmpeg
+from packages.checker import checking_wahiddl
+from packages.checker import checking_wahiddl_DEV
+from packages.checker import checking_ytdlp
+from packages.checker import checking_ffmpeg
 from packages.installer import installer_wahiddl
 from packages.installer import installer_wahiddl_DEV
 from packages.installer import installer_ytdlp
