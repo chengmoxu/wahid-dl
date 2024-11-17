@@ -13,12 +13,9 @@ from packages.uninstaller import uninstaller_wahiddl_DEV
 from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import version_info
+from packages.core import ui
 system_os = system_os.get_system_os()
 def wahiddl_tool_windows():
-    def exit():
-        print ("------------------------------------------------------------")
-        print ("即將結束程式")
-        print ("------------------------------------------------------------")
     print ("wahid-dl Tool [" + system_os + "]")
     print (version_info.get_version_outline())
     mode = "start"
@@ -33,7 +30,7 @@ def wahiddl_tool_windows():
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
             if userinput == "0":
-                exit()
+                ui.ui_exit()
                 break
             elif userinput == "1":
                 print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
@@ -68,7 +65,7 @@ def wahiddl_tool_windows():
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
-                exit()
+                ui.ui_exit()
                 break
             elif userinput == "2":
                 print ("安裝 wahid-dl 主程式")
@@ -79,7 +76,7 @@ def wahiddl_tool_windows():
                 elif wahiddl_status == False:
                     os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
-                exit()
+                ui.ui_exit()
                 break
             elif userinput == "3":
                 print ("安裝 yt-dlp")
@@ -89,7 +86,7 @@ def wahiddl_tool_windows():
                     installer_ytdlp.installer_wahiddl_ytdlp_install()
                 elif ytdlp_status == False:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
-                exit()
+                ui.ui_exit()
                 break
             elif userinput == "4":
                 print ("安裝 FFmpeg")
@@ -109,21 +106,31 @@ def wahiddl_tool_windows():
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
-                exit()
+                ui.ui_exit()
                 break
             else:
                 print ("請重新輸入正確選項！")
         elif userinput_judge == False:
             if userinput == "DEVINSTALL":
+                ui.ui_start()
                 print ("安裝 wahid-dl DEV 主程式")
-                wahiddl_DEV_status = checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0]
-                if wahiddl_DEV_status == True:
+                if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
-                elif wahiddl_DEV_status == False:
-                    os.mkdir ('C:\\wahid-dl DEV')
-                    installer_wahiddl_DEV.installer_wahiddl_DEV_install()
-                exit()
+                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0] == False:
+                    if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1] == "Unsupported OS":
+                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
+                        continue
+                    else:
+                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
+                        os.mkdir ('C:\\wahid-dl DEV')
+                        installer_wahiddl_DEV.installer_wahiddl_DEV_install()
+                if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
+                    installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
+                elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
+                    installer_ytdlp.installer_wahiddl_DEV_ytdlp_install()
+                ui.ui_complete()
+                ui.ui_exit()
                 break
             else:
                 print ("請重新輸入正確選項！")
