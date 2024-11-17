@@ -125,6 +125,8 @@ def wahiddl_tool_windows():
                         print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
                         os.mkdir ('C:\\wahid-dl DEV')
                         installer_wahiddl_DEV.installer_wahiddl_DEV_install()
+                print ("------------------------------------------------------------")
+                print ("安裝 yt-dlp")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
                 elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
