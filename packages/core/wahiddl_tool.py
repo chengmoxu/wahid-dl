@@ -80,12 +80,11 @@ def wahiddl_tool_windows():
                 break
             elif userinput == "3":
                 print ("安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
-                if ytdlp_status == True:
-                    uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
-                    installer_ytdlp.installer_wahiddl_ytdlp_install()
-                elif ytdlp_status == False:
+                if checking_ytdlp.checking_wahiddl_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
+                elif checking_ytdlp.checking_wahiddl_ytdlp_existed() == False:
+                    installer_ytdlp.installer_wahiddl_ytdlp_install()
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "4":
