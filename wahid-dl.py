@@ -15,6 +15,7 @@ from packages.core import ui
 
 # Download Function within OS judge
 if sys.platform == "win32":
+    print (ui.ASCII_art())
     print (ui.get_title_wahiddl())
     print ("------------------------------------------------------------")
     mode = ""
@@ -36,17 +37,16 @@ if sys.platform == "win32":
                 os.chdir ('C:\\wahid-dl')
                 downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
                 os.system (downloadcommand)
-                print ("------------------------------------------------------------")
-                print ("執行結束，請至資料夾內確認您的下載")
-                print ("------------------------------------------------------------")
+                ui.ui_complete()
             elif userinput.startswith("http") == False:
                 print ("請重新輸入正確網址！")
             else:
                 print ("請重新輸入正確網址！")
     while mode == "0":
-        print("即將結束程式，稍後再次按下Enter鍵即可退出此程式")
+        ui.ui_exit()
         break
 elif sys.platform == "linux":
+    print (ui.ASCII_art())
     print (ui.get_title_wahiddl())
     print ("------------------------------------------------------------")
     mode = ""
@@ -67,15 +67,13 @@ elif sys.platform == "linux":
                 print ("------------------------------------------------------------")
                 downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 ') + userinput)
                 os.system (downloadcommand)
-                print ("------------------------------------------------------------")
-                print ("The execution is completed, please go to the folder to confirm your download")
-                print ("------------------------------------------------------------")
+                ui.ui_complete()
             elif userinput.startswith("http") == False:
                 print ("Please re-enter the correct URL!")
             else:
                 print ("Please re-enter the correct URL!")
     while mode == "0":
-        print("This program will come to a close, press the Enter key again later to exit this program")
+        ui.ui_exit()
         break
 #elif sys.platform == "darwin":
 #    print ("wahid-dl Python-Based")
