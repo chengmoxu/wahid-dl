@@ -16,6 +16,7 @@ from packages.core import version_info
 from packages.core import ui
 system_os = system_os.get_system_os()
 def wahiddl_tool_windows():
+    print(ui.ASCII_art())
     print ("wahid-dl Tool [" + system_os + "]")
     print (version_info.get_version_outline())
     mode = "start"
