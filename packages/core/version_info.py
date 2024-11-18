@@ -1,7 +1,7 @@
-version_outline = "[Stable] v5.3-20241118.2"
-version_number = "5.3"
-version_build_number = "20241118.2"
-version_channel = "Stable"
+version_outline = "[Dev] v5.4-20241118.1"
+version_number = "5.4"
+version_build_number = "20241118.1"
+version_channel = "Dev"
 version_programming_language = "Python"
 def get_version_outline():
     return version_outline
