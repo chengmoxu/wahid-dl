@@ -1,10 +1,11 @@
 import os
-from packages.core import title
+from packages.core import ui
 from packages.core import version_info
-from packages.checking import checking_system_os
-system_os = checking_system_os.get_system_os()
+from packages.core import system_os
+system_os = system_os.get_system_os()
 def wahiddl_devmode_windows():
-    print(title.get_title_wahiddl_devmode())
+    print(ui.ASCII_art())
+    print(ui.get_title_wahiddl_devmode())
     print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":

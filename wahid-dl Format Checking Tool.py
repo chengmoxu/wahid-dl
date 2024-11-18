@@ -66,7 +66,7 @@ elif sys.platform == "linux":
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+                
                 testcommand = str (('yt-dlp -F ') + userinput)
                 os.system (testcommand)
                 print ("------------------------------------------------------------")

@@ -71,7 +71,7 @@ elif sys.platform == "linux":
                 print ("------------------------------------------------------------")
                 print ("執行開始")
                 print ("------------------------------------------------------------")
-                subprocess.check_call ([sys.executable, '-m', 'pip', 'install', '-U', 'yt-dlp[default]'])
+                
                 testcommand = str (('yt-dlp -F ') + userinput)
                 os.system (testcommand)
                 print ('請記下您想要下載的影片畫質ID，並於下方輸入')

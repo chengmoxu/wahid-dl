@@ -16,7 +16,7 @@ import shutil
 import glob
 import re
 
-version_outline = "v5.2-20241020.1"
+version_outline = "[Stable] v5.3-20241118.2"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -220,9 +220,9 @@ def wahiddl_DEV_installer_without_packages():
     os.remove("C:\\wahid-dl DEV\\.gitignore")
     os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
 def exit():
-        print ("------------------------------------------------------------")
-        print ("即將結束程式")
-        print ("------------------------------------------------------------")
+    print ("------------------------------------------------------------")
+    print ("即將結束程式")
+    print ("------------------------------------------------------------")
 
 if system_os  == "Windows":
     if not os.path.exists ("C:\\wahid-dl\\packages"):
@@ -273,9 +273,36 @@ if system_os  == "Windows":
     elif os.path.exists ("C:\\wahid-dl\\packages"):
         from packages.core import wahiddl_tool
         wahiddl_tool.wahiddl_tool_windows()
-    os.system ("pause")
+    input ()
 elif system_os  == "Linux":
-    print ("暫時不支援")
+    if not os.path.exists ("$HOME/wahid-dl/packages"):
+        print ("wahid-dl Tool Without Packages [" + system_os + "]")
+        print (version_outline)
+        mode = ""
+        while mode == "":
+            print ("Enter 'START' to start the installer")
+            print ("Or enter '0' to end this program\n")
+            userinput = input ("Please enter:")
+            userinput_judge = str.isdigit(userinput)
+            if userinput_judge == True: 
+                if  userinput == "0":
+                    mode = "0"
+                else:
+                    print ("Please re-enter the correct options!")
+            elif userinput_judge == False:
+                if userinput.startswith("START") == True:
+                    print ("Start the installer")
+                    os.system ('sudo apt install pipx')
+                    os.system ('sudo apt install opus-tools')
+                    os.system ('sudo apt install ffmpeg')
+                    os.system ('pipx ensurepath')
+                    os.system ('pipx install yt-dlp --force')
+                else:
+                    print ("Please re-enter the correct options!")
+        while mode == "0":
+            exit()
+            break
+    input ()
 elif system_os == "macOS":
     print ("暫時不支援")
 else:
