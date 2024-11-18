@@ -15,7 +15,7 @@ from packages.core import version_info
 from packages.core import ui
 system_os = system_os.get_system_os()
 def wahiddl_tool_windows():
-    print(ui.ASCII_art())
+    print (ui.ASCII_art())
     print ("wahid-dl Tool [" + system_os + "]")
     print (version_info.get_version_outline())
     print ("------------------------------------------------------------")
@@ -70,13 +70,17 @@ def wahiddl_tool_windows():
                 break
             elif userinput == "2":
                 print ("安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
-                if wahiddl_status == True:
+                if checking_wahiddl.checking_wahiddl_folder_existed() == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
-                elif wahiddl_status == False:
-                    os.mkdir ('C:\\wahid-dl')
-                    installer_wahiddl.installer_wahiddl_install()
+                elif checking_wahiddl.checking_wahiddl_folder_existed()[0] == False:
+                    if checking_wahiddl.checking_wahiddl_folder_existed()[1] == "Unsupported OS":
+                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
+                        continue
+                    else:
+                        os.mkdir ('C:\\wahid-dl')
+                        installer_wahiddl.installer_wahiddl_install()
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "3":
