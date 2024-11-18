@@ -9,10 +9,8 @@
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
 '''
 
-# Library import
 import os
 import sys
-import subprocess
 
 # Subtitle Download within OS judge
 if sys.platform == "win32":

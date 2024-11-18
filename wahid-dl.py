@@ -8,12 +8,10 @@
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
 '''
 
-# Library import
 import os
 import sys
 from packages.core import ui
 
-# Download Function within OS judge
 if sys.platform == "win32":
     print (ui.ASCII_art())
     print (ui.get_title_wahiddl())

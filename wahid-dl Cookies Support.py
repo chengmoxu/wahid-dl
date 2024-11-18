@@ -8,12 +8,10 @@
  #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
 '''
-# Library import
+
 import os
 import sys
-import subprocess
 
-# Download Function within OS judge
 if sys.platform == "win32":
     print ("wahid-dl Cookies Support")
     print ("------------------------------------------------------------")

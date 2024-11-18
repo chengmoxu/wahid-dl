@@ -9,10 +9,8 @@
 ####      ##     ###      ##     ###     ###     #######          #########            #########       ###
 '''
 
-# Library import
 import os
 import sys
-import subprocess
 
 # Checking Function within OS judge
 if sys.platform == "win32":
