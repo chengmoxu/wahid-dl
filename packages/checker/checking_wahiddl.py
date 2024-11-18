@@ -10,6 +10,6 @@ def checking_wahiddl_folder_existed():
         return False, "Unsupported OS"
     try:
         wahiddl_folder_existed = os.path.exists(path)
-        return wahiddl_folder_existed, None
+        return wahiddl_folder_existed
     except Exception as error:
         return False, str(error)
