@@ -10,7 +10,6 @@ from packages.installer import installer_ytdlp
 from packages.installer import installer_ffmpeg
 from packages.uninstaller import uninstaller_wahiddl
 from packages.uninstaller import uninstaller_wahiddl_DEV
-from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import version_info
 from packages.core import ui
@@ -19,6 +18,7 @@ def wahiddl_tool_windows():
     print(ui.ASCII_art())
     print ("wahid-dl Tool [" + system_os + "]")
     print (version_info.get_version_outline())
+    print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
