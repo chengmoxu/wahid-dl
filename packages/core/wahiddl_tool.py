@@ -13,7 +13,7 @@ from packages.uninstaller import uninstaller_wahiddl_DEV
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import ui
 system_os = system_os.get_system_os()
-def wahiddl_tool_windows():
+def wahiddl_tool_windows_x64():
     print (ui.ASCII_art())
     print (ui.get_title_wahiddl_tool())
     print ("------------------------------------------------------------")
