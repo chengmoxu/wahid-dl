@@ -33,7 +33,7 @@ def devmode():
                 ui.ui_complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print (version_info.version_detail())
+                print ("Version Number: " + version_info.version_detail()[0] + "\n" + "Build Number: " + version_info.version_detail()[1] + "\n" + "Version Channel: " + version_info.version_detail()[2] + "\n" + "Programming Language: " + version_info.version_detail()[3])
                 ui.ui_complete()
                 mode = ""
             else:
