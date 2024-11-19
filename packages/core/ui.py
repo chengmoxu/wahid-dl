@@ -9,15 +9,15 @@ def ASCII_art():
            " #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###\n"
            "####      ##     ###      ##     ###     ###     #######          #########            #########       ###")
 system_os = system_os.get_system_os()
-programming_language = version_info.get_version_programming_language()
+programming_language = version_info.version_programming_language()
 def get_title_wahiddl():
-    title_wahiddl = "wahid-dl [" + system_os + "] [" + programming_language + "]"+ "\n" + version_info.get_version_outline()
+    title_wahiddl = "wahid-dl [" + system_os + "] [" + programming_language + "]"+ "\n" + version_info.version_outline()
     return title_wahiddl
 def get_title_wahiddl_tool():
-    title_wahiddl_tool = "wahid-dl Tool [" + system_os + "] [" + programming_language + "]"+ "\n" + version_info.get_version_outline()
+    title_wahiddl_tool = "wahid-dl Tool [" + system_os + "] [" + programming_language + "]"+ "\n" + version_info.version_outline()
     return title_wahiddl_tool
 def get_title_wahiddl_devmode():
-    title_wahiddl_devmode = "wahid-dl Dev Mode [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.get_version_outline()
+    title_wahiddl_devmode = "wahid-dl Dev Mode [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_devmode
 def ui_start():
     print ("------------------------------------------------------------")

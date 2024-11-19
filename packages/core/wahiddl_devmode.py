@@ -34,7 +34,7 @@ def wahiddl_devmode_windows():
                 print ("執行結束")
                 print ("------------------------------------------------------------")
             if userinput.startswith("wahid-dl -V") == True:
-                print (version_info.get_version_detail())
+                print (version_info.version_detail())
                 print ("------------------------------------------------------------")
             else:
                 print ("請重新輸入正確命令！")
