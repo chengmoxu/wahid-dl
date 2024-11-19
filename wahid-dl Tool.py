@@ -16,7 +16,7 @@ import shutil
 import glob
 import re
 
-version_outline = "[Dev] v5.4-20241118.1"
+version_outline = "[Dev] v5.4-20241118.2"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -272,7 +272,7 @@ if system_os  == "Windows":
                     print ("請重新輸入正確選項！")
     elif os.path.exists ("C:\\wahid-dl\\packages"):
         from packages.core import wahiddl_tool
-        wahiddl_tool.wahiddl_tool_windows()
+        wahiddl_tool.wahiddl_tool_windows_x64()
     input ()
 elif system_os  == "Linux":
     if not os.path.exists ("$HOME/wahid-dl/packages"):
