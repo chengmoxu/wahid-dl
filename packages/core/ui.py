@@ -37,6 +37,9 @@ def get_title_wahiddl_List():
 def get_title_wahiddl_audio():
     title_wahiddl_audio = "wahid-dl for Audio [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_audio
+def get_title_wahiddl_CS():
+    title_wahiddl_CS = "wahid-dl for Cookies Support [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_CS
 def ui_start():
     print ("------------------------------------------------------------")
     print ("任務開始執行")
