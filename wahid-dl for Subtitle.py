@@ -4,7 +4,7 @@ from packages.core import ui
 
 if sys.platform == "win32":
     print (ui.ASCII_art())
-    print (ui.get_title_wahiddl_QS())
+    print (ui.get_title_wahiddl_S())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
