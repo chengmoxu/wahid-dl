@@ -28,6 +28,9 @@ def get_title_wahiddl_S():
 def get_title_wahiddl_QS():
     title_wahiddl_QS = "wahid-dl for Quality Selection [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_QS
+def get_title_wahiddl_Live():
+    title_wahiddl_Live = "wahid-dl for Live [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_Live
 def ui_start():
     print ("------------------------------------------------------------")
     print ("任務開始執行")

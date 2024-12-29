@@ -1,8 +1,10 @@
 import os
 import sys
+from packages.core import ui
 
 if sys.platform == "win32":
-    print ("wahid-dl for Live")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_Live())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -34,7 +36,8 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
-    print ("wahid-dl Python-Based for Live")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_Live())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -66,5 +69,4 @@ elif sys.platform == "linux":
         print("即將結束程式")
         break
 #elif sys.platform == "darwin":
-#    print ("wahid-dl Python-Based")
 os.system ('pause')
