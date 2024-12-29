@@ -1,9 +1,11 @@
 import os
 import sys
+from packages.core import ui
 
 # Checking Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl Format Checking Tool")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_format_checking_tool())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -35,7 +37,8 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
-    print ("wahid-dl-python-based Format Checking Tool")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_format_checking_tool())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -67,5 +70,4 @@ elif sys.platform == "linux":
         print("即將結束程式")
         break
 #elif sys.platform == "darwin":
-#    print ("wahid-dl Python-Based")
 os.system ('pause')

@@ -19,6 +19,9 @@ def get_title_wahiddl_tool():
 def get_title_wahiddl_devmode():
     title_wahiddl_devmode = "wahid-dl Dev Mode [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_devmode
+def get_title_wahiddl_format_checking_tool():
+    title_wahiddl_format_checking_tool = "wahid-dl Format Checking Tool [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_format_checking_tool
 def ui_start():
     print ("------------------------------------------------------------")
     print ("任務開始執行")
