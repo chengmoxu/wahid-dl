@@ -3,47 +3,45 @@ from packages.core import ui
 from packages.core import version_info
 from packages.core import system_os
 system_os = system_os.get_system_os()
-def wahiddl_devmode_windows():
+def devmode():
     print(ui.ASCII_art())
     print(ui.get_title_wahiddl_devmode())
     print ("------------------------------------------------------------")
-    mode = "start"
-    while mode == "start":
+    mode = ""
+    while mode == "":
         print ("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print ("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True:
             if  userinput == "0":
-                mode = "end"
+                mode = "0"
             else:
                 print ("請重新輸入正確選項！")
-                mode = "start"
+                mode = ""
         elif userinput_judge == False:
             if userinput.startswith("yt-dlp") == True:
-                print ("------------------------------------------------------------")
-                print ("執行開始")
-                print ("------------------------------------------------------------")
+                ui.ui_start()
                 if system_os == "Windows":
                     os.chdir ('C:\\wahid-dl')
+                elif system_os == "Linux":
+                    os.chdir ('$HOME/wahid-dl')
                 else:
                     continue
                 command = str (('yt-dlp ') + userinput)
                 os.system (command)
-                print ("------------------------------------------------------------")
-                print ("執行結束")
-                print ("------------------------------------------------------------")
+                ui.ui_complete()
+                mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print (version_info.get_version_detail())
-                print ("------------------------------------------------------------")
+                print ("Version Number: " + version_info.version_detail()[0] + "\n" + "Build Number: " + version_info.version_detail()[1] + "\n" + "Channel: " + version_info.version_detail()[2] + "\n" + "Programming Language: " + version_info.version_detail()[3])
+                ui.ui_complete()
+                mode = ""
             else:
                 print ("請重新輸入正確命令！")
-                mode = "start"    
+                mode = ""    
         else:
             print ("請重新輸入正確命令！")
-            mode = "start"
-    while mode == "end":
-        print ("------------------------------------------------------------")
-        print("即將結束程式")
-        print ("------------------------------------------------------------")
+            mode = ""
+    while mode == "0":
+        ui.ui_exit()
         break

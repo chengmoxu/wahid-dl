@@ -1,22 +1,10 @@
-# wahid-dl for List
-'''
-      ###       ###        ###         ###     ###         #######      ########             #########       ###
-     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
-    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###
-   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>
-  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
- #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
-####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-'''
-
-# Library import
 import os
 import sys
-import subprocess
+from packages.core import ui
 
-# Download Function within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl for List")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_list())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -68,6 +56,9 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_list())
+    print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
         print ("開始請輸入1，想要結束程式請輸入0\n")
@@ -118,5 +109,4 @@ elif sys.platform == "linux":
         print("即將結束程式")
         break
 #elif sys.platform == "darwin":
-#    print ("wahid-dl Python-Based")
 os.system ('pause')

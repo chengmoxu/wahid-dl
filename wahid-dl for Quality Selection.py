@@ -1,22 +1,10 @@
-# wahid-dl for Quality Selection
-'''
-      ###       ###        ###         ###     ###         #######      ########             #########       ###
-     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
-    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###
-   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>
-  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
- #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
-####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-'''
-
-# Library import
 import os
 import sys
-import subprocess
+from packages.core import ui
 
-# Quality Selection within OS judge
 if sys.platform == "win32":
-    print ("wahid-dl for Quality Selection")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_QS())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -53,7 +41,8 @@ if sys.platform == "win32":
         print("即將結束程式")
         break
 elif sys.platform == "linux":
-    print ("wahid-dl-python-based for Quality Selection")
+    print (ui.ASCII_art())
+    print (ui.get_title_wahiddl_QS())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -90,5 +79,4 @@ elif sys.platform == "linux":
         print("即將結束程式")
         break
 #elif sys.platform == "darwin":
-#    print ("wahid-dl Python-Based")
 os.system ('pause')

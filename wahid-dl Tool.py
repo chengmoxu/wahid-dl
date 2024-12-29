@@ -1,14 +1,3 @@
-# wahid-dl Tool
-'''
-      ###       ###        ###         ###     ###         #######      ########             #########       ###
-     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
-    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###
-   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>
-  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
- #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
-####      ##     ###      ##     ###     ###     #######          #########            #########       ###
-'''
-
 import os
 import sys
 import subprocess
@@ -16,7 +5,7 @@ import shutil
 import glob
 import re
 
-version_outline = "[Stable] v5.3-20241118.2"
+version_outline = "[Stable] v5.4-20241230.1"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -272,7 +261,7 @@ if system_os  == "Windows":
                     print ("請重新輸入正確選項！")
     elif os.path.exists ("C:\\wahid-dl\\packages"):
         from packages.core import wahiddl_tool
-        wahiddl_tool.wahiddl_tool_windows()
+        wahiddl_tool.wahiddl_tool_windows_x64()
     input ()
 elif system_os  == "Linux":
     if not os.path.exists ("$HOME/wahid-dl/packages"):

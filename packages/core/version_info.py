@@ -1,13 +1,13 @@
-version_outline = "[Stable] v5.3-20241118.2"
-version_number = "5.3"
-version_build_number = "20241118.2"
-version_channel = "Stable"
-version_programming_language = "Python"
-def get_version_outline():
-    return version_outline
-def get_version_detail():
-    return version_number, version_build_number, version_channel, version_programming_language
-def get_version_channel():
-    return version_channel
-def get_version_programming_language():
-    return version_programming_language
+outline = "[Stable] v5.4-20241230.1"
+number = "5.4"
+build_number = "20241230.1"
+channel = "Stable"
+programming_language = "Python"
+def version_outline():
+    return outline
+def version_detail():
+    return number, build_number, channel, programming_language
+def version_channel():
+    return channel
+def version_programming_language():
+    return programming_language

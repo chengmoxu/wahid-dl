@@ -11,13 +11,11 @@ from packages.installer import installer_ffmpeg
 from packages.uninstaller import uninstaller_wahiddl
 from packages.uninstaller import uninstaller_wahiddl_DEV
 from packages.uninstaller import uninstaller_ffmpeg
-from packages.core import version_info
 from packages.core import ui
 system_os = system_os.get_system_os()
-def wahiddl_tool_windows():
+def wahiddl_tool_windows_x64():
     print (ui.ASCII_art())
-    print ("wahid-dl Tool [" + system_os + "]")
-    print (version_info.get_version_outline())
+    print (ui.get_title_wahiddl_tool())
     print ("------------------------------------------------------------")
     mode = "start"
     while mode == "start":
