@@ -22,7 +22,7 @@ def checking_wahiddl_tool_existed():
     except Exception as error:
         return False, f"Error checking wahid-dl Tool.py: {str(error)}"
 def create_folder():
-    version_outline = "Dev_v5.3_20241117.1"
+    version_outline = "Stable_v5.4_20241230.1"
     exact_time = time.ctime(time.time())
     folder_name = "wahid-dl Installer Generation Tool" + "_" + version_outline + "(" + exact_time + ")"
     if not os.path.exists (folder_name):
