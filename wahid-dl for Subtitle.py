@@ -79,5 +79,4 @@ elif sys.platform == "linux":
         print("即將結束程式")
         break
 #elif sys.platform == "darwin":
-#    print ("wahid-dl Python-Based")
 os.system ('pause')

@@ -2,7 +2,6 @@ import os
 import sys
 from packages.core import ui
 
-# Checking Function within OS judge
 if sys.platform == "win32":
     print (ui.ASCII_art())
     print (ui.get_title_wahiddl_format_checking_tool())

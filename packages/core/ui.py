@@ -28,12 +28,12 @@ def get_title_wahiddl_S():
 def get_title_wahiddl_QS():
     title_wahiddl_QS = "wahid-dl for Quality Selection [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_QS
-def get_title_wahiddl_Live():
-    title_wahiddl_Live = "wahid-dl for Live [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
-    return title_wahiddl_Live
-def get_title_wahiddl_List():
-    title_wahiddl_List = "wahid-dl for List [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
-    return title_wahiddl_List
+def get_title_wahiddl_live():
+    title_wahiddl_live = "wahid-dl for Live [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_live
+def get_title_wahiddl_list():
+    title_wahiddl_list = "wahid-dl for List [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_list
 def get_title_wahiddl_audio():
     title_wahiddl_audio = "wahid-dl for Audio [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_audio
