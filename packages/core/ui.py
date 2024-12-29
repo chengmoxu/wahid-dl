@@ -25,6 +25,9 @@ def get_title_wahiddl_format_checking_tool():
 def get_title_wahiddl_S():
     title_wahiddl_S = "wahid-dl for wahid-dl for Subtitle [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
     return title_wahiddl_S
+def get_title_wahiddl_QS():
+    title_wahiddl_QS = "wahid-dl for Quality Selection [" + system_os + "] [" + programming_language + "]" + "\n" + version_info.version_outline()
+    return title_wahiddl_QS
 def ui_start():
     print ("------------------------------------------------------------")
     print ("任務開始執行")
