@@ -10,12 +10,11 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: v5.3-20241118.2
-> fix: Bugs fixed  
-> fix: Removed redundant returns  
-> feat: Some features now support Linux  
-> feat: Code optimization  
-> feat: Added installer generation tool (Experimenting)  
+* For Windows/Linux/macOS Version Number: v5.4-20241230.1
+> feat: Call the new unified UI  
+> feat: Improved version information display  
+> style/fix: Removed old annotations/Removed old code  
+ rename: Renamed wahid-dl Cookies Support to wahid-dl for Cookies Support  
 
 * For Google Colab Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
@@ -68,7 +67,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 > This function will download the file from GitHub to install or update the complete wahid-dl. Additionally, yt-dlp and ffmpeg will be, also.  
 2. wahid-dl.py
 > This function can download video.  
-3. wahid-dl Cookies Support.py
+3. wahid-dl for Cookies Support.py
 > Using this function can download video using Cookies (Default = Chrome).  
 4. wahid-dl for Audio.py
 > This function can download audio.  
