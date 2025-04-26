@@ -1,6 +1,6 @@
-from packages.core import system_os
-from packages.core import wahiddl_devmode
-system_os = system_os.get_system_os()
+from packages.core import version_info
+from packages.function import wahiddl_devmode
+system_os = version_info.vi_platform()
 if system_os  == "Windows":
     wahiddl_devmode.devmode()
 elif system_os  == "Linux":

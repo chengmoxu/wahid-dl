@@ -1,11 +1,10 @@
 import os
 from packages.core import ui
 from packages.core import version_info
-from packages.core import system_os
-system_os = system_os.get_system_os()
+system_os = version_info.vi_platform()
 def devmode():
     print(ui.ASCII_art())
-    print(ui.get_title_wahiddl_devmode())
+    print(ui.ui_title_wahiddl_devmode())
     print ("------------------------------------------------------------")
     mode = ""
     while mode == "":
@@ -33,7 +32,7 @@ def devmode():
                 ui.ui_complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print ("Version Number: " + version_info.version_detail()[0] + "\n" + "Build Number: " + version_info.version_detail()[1] + "\n" + "Channel: " + version_info.version_detail()[2] + "\n" + "Programming Language: " + version_info.version_detail()[3])
+                print ("Version Number: " + version_info.version_detail()[0] + "\n" + "Build Number: " + version_info.version_detail()[1] + "\n" + "Channel: " + version_info.version_detail()[2])
                 ui.ui_complete()
                 mode = ""
             else:

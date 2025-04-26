@@ -1,13 +1,19 @@
-outline = "[Dev] v6.0-20250427.1"
+#Platform info
+import sys
+def vi_platform():
+    if sys.platform  == "win32":
+        system_os = "Windows"
+        return system_os
+    elif sys.platform  == "linux":
+        system_os = "Linux"
+        return system_os
+    elif sys.platform == "darwin":
+        system_os = "macOS"
+        return system_os
+#Wahid-dl info
+channel = "Develop"
 number = "6.0"
 build_number = "20250427.1"
-channel = "Dev"
-programming_language = "Python"
-def version_outline():
-    return outline
-def version_detail():
-    return number, build_number, channel, programming_language
-def version_channel():
-    return channel
-def version_programming_language():
-    return programming_language
+language = "Python"
+def vi_detail():
+    return channel, number, build_number, language

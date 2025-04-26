@@ -4,7 +4,7 @@ from packages.core import ui
 
 if sys.platform == "win32":
     print (ui.ASCII_art())
-    print (ui.get_title_wahiddl_format_checking_tool())
+    print (ui.ui_title_wahiddl_format_checking_tool())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
@@ -37,7 +37,7 @@ if sys.platform == "win32":
         break
 elif sys.platform == "linux":
     print (ui.ASCII_art())
-    print (ui.get_title_wahiddl_format_checking_tool())
+    print (ui.ui_title_wahiddl_format_checking_tool())
     print ("------------------------------------------------------------")
     mode = ""
     while mode != "0":
