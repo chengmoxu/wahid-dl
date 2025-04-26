@@ -1,7 +1,7 @@
-outline = "[Stable] v5.4-20241230.1"
-number = "5.4"
-build_number = "20241230.1"
-channel = "Stable"
+outline = "[Dev] v6.0-20250427.1"
+number = "6.0"
+build_number = "20250427.1"
+channel = "Dev"
 programming_language = "Python"
 def version_outline():
     return outline
