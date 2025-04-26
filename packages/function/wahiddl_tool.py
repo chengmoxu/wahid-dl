@@ -1,5 +1,4 @@
 import os
-from packages.core import version_info
 from packages.checker import checking_wahiddl
 from packages.checker import checking_wahiddl_DEV
 from packages.checker import checking_ytdlp
