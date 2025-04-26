@@ -9,7 +9,7 @@ def installer_wahiddl_DEV_install():
         print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
     elif os.path.exists (updates_folder_name):
         print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
-    print ('解壓縮 wahid-dl DEV 更新資料')
+    print ('解壓縮 wahid-dl Develop Channel 更新資料')
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
     wahiddl_DEV_updatesfiles_folder = 'C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\'
     wahiddl_DEV_folder = 'C:\\wahid-dl DEV\\'

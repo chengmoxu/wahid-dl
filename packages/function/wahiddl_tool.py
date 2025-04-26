@@ -21,7 +21,7 @@ def wahiddl_tool_windows_x64():
         print ("2: 更新 wahid-dl 主程式")
         print ("3: 更新 yt-dlp")
         print ("4: 更新 FFmpeg")
-        print ("DEVINSTALL: 安裝/更新 wahid-dl DEV 主程式")
+        print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
         print ("0: 離開程式")
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
@@ -113,7 +113,7 @@ def wahiddl_tool_windows_x64():
         elif userinput_judge == False:
             if userinput == "DEVINSTALL":
                 ui.ui_start()
-                print ("安裝 wahid-dl DEV 主程式")
+                print ("安裝 wahid-dl Develop Channel")
                 if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()

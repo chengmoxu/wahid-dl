@@ -5,7 +5,7 @@ import shutil
 import glob
 import re
 
-version_outline = "[Develop] v6.0-20250427.1-Python"
+version_outline = "[Develop]v6.0-20250427.1-Python"
 
 if sys.platform == "win32":
     system_os = "Windows"
@@ -193,7 +193,7 @@ def wahiddl_DEV_installer_without_packages():
         print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
     elif os.path.exists (updates_folder_name):
         print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
-    print ("解壓縮 wahid-dl DEV 更新資料")
+    print ("解壓縮 wahid-dl Develop Channel 更新資料")
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
     wahiddl_DEV_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\"
     wahiddl_DEV_folder = "C:\\wahid-dl DEV\\"
@@ -213,7 +213,7 @@ def exit():
     print ("即將結束程式")
     print ("------------------------------------------------------------")
 
-if system_os  == "Windows":
+if sys.platform == "win32":
     if not os.path.exists ("C:\\wahid-dl\\packages"):
         print ("wahid-dl Tool Without Packages [" + system_os + "]")
         print (version_outline)
@@ -223,7 +223,7 @@ if system_os  == "Windows":
             print ("2: 更新 wahid-dl 主程式")
             print ("3: 更新 yt-dlp")
             print ("4: 更新 FFmpeg")
-            print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
+            print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
             print ("0: 離開程式")
             userinput = input ("請選擇執行項目: ")
             userinput_judge = str.isdigit(userinput)
@@ -263,7 +263,7 @@ if system_os  == "Windows":
         from packages.core import wahiddl_tool
         wahiddl_tool.wahiddl_tool_windows_x64()
     input ()
-elif system_os  == "Linux":
+elif sys.platform == "linux":
     if not os.path.exists ("$HOME/wahid-dl/packages"):
         print ("wahid-dl Tool Without Packages [" + system_os + "]")
         print (version_outline)
