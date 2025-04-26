@@ -4,6 +4,7 @@ import subprocess
 import shutil
 import glob
 import re
+import importlib
 
 version_outline = "[Develop]v6.0-20250427.1-Python"
 
@@ -260,7 +261,7 @@ if sys.platform == "win32":
                 else:
                     print ("請重新輸入正確選項！")
     elif os.path.exists ("C:\\wahid-dl\\packages"):
-        from packages.core import wahiddl_tool
+        wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
         wahiddl_tool.wahiddl_tool_windows_x64()
     input ()
 elif sys.platform == "linux":
