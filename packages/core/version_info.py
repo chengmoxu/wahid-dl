@@ -16,4 +16,5 @@ number = "6.0"
 build_number = "20250427.1"
 language = "Python"
 def vi_detail():
-    return channel, number, build_number, language
+    vi = [channel, number, build_number, language]
+    return vi
