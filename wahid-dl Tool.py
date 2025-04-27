@@ -107,7 +107,7 @@ def ffmpeg_installer_without_packages():
             if ffmpeg_version_detail:
                 ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
             if ffmpeg_check_version == ffmpeg_exact_version_number:
-                print ("FFmpeg 已是最新版本，不需要更新")
+                print ("FFmpeg 已是v" + ffmpeg_exact_version_number + "，不需要更新")
                 ffmpeg_download_need = "0"
             else:
                 # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
@@ -128,7 +128,7 @@ def ffmpeg_installer_without_packages():
                     print ("已不存在新式舊版 ffprobe.exe")
                 ffmpeg_download_need = "1"
     while ffmpeg_download_need == "1":
-        print ("開始下載最新版本 FFmpeg")
+        print ("開始下載 FFmpeg")
         os.chdir ("C:\\FFmpeg")
         # FFmpeg Version Number，變動需要更新
         os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.1.1-full_build.zip")
