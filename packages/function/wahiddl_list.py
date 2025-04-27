@@ -1,6 +1,6 @@
 import os
 from packages.core import ui
-def wahiddl_list():
+def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_list())
     print ("------------------------------------------------------------")
