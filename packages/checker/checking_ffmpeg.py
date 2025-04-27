@@ -75,7 +75,7 @@ def checking_old_ffmpeg_files_existed():
         error_location = 'checking_old_ffmpeg_files_existed()'
     return ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed, error_location
 def checking_ffmpeg_version():
-    ffmpeg_exact_version_number = '7.1'
+    ffmpeg_exact_version_number = '7.1.1'
     ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
     ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
     if ffmpeg_version_detail:
