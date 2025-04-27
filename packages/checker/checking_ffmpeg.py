@@ -77,7 +77,7 @@ def checking_old_ffmpeg_files_existed():
 def checking_ffmpeg_version():
     ffmpeg_exact_version_number = '7.1.1'
     ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
-    ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
+    ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
     if ffmpeg_version_detail:
         ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
     if ffmpeg_check_version == ffmpeg_exact_version_number:

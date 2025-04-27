@@ -8,13 +8,6 @@ import importlib
 
 version_outline = "[Develop]v6.0-20250427.1-Python"
 
-if sys.platform == "win32":
-    system_os = "Windows"
-elif sys.platform == "linux":
-    system_os  = "Linux"
-elif sys.platform == "darwin":
-    system_os = "macOS"
-
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
         os.chdir ("C:\\wahid-dl")
@@ -103,7 +96,7 @@ def ffmpeg_installer_without_packages():
             # FFmpeg Version Number，變動需要更新
             ffmpeg_exact_version_number = "7.1.1"
             ffmpeg_version_org_output = subprocess.getoutput ("ffmpeg -version")
-            ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
+            ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
             if ffmpeg_version_detail:
                 ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
             if ffmpeg_check_version == ffmpeg_exact_version_number:
@@ -216,7 +209,7 @@ def exit():
 
 if sys.platform == "win32":
     if not os.path.exists ("C:\\wahid-dl\\packages"):
-        print ("wahid-dl Tool Without Packages [" + system_os + "]")
+        print ("wahid-dl Tool Without Packages [Windows]")
         print (version_outline)
         mode = ""
         while mode == "":
@@ -266,7 +259,7 @@ if sys.platform == "win32":
     input ()
 elif sys.platform == "linux":
     if not os.path.exists ("$HOME/wahid-dl/packages"):
-        print ("wahid-dl Tool Without Packages [" + system_os + "]")
+        print ("wahid-dl Tool Without Packages [Linux]")
         print (version_outline)
         mode = ""
         while mode == "":
@@ -293,7 +286,7 @@ elif sys.platform == "linux":
             exit()
             break
     input ()
-elif system_os == "macOS":
+elif sys.platform == "darwin":
     print ("暫時不支援")
 else:
     print ("不支援的平台")
