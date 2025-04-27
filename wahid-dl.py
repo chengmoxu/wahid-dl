@@ -2,7 +2,7 @@ from packages.core import version_info
 from packages.function import wahiddl
 system_os = version_info.vi_platform()
 if system_os  == "Windows":
-    wahiddl.wahiddl()
+    wahiddl.main()
 elif system_os  == "Linux":
     print ("暫時不支援")
 elif system_os == "macOS":
