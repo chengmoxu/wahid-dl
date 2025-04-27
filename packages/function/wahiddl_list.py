@@ -2,7 +2,7 @@ import os
 from packages.core import ui
 def wahiddl_list():
     print(ui.ASCII_art())
-    print(ui.ui_title_wahiddl())
+    print(ui.ui_title_wahiddl_list())
     print ("------------------------------------------------------------")
     mode = ""
     while mode == "":
