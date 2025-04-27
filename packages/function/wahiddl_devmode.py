@@ -1,7 +1,7 @@
 import os
+import sys
 from packages.core import ui
 from packages.core import version_info
-system_os = version_info.vi_platform()
 def devmode():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_devmode())
@@ -21,9 +21,9 @@ def devmode():
         elif userinput_judge == False:
             if userinput.startswith("yt-dlp") == True:
                 ui.ui_start()
-                if system_os == "Windows":
+                if sys.platform == "win32":
                     os.chdir ('C:\\wahid-dl')
-                elif system_os == "Linux":
+                elif sys.platform == "linux":
                     os.chdir ('$HOME/wahid-dl')
                 else:
                     continue
@@ -32,7 +32,7 @@ def devmode():
                 ui.ui_complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print ("Version Number: " + version_info.version_detail()[0] + "\n" + "Build Number: " + version_info.version_detail()[1] + "\n" + "Channel: " + version_info.version_detail()[2])
+                print ("Channel: " + version_info.vi_detail()[0] + "\n" + "Version Number: " + version_info.vi_detail()[1] + "\n" + "Build Number: " + version_info.vi_detail()[2] + "\n" + "Language: " + version_info.vi_detail()[3])
                 ui.ui_complete()
                 mode = ""
             else:

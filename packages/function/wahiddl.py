@@ -1,7 +1,5 @@
 import os
 from packages.core import ui
-from packages.core import version_info
-system_os = version_info.vi_platform()
 def wahiddl():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl())
