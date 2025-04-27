@@ -18,9 +18,7 @@ def wahiddl():
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
-                print ("------------------------------------------------------------")
-                print ("執行開始")
-                print ("------------------------------------------------------------")
+                ui.ui_start()
                 os.chdir ('C:\\wahid-dl')
                 downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
                 os.system (downloadcommand)
