@@ -208,7 +208,8 @@ def exit():
     print ("------------------------------------------------------------")
 
 if sys.platform == "win32":
-    if not os.path.exists ("C:\\wahid-dl\\packages"):
+    current_file_path = os.path.abspath(__file__)
+    if not os.path.exists ("C:\\wahid-dl\\packages") or current_file_path!='C:\\wahid-dl\\wahid-dl Tool.py':
         print ("wahid-dl Tool Without Packages [Windows]")
         print (version_outline)
         mode = ""
@@ -253,7 +254,7 @@ if sys.platform == "win32":
                     break
                 else:
                     print ("請重新輸入正確選項！")
-    elif os.path.exists ("C:\\wahid-dl\\packages"):
+    elif os.path.exists ("C:\\wahid-dl\\packages") and current_file_path=='C:\\wahid-dl\\wahid-dl Tool.py':
         wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
         wahiddl_tool.wahiddl_tool_windows_x64()
     input ()
