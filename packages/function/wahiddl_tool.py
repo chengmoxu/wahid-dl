@@ -18,9 +18,9 @@ def wahiddl_tool_windows_x64():
     mode = "start"
     while mode == "start":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
-        print ("2: 更新 wahid-dl 主程式")
-        print ("3: 更新 yt-dlp")
-        print ("4: 更新 FFmpeg")
+        print ("2: 安裝/更新 wahid-dl 主程式")
+        print ("3: 安裝/更新 yt-dlp")
+        print ("4: 安裝 FFmpeg")
         print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
         print ("0: 離開程式")
         userinput = input ("請選擇執行項目: ")
@@ -39,7 +39,7 @@ def wahiddl_tool_windows_x64():
                 elif wahiddl_status == False:
                     os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
-                print ("安裝 yt-dlp")
+                print ("安裝/更新 yt-dlp")
                 ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
                 if ytdlp_status == True:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
@@ -65,7 +65,7 @@ def wahiddl_tool_windows_x64():
                 ui.ui_exit()
                 break
             elif userinput == "2":
-                print ("安裝 wahid-dl 主程式")
+                print ("安裝/更新 wahid-dl 主程式")
                 if checking_wahiddl.checking_wahiddl_folder_existed() == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
@@ -80,7 +80,7 @@ def wahiddl_tool_windows_x64():
                 ui.ui_exit()
                 break
             elif userinput == "3":
-                print ("安裝 yt-dlp")
+                print ("安裝/更新 yt-dlp")
                 if checking_ytdlp.checking_wahiddl_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
                 elif checking_ytdlp.checking_wahiddl_ytdlp_existed() == False:
@@ -113,7 +113,7 @@ def wahiddl_tool_windows_x64():
         elif userinput_judge == False:
             if userinput == "DEVINSTALL":
                 ui.ui_start()
-                print ("安裝 wahid-dl Develop Channel")
+                print ("安裝/更新 wahid-dl Develop Channel")
                 if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
@@ -126,7 +126,7 @@ def wahiddl_tool_windows_x64():
                         os.mkdir ('C:\\wahid-dl DEV')
                         installer_wahiddl_DEV.installer_wahiddl_DEV_install()
                 print ("------------------------------------------------------------")
-                print ("安裝 yt-dlp")
+                print ("安裝/更新 yt-dlp")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
                 elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:

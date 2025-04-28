@@ -234,9 +234,9 @@ if sys.platform == "win32":
         mode = ""
         while mode == "":
             print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
-            print ("2: 更新 wahid-dl 主程式")
-            print ("3: 更新 yt-dlp")
-            print ("4: 更新 FFmpeg")
+            print ("2: 安裝/更新 wahid-dl 主程式")
+            print ("3: 安裝/更新 yt-dlp")
+            print ("4: 安裝/更新 FFmpeg")
             print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
             print ("0: 離開程式")
             userinput = input ("請選擇執行項目: ")
