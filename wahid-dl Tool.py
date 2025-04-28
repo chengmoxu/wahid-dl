@@ -58,6 +58,26 @@ def ytdlp_installer_without_packages():
         print ("安裝/更新 yt-dlp 完成")
     else:
         print ("安裝/更新 yt-dlp 失敗")
+def DEV_ytdlp_installer_without_packages():
+    print ("------------------------------------------------------------")
+    print ("開始安裝/更新 yt-dlp")
+    print ("------------------------------------------------------------")
+    print ("開始下載最新版本 yt-dlp")
+    os.chdir ("C:\\wahid-dl DEV")
+    yt_dlp_path = "C:\\wahid-dl DEV\\yt-dlp.exe"
+    if not os.path.exists (yt_dlp_path):
+        print ("yt-dlp不存在，開始下載 yt-dlp")
+        os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
+    elif os.path.exists (yt_dlp_path):
+        print ("yt-dlp已存在，開始更新 yt-dlp")
+        os.system ("yt-dlp -U")
+    print ("------------------------------------------------------------")
+    # yt-dlp Install Checking
+    os.chdir ("C:\\wahid-dl DEV")
+    if os.path.exists (yt_dlp_path):
+        print ("安裝/更新 yt-dlp 完成")
+    else:
+        print ("安裝/更新 yt-dlp 失敗")
 def ffmpeg_installer_without_packages():
     print ("------------------------------------------------------------")
     print ("開始安裝/更新 FFmpeg")
@@ -249,6 +269,7 @@ if sys.platform == "win32":
             elif userinput_judge == False:
                 if userinput == "DEVINSTALL":
                     wahiddl_DEV_installer_without_packages()
+                    DEV_ytdlp_installer_without_packages()
                     exit()
                     break
                 else:
