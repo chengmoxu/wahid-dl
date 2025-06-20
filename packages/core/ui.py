@@ -19,7 +19,7 @@ def ui_title_wahiddl_tool():
 def ui_title_wahiddl_devmode():
     title_wahiddl_devmode = "wahid-dl Dev Mode" + vi
     return title_wahiddl_devmode
-def ui_title_wahiddl_format_checking_tool():
+def ui_title_wahiddl_FCT():
     title_wahiddl_format_checking_tool = "wahid-dl Format Checking Tool" + vi
     return title_wahiddl_format_checking_tool
 def ui_title_wahiddl_subtitle():
