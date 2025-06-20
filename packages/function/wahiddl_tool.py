@@ -54,9 +54,9 @@ def wahiddl_tool_windows_x64():
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                        if ffmpeg_version_status == 'unnecessary':
+                        if ffmpeg_version_status == False:
                             continue
-                        elif ffmpeg_version_status == 'need':
+                        elif ffmpeg_version_status == True:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
                 elif ffmpeg_folder_status == False:
@@ -98,9 +98,9 @@ def wahiddl_tool_windows_x64():
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                        if ffmpeg_version_status == 'unnecessary':
+                        if ffmpeg_version_status == False:
                             continue
-                        elif ffmpeg_version_status == 'need':
+                        elif ffmpeg_version_status == True:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
                 elif ffmpeg_folder_status == False:
