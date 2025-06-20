@@ -22,7 +22,7 @@ def ui_title_wahiddl_devmode():
 def ui_title_wahiddl_format_checking_tool():
     title_wahiddl_format_checking_tool = "wahid-dl Format Checking Tool" + vi
     return title_wahiddl_format_checking_tool
-def ui_title_wahiddl_S():
+def ui_title_wahiddl_subtitle():
     title_wahiddl_S = "wahid-dl for wahid-dl for Subtitle" + vi
     return title_wahiddl_S
 def ui_title_wahiddl_QS():
