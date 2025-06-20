@@ -25,8 +25,8 @@ def main():
                 print ('請記下您想要下載的影片字幕Language，並於下方輸入')
                 print ('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_sub_id = str(input('請輸入影片字幕Language:'))
-                command = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
-                os.system (command)
+                downloadcommand = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
+                os.system (downloadcommand)
                 ui.ui_complete()
             elif userinput.startswith("http") == False:
                 print ("請重新輸入正確網址！")
