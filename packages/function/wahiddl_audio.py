@@ -20,7 +20,7 @@ def main():
             if userinput.startswith("http") == True:
                 ui.ui_start()
                 os.chdir ('C:\\wahid-dl')
-                downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" ') + userinput)
+                downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" --ffmpeg-location "C:\\FFmpeg" ') + userinput)
                 os.system (downloadcommand)
                 ui.ui_complete()
             elif userinput.startswith("http") == False:
