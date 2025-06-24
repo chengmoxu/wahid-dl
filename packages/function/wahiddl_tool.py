@@ -136,17 +136,12 @@ def wahiddl_tool_windows_x64():
                     ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
-                        ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                        if ffmpeg_version_status == False:
-                            continue
-                        elif ffmpeg_version_status == True:
-                            uninstaller_ffmpeg.uninstaller_ffmpeg()
+                        uninstaller_ffmpeg.uninstaller_ffmpeg()
                 elif ffmpeg_folder_status == False:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
                 break
             elif userinput == "6":
-                print ("解除安裝 wahid-dl 主程式")
                 print ("解除安裝 wahid-dl 主程式")
                 wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
                 if wahiddl_status == True:
@@ -175,11 +170,7 @@ def wahiddl_tool_windows_x64():
                     ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
-                        ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                        if ffmpeg_version_status == False:
-                            continue
-                        elif ffmpeg_version_status == True:
-                            uninstaller_ffmpeg.uninstaller_ffmpeg()
+                        uninstaller_ffmpeg.uninstaller_ffmpeg()
                 elif ffmpeg_folder_status == False:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
