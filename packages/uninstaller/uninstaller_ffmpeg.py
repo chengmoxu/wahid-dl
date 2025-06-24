@@ -15,7 +15,7 @@ def uninstaller_ffmpeg():
         os.remove ('C:\\FFmpeg\\ffprobe.exe')
         print ("已刪除新式舊版的 ffprobe.exe")
     if os.path ('C:\\FFmpeg') == True:
-        os.remove ('C:\\FFmpeg')
+        os.rmdir ('C:\\FFmpeg')
         print ("已刪除FFmpeg資料夾")
     elif not os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
         print ("已不存在新式舊版 ffprobe.exe")
