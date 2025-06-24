@@ -24,7 +24,7 @@ def checking_ffmpeg_files_existed():
         ffprobe_exe_existed = True
     elif not os.path.isfile ('C:\\FFmpeg\\ffprobe.exe'):
         ffprobe_exe_existed = False
-    return ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed
+    return (ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed)
 def checking_old_ffmpeg_files_existed():
     os.chdir ('C:\\wahid-dl\\')
     if os.path.isfile ('C:\\wahid-dl\\ffmpeg.exe'):
@@ -39,7 +39,7 @@ def checking_old_ffmpeg_files_existed():
         ffprobe_exe_existed = True
     elif not os.path.isfile ('C:\\wahid-dl\\ffprobe.exe'):
         ffprobe_exe_existed = False
-    return ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed
+    return (ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed)
 def checking_ffmpeg_version():
     ffmpeg_exact_version_number = '7.1.1'
     ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
