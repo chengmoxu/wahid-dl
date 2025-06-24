@@ -276,7 +276,7 @@ if sys.platform == "win32":
                     print ("請重新輸入正確選項！")
     current_file_path = os.path.abspath(__file__)
     if os.path.exists ("C:\\wahid-dl\\packages"):
-        if current_file_path=='C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path=='C:\\wahid-dl DEV\\wahid-dl Tool.py':
+        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py':
                 wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
                 wahiddl_tool.wahiddl_tool_windows_x64()
         else:
