@@ -9,6 +9,7 @@ from packages.installer import installer_ytdlp
 from packages.installer import installer_ffmpeg
 from packages.uninstaller import uninstaller_wahiddl
 from packages.uninstaller import uninstaller_wahiddl_DEV
+from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import ui
 def wahiddl_tool_windows_x64():
@@ -21,7 +22,12 @@ def wahiddl_tool_windows_x64():
         print ("2: 安裝/更新 wahid-dl 主程式")
         print ("3: 安裝/更新 yt-dlp")
         print ("4: 安裝 FFmpeg")
+        print ("5: 完整解除安裝 wahid-dl 及附屬依賴工具")
+        print ("6: 解除安裝 wahid-dl 主程式")
+        print ("7: 解除安裝 yt-dlp")
+        print ("8: 解除安裝 FFmpeg")
         print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
+        print ("DEVUNINSTALL: 解除安裝 wahid-dl Develop Channel")
         print ("0: 離開程式")
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
@@ -108,6 +114,76 @@ def wahiddl_tool_windows_x64():
                     installer_ffmpeg.installer_ffmpeg()
                 ui.ui_exit()
                 break
+            elif userinput == "5":
+                print ("完整解除安裝 wahid-dl 及附屬依賴工具")
+                print ("解除安裝 wahid-dl 主程式")
+                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
+                if wahiddl_status == True:
+                    uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
+                elif wahiddl_status == False:
+                    print ("wahid-dl 主程式已不存在")
+                print ("解除安裝 yt-dlp")
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                if ytdlp_status == True:
+                    uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
+                elif ytdlp_status == False:
+                    print ("yt-dlp 已不存在")
+                print ("解除安裝 FFmpeg")
+                uninstaller_ffmpeg.uninstaller_old_ffmpeg()
+                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
+                if ffmpeg_folder_status == True:
+                    ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
+                    ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
+                    ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
+                    if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
+                        ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
+                        if ffmpeg_version_status == False:
+                            continue
+                        elif ffmpeg_version_status == True:
+                            uninstaller_ffmpeg.uninstaller_ffmpeg()
+                elif ffmpeg_folder_status == False:
+                    print ("FFmpeg 已不存在")
+                ui.ui_exit()
+                break
+            elif userinput == "6":
+                print ("解除安裝 wahid-dl 主程式")
+                print ("解除安裝 wahid-dl 主程式")
+                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
+                if wahiddl_status == True:
+                    uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
+                elif wahiddl_status == False:
+                    print ("wahid-dl 主程式已不存在")
+                ui.ui_complete()
+                ui.ui_exit()
+                break
+            elif userinput == "7":
+                print ("解除安裝 yt-dlp")
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                if ytdlp_status == True:
+                    uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
+                elif ytdlp_status == False:
+                    print ("yt-dlp 已不存在")
+                ui.ui_complete()
+                ui.ui_exit()
+                break
+            elif userinput == "8":
+                print ("解除安裝 FFmpeg")
+                uninstaller_ffmpeg.uninstaller_old_ffmpeg()
+                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
+                if ffmpeg_folder_status == True:
+                    ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
+                    ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
+                    ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
+                    if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
+                        ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
+                        if ffmpeg_version_status == False:
+                            continue
+                        elif ffmpeg_version_status == True:
+                            uninstaller_ffmpeg.uninstaller_ffmpeg()
+                elif ffmpeg_folder_status == False:
+                    print ("FFmpeg 已不存在")
+                ui.ui_exit()
+                break
             else:
                 print ("請重新輸入正確選項！")
         elif userinput_judge == False:
@@ -126,11 +202,31 @@ def wahiddl_tool_windows_x64():
                         os.mkdir ('C:\\wahid-dl DEV')
                         installer_wahiddl_DEV.installer_wahiddl_DEV_install()
                 print ("------------------------------------------------------------")
-                print ("安裝/更新 yt-dlp")
+                print ("安裝/更新 yt-dlp in wahid-dl Develop Channel")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
                 elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
                     installer_ytdlp.installer_wahiddl_DEV_ytdlp_install()
+                ui.ui_complete()
+                ui.ui_exit()
+                break
+            elif userinput == "DEVUNINSTALL":
+                ui.ui_start()
+                print ("解除安裝 wahid-dl Develop Channel")
+                if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
+                    uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
+                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0] == False:
+                    if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1] == "Unsupported OS":
+                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
+                        continue
+                    else:
+                        print ("wahid-dl Develop Channel 已不存在")
+                print ("------------------------------------------------------------")
+                print ("解除安裝 yt-dlp in wahid-dl Develop Channel")
+                if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
+                    uninstaller_ytdlp.uninstaller_wahiddl_DEV_ytdlp_uninstall()
+                elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
+                    print ("yt-dlp in wahid-dl Develop Channel 已不存在")
                 ui.ui_complete()
                 ui.ui_exit()
                 break
