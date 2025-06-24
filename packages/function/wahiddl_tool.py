@@ -165,6 +165,7 @@ def wahiddl_tool_windows_x64():
                         print ("FFmpeg 已不存在")
                 else:
                     print ("FFmpeg 已不存在")
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             else:
@@ -215,4 +216,3 @@ def wahiddl_tool_windows_x64():
                 break
             else:
                 print ("請重新輸入正確選項！")
-wahiddl_tool_windows_x64()
