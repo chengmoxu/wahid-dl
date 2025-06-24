@@ -10,3 +10,8 @@ def ffmpeg_folder():
 def old_ffmpeg_files():
     path = ['C:\\wahid-dl\\ffmpeg.exe', 'C:\\wahid-dl\\ffplay.exe', 'C:\\wahid-dl\\ffprobe.exe']
     return path
+def wahiddl_ytdlp():
+    path = 'C:\\wahid-dl\\yt-dlp.exe'
+    return path
+def wahiddl_DEV_ytdlp():
+    path = 'C:\\wahid-dl DEV\\yt-dlp.exe'
