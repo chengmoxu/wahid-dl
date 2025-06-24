@@ -15,7 +15,7 @@ from packages.core import ui
 def wahiddl_tool_windows_x64():
     print (ui.ASCII_art())
     print (ui.ui_title_wahiddl_tool())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = "start"
     while mode == "start":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
@@ -185,7 +185,7 @@ def wahiddl_tool_windows_x64():
                         print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
                         os.mkdir ('C:\\wahid-dl DEV')
                         installer_wahiddl_DEV.installer_wahiddl_DEV_install()
-                print ("------------------------------------------------------------")
+                print ('--------------------------------------------------')
                 print ("安裝/更新 yt-dlp in wahid-dl Develop Channel")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
                     installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
@@ -205,7 +205,7 @@ def wahiddl_tool_windows_x64():
                         continue
                     else:
                         print ("wahid-dl Develop Channel 已不存在")
-                print ("------------------------------------------------------------")
+                print ('--------------------------------------------------')
                 print ("解除安裝 yt-dlp in wahid-dl Develop Channel")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
                     uninstaller_ytdlp.uninstaller_wahiddl_DEV_ytdlp_uninstall()

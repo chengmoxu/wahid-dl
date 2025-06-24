@@ -3,7 +3,7 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_audio())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = ""
     while mode == "":
         print ("請輸入欲下載音訊之網址")

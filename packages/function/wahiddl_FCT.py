@@ -3,7 +3,7 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_FCT())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = ""
     while mode == "":
         print ("請輸入欲測試影片或音檔之網址")

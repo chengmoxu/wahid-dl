@@ -3,7 +3,7 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_live())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = ""
     while mode == "":
         print ("請輸入欲下載直播影片之網址")

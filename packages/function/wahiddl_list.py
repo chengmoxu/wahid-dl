@@ -3,7 +3,7 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_list())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = ""
     while mode == "":
         print ("開始請輸入1")

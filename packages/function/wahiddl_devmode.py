@@ -5,7 +5,7 @@ from packages.core import version_info
 def devmode():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_devmode())
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     mode = ""
     while mode == "":
         print ("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")

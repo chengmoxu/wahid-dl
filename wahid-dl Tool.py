@@ -39,9 +39,9 @@ def wahiddl_installer_without_packages():
     os.remove("C:\\wahid-dl\\.gitignore")
     os.remove("C:\\wahid-dl\\wahid-dl-colab.ipynb")
 def ytdlp_installer_without_packages():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始安裝/更新 yt-dlp")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始下載最新版本 yt-dlp")
     os.chdir ("C:\\wahid-dl")
     yt_dlp_path = "C:\\wahid-dl\\yt-dlp.exe"
@@ -51,7 +51,7 @@ def ytdlp_installer_without_packages():
     elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     # yt-dlp Install Checking
     os.chdir ("C:\\wahid-dl")
     if os.path.exists (yt_dlp_path):
@@ -59,9 +59,9 @@ def ytdlp_installer_without_packages():
     else:
         print ("安裝/更新 yt-dlp 失敗")
 def DEV_ytdlp_installer_without_packages():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始安裝/更新 yt-dlp")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始下載最新版本 yt-dlp")
     os.chdir ("C:\\wahid-dl DEV")
     yt_dlp_path = "C:\\wahid-dl DEV\\yt-dlp.exe"
@@ -71,7 +71,7 @@ def DEV_ytdlp_installer_without_packages():
     elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     # yt-dlp Install Checking
     os.chdir ("C:\\wahid-dl DEV")
     if os.path.exists (yt_dlp_path):
@@ -79,9 +79,9 @@ def DEV_ytdlp_installer_without_packages():
     else:
         print ("安裝/更新 yt-dlp 失敗")
 def ffmpeg_installer_without_packages():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始安裝/更新 FFmpeg")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     os.chdir ("C:\\wahid-dl")
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
@@ -169,7 +169,7 @@ def ffmpeg_installer_without_packages():
         ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
         if os.path.exists (ffmpeg_unzip_folder_path):
             shutil.rmtree (ffmpeg_unzip_folder_path)
-        print ("------------------------------------------------------------")
+        print ('--------------------------------------------------')
         # FFmpeg Installation Check
         os.chdir ("C:\\FFmpeg\\")
         if os.path.isfile ("C:\\FFmpeg\\ffmpeg.exe") == True:
@@ -223,9 +223,9 @@ def wahiddl_DEV_installer_without_packages():
     os.remove("C:\\wahid-dl DEV\\.gitignore")
     os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
 def exit():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("即將結束程式")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
 
 if sys.platform == "win32":
     def main():
