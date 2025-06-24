@@ -128,14 +128,11 @@ def wahiddl_tool_windows_x64():
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
                 ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
                 if ffmpeg_folder_status == True:
-                    ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
-                    ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
-                    ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
-                    if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
+                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
                     else:
                         print ("FFmpeg 已不存在")
-                elif ffmpeg_folder_status == False:
+                else:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
                 break
@@ -164,14 +161,11 @@ def wahiddl_tool_windows_x64():
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
                 ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
                 if ffmpeg_folder_status == True:
-                    ffmpeg_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[0]
-                    ffplay_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[1]
-                    ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
-                    if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
+                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
                     else:
                         print ("FFmpeg 已不存在")
-                elif ffmpeg_folder_status == False:
+                else:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
                 break
