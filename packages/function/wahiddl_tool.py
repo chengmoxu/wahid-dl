@@ -53,7 +53,7 @@ def wahiddl_tool_windows_x64():
                     installer_ytdlp.installer_wahiddl_ytdlp_install()
                 print ("安裝 FFmpeg")
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
+                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()
                 if ffmpeg_folder_status == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         if checking_ffmpeg.checking_ffmpeg_version() == False:
@@ -95,7 +95,7 @@ def wahiddl_tool_windows_x64():
             elif userinput == "4":
                 print ("安裝 FFmpeg")
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
+                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()
                 if ffmpeg_folder_status == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         if checking_ffmpeg.checking_ffmpeg_version() == False:
