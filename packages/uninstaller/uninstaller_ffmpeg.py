@@ -17,10 +17,10 @@ def uninstaller_ffmpeg():
     elif not os.path.isfile ('C:\\FFmpeg\\ffprobe.exe') == True:
         print ("已不存在新式舊版 ffprobe.exe")
     os.chdir ('C:\\')
-    if os.path ('C:\\FFmpeg') == True:
-        os.rmdir ('C:\\FFmpeg')
+    if os.path.exists ('C:\\FFmpeg\\') == True:
+        os.rmdir ('C:\\FFmpeg\\')
         print ("已刪除 FFmpeg 資料夾")
-    elif not os.path.isfile ('C:\\FFmpeg') == True:
+    elif not os.path.exists ('C:\\FFmpeg\\') == True:
         print ("已不存在 FFmpeg 資料夾")
 def uninstaller_old_ffmpeg():
     os.chdir ('C:\\wahid-dl')

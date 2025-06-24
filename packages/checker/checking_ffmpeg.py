@@ -6,9 +6,10 @@ def checking_ffmpeg_folder_existed():
     os.chdir ('C:\\')
     if os.path.exists (ffmpeg_folder_name):
         ffmpeg_folder_existed = True
+        return ffmpeg_folder_existed
     elif not os.path.exists (ffmpeg_folder_name):
         ffmpeg_folder_existed = False
-    return ffmpeg_folder_existed
+        return ffmpeg_folder_existed
 def checking_ffmpeg_files_existed():
     os.chdir ('C:\\FFmpeg\\')
     if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe'):

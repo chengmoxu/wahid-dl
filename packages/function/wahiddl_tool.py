@@ -126,8 +126,7 @@ def wahiddl_tool_windows_x64():
                     print ("yt-dlp 已不存在")
                 print ("解除安裝 FFmpeg")
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
-                if ffmpeg_folder_status == True:
+                if checking_ffmpeg.checking_ffmpeg_folder_existed() == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
                     else:
@@ -159,8 +158,7 @@ def wahiddl_tool_windows_x64():
             elif userinput == "8":
                 print ("解除安裝 FFmpeg")
                 uninstaller_ffmpeg.uninstaller_old_ffmpeg()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
-                if ffmpeg_folder_status == True:
+                if checking_ffmpeg.checking_ffmpeg_folder_existed() == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
                     else:
@@ -217,3 +215,4 @@ def wahiddl_tool_windows_x64():
                 break
             else:
                 print ("請重新輸入正確選項！")
+wahiddl_tool_windows_x64()
