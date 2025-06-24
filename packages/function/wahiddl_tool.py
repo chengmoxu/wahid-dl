@@ -56,14 +56,9 @@ def wahiddl_tool_windows_x64():
                 ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
                 if ffmpeg_folder_status == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
-                        try:
-                            ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                            if ffmpeg_version_status == False:
-                                continue
-                            elif ffmpeg_version_status == True:
-                                uninstaller_ffmpeg.uninstaller_ffmpeg()
-                                installer_ffmpeg.installer_ffmpeg()
-                        except:
+                        if checking_ffmpeg.checking_ffmpeg_version() == False:
+                            continue
+                        else:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
                     else:
@@ -103,14 +98,9 @@ def wahiddl_tool_windows_x64():
                 ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()[0]
                 if ffmpeg_folder_status == True:
                     if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
-                        try:
-                            ffmpeg_version_status = checking_ffmpeg.checking_ffmpeg_version()
-                            if ffmpeg_version_status == False:
-                                continue
-                            elif ffmpeg_version_status == True:
-                                uninstaller_ffmpeg.uninstaller_ffmpeg()
-                                installer_ffmpeg.installer_ffmpeg()
-                        except:
+                        if checking_ffmpeg.checking_ffmpeg_version() == False:
+                            continue
+                        else:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
                     else:
