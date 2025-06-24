@@ -66,6 +66,8 @@ def wahiddl_tool_windows_x64():
                         except:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
+                    else:
+                        installer_ffmpeg.installer_ffmpeg()
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
@@ -111,6 +113,8 @@ def wahiddl_tool_windows_x64():
                         except:
                             uninstaller_ffmpeg.uninstaller_ffmpeg()
                             installer_ffmpeg.installer_ffmpeg()
+                    else:
+                        installer_ffmpeg.installer_ffmpeg()
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
@@ -139,6 +143,8 @@ def wahiddl_tool_windows_x64():
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
+                    else:
+                        print ("FFmpeg 已不存在")
                 elif ffmpeg_folder_status == False:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
@@ -173,6 +179,8 @@ def wahiddl_tool_windows_x64():
                     ffprobe_exe_status = checking_ffmpeg.checking_ffmpeg_files_existed()[2]
                     if ffmpeg_exe_status == True and ffplay_exe_status == True and ffprobe_exe_status == True:
                         uninstaller_ffmpeg.uninstaller_ffmpeg()
+                    else:
+                        print ("FFmpeg 已不存在")
                 elif ffmpeg_folder_status == False:
                     print ("FFmpeg 已不存在")
                 ui.ui_exit()
