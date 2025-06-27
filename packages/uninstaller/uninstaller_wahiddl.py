@@ -21,17 +21,14 @@ def uninstaller_wahiddl_uninstall():
         shutil.rmtree("C:\\wahid-dl\\packages")
         print (f"已刪除 wahid-dl 的 packages")
     elif not os.path.exists ("C:\\wahid-dl\\packages"):
-        shutil.rmtree("C:\\wahid-dl\\packages")
         print (f"已不存在 wahid-dl 的 packages")
     if os.path.exists ("C:\\wahid-dl\\bat"):
         shutil.rmtree("C:\\wahid-dl\\bat")
         print (f"已刪除 wahid-dl 的早期版本支援")
     elif not os.path.exists ("C:\\wahid-dl\\bat"):
-        shutil.rmtree("C:\\wahid-dl\\bat")
         print (f"已不存在 wahid-dl 的早期版本支援")
     if os.path.exists ("C:\\wahid-dl\\tool"):
         shutil.rmtree("C:\\wahid-dl\\tool")
         print (f"已刪除 wahid-dl 的安裝檔打包工具資料夾")
     elif not os.path.exists ("C:\\wahid-dl\\tool"):
-        shutil.rmtree("C:\\wahid-dl\\tool")
         print (f"已不存在 wahid-dl 的安裝檔打包工具資料夾")
