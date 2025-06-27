@@ -66,6 +66,7 @@ def wahiddl_tool_windows_x64():
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "2":
@@ -107,6 +108,7 @@ def wahiddl_tool_windows_x64():
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.installer_ffmpeg()
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "5":
@@ -132,6 +134,7 @@ def wahiddl_tool_windows_x64():
                         print ("FFmpeg 已不存在")
                 else:
                     print ("FFmpeg 已不存在")
+                ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "6":
