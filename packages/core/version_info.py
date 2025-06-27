@@ -11,7 +11,7 @@ def vi_platform():
         system_os = "macOS"
         return system_os
 #Wahid-dl info
-channel = "Develop"
+channel = "Stable"
 number = "6.0"
 build_number = "20250627.1"
 language = "Python"
