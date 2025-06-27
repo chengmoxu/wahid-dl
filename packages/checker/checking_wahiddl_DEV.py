@@ -1,15 +1,15 @@
 import os
-from packages.core import system_os
+from packages.core import version_info
 wahiddl_DEV_folder_name = "wahid-dl DEV"
 def checking_wahiddl_DEV_folder_existed():
-    if system_os.get_system_os() == "Windows":
+    if version_info.vi_platform() == "Windows":
         path = os.path.join("C:\\", "wahid-dl DEV")
-    elif system_os.get_system_os() == "Linux":
+    elif version_info.vi_platform() == "Linux":
         path = os.path.expanduser("~/wahid-dl DEV")
     else:
-        return False, "Unsupported OS"
+        return False
     try:
         wahiddl_DEV_folder_existed = os.path.exists(path)
         return wahiddl_DEV_folder_existed
-    except Exception as error:
-        return False, str(error)
+    except:
+        return False

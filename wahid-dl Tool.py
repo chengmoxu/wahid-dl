@@ -4,15 +4,9 @@ import subprocess
 import shutil
 import glob
 import re
+import importlib
 
-version_outline = "[Stable] v5.4-20241230.1"
-
-if sys.platform == "win32":
-    system_os = "Windows"
-elif sys.platform == "linux":
-    system_os  = "Linux"
-elif sys.platform == "darwin":
-    system_os = "macOS"
+version_outline = "[Stable]v6.0.20250627.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
@@ -45,9 +39,9 @@ def wahiddl_installer_without_packages():
     os.remove("C:\\wahid-dl\\.gitignore")
     os.remove("C:\\wahid-dl\\wahid-dl-colab.ipynb")
 def ytdlp_installer_without_packages():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始安裝/更新 yt-dlp")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始下載最新版本 yt-dlp")
     os.chdir ("C:\\wahid-dl")
     yt_dlp_path = "C:\\wahid-dl\\yt-dlp.exe"
@@ -57,17 +51,37 @@ def ytdlp_installer_without_packages():
     elif os.path.exists (yt_dlp_path):
         print ("yt-dlp已存在，開始更新 yt-dlp")
         os.system ("yt-dlp -U")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     # yt-dlp Install Checking
     os.chdir ("C:\\wahid-dl")
     if os.path.exists (yt_dlp_path):
         print ("安裝/更新 yt-dlp 完成")
     else:
         print ("安裝/更新 yt-dlp 失敗")
+def DEV_ytdlp_installer_without_packages():
+    print ('--------------------------------------------------')
+    print ("開始安裝/更新 yt-dlp")
+    print ('--------------------------------------------------')
+    print ("開始下載最新版本 yt-dlp")
+    os.chdir ("C:\\wahid-dl DEV")
+    yt_dlp_path = "C:\\wahid-dl DEV\\yt-dlp.exe"
+    if not os.path.exists (yt_dlp_path):
+        print ("yt-dlp不存在，開始下載 yt-dlp")
+        os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
+    elif os.path.exists (yt_dlp_path):
+        print ("yt-dlp已存在，開始更新 yt-dlp")
+        os.system ("yt-dlp -U")
+    print ('--------------------------------------------------')
+    # yt-dlp Install Checking
+    os.chdir ("C:\\wahid-dl DEV")
+    if os.path.exists (yt_dlp_path):
+        print ("安裝/更新 yt-dlp 完成")
+    else:
+        print ("安裝/更新 yt-dlp 失敗")
 def ffmpeg_installer_without_packages():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("開始安裝/更新 FFmpeg")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     os.chdir ("C:\\wahid-dl")
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
@@ -100,13 +114,13 @@ def ffmpeg_installer_without_packages():
             print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
             # 檢查 FFmpeg 版本
             # FFmpeg Version Number，變動需要更新
-            ffmpeg_exact_version_number = "7.1"
+            ffmpeg_exact_version_number = "7.1.1"
             ffmpeg_version_org_output = subprocess.getoutput ("ffmpeg -version")
-            ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+\.\d+)', ffmpeg_version_org_output)
+            ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
             if ffmpeg_version_detail:
                 ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
             if ffmpeg_check_version == ffmpeg_exact_version_number:
-                print ("FFmpeg 已是最新版本，不需要更新")
+                print ("FFmpeg 已是v" + ffmpeg_exact_version_number + "，不需要更新")
                 ffmpeg_download_need = "0"
             else:
                 # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
@@ -127,10 +141,10 @@ def ffmpeg_installer_without_packages():
                     print ("已不存在新式舊版 ffprobe.exe")
                 ffmpeg_download_need = "1"
     while ffmpeg_download_need == "1":
-        print ("開始下載最新版本 FFmpeg")
+        print ("開始下載 FFmpeg")
         os.chdir ("C:\\FFmpeg")
         # FFmpeg Version Number，變動需要更新
-        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-full_build.zip")
+        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.1.1-full_build.zip")
         FFmpegunzip_folder_name = "FFmpeg-unzip"
         if not os.path.exists (FFmpegunzip_folder_name):
             os.mkdir (FFmpegunzip_folder_name)
@@ -139,7 +153,7 @@ def ffmpeg_installer_without_packages():
             print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
         os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
         # FFmpeg Version Number，變動需要更新
-        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1-full_build\\bin\\"
+        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1.1-full_build\\bin\\"
         ffmpeg_dst_folder = "C:\\FFmpeg\\"
         ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
         for ffmpeg_exe_file in ffmpeg_exe_files:
@@ -155,7 +169,7 @@ def ffmpeg_installer_without_packages():
         ffmpeg_unzip_folder_path = "C:\\FFmpeg\\ffmpeg-unzip"
         if os.path.exists (ffmpeg_unzip_folder_path):
             shutil.rmtree (ffmpeg_unzip_folder_path)
-        print ("------------------------------------------------------------")
+        print ('--------------------------------------------------')
         # FFmpeg Installation Check
         os.chdir ("C:\\FFmpeg\\")
         if os.path.isfile ("C:\\FFmpeg\\ffmpeg.exe") == True:
@@ -193,7 +207,7 @@ def wahiddl_DEV_installer_without_packages():
         print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
     elif os.path.exists (updates_folder_name):
         print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
-    print ("解壓縮 wahid-dl DEV 更新資料")
+    print ("解壓縮 wahid-dl Develop Channel 更新資料")
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
     wahiddl_DEV_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\"
     wahiddl_DEV_folder = "C:\\wahid-dl DEV\\"
@@ -209,21 +223,21 @@ def wahiddl_DEV_installer_without_packages():
     os.remove("C:\\wahid-dl DEV\\.gitignore")
     os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
 def exit():
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
     print ("即將結束程式")
-    print ("------------------------------------------------------------")
+    print ('--------------------------------------------------')
 
-if system_os  == "Windows":
-    if not os.path.exists ("C:\\wahid-dl\\packages"):
-        print ("wahid-dl Tool Without Packages [" + system_os + "]")
+if sys.platform == "win32":
+    def main():
+        print ("wahid-dl Tool Without Packages [Windows]")
         print (version_outline)
         mode = ""
         while mode == "":
             print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
-            print ("2: 更新 wahid-dl 主程式")
-            print ("3: 更新 yt-dlp")
-            print ("4: 更新 FFmpeg")
-            print ("DEVINSTALL: 安裝/更新 wahid-dl Dev 主程式")
+            print ("2: 安裝/更新 wahid-dl 主程式")
+            print ("3: 安裝/更新 yt-dlp")
+            print ("4: 安裝/更新 FFmpeg")
+            print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
             print ("0: 離開程式")
             userinput = input ("請選擇執行項目: ")
             userinput_judge = str.isdigit(userinput)
@@ -255,17 +269,24 @@ if system_os  == "Windows":
             elif userinput_judge == False:
                 if userinput == "DEVINSTALL":
                     wahiddl_DEV_installer_without_packages()
+                    DEV_ytdlp_installer_without_packages()
                     exit()
                     break
                 else:
                     print ("請重新輸入正確選項！")
-    elif os.path.exists ("C:\\wahid-dl\\packages"):
-        from packages.core import wahiddl_tool
-        wahiddl_tool.wahiddl_tool_windows_x64()
+    current_file_path = os.path.abspath(__file__)
+    if os.path.exists ("C:\\wahid-dl\\packages"):
+        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py':
+                wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
+                wahiddl_tool.wahiddl_tool_windows_x64()
+        else:
+            main()
+    else:
+        main()
     input ()
-elif system_os  == "Linux":
+elif sys.platform == "linux":
     if not os.path.exists ("$HOME/wahid-dl/packages"):
-        print ("wahid-dl Tool Without Packages [" + system_os + "]")
+        print ("wahid-dl Tool Without Packages [Linux]")
         print (version_outline)
         mode = ""
         while mode == "":
@@ -292,7 +313,7 @@ elif system_os  == "Linux":
             exit()
             break
     input ()
-elif system_os == "macOS":
+elif sys.platform == "darwin":
     print ("暫時不支援")
 else:
     print ("不支援的平台")

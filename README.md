@@ -32,7 +32,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 
 ### Third. Instructions for use
 #### For Windows and Linux
-1. [Install or update wahid-dl, wahid-dl DEV, yt-flp or FFmpeg] Execute wahid-dl Tool.py  
+1. [Install or update wahid-dl, wahid-dl Develop Channel, yt-flp or FFmpeg] Execute wahid-dl Tool.py  
 2. [Using] Choose the function which you want to use
 
 *Notice: Please check for yt-dlp updates when prompted with an error message*  
