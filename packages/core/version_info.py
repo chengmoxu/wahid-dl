@@ -13,7 +13,7 @@ def vi_platform():
 #Wahid-dl info
 channel = "Develop"
 number = "6.0"
-build_number = "20250624.2"
+build_number = "20250627.1"
 language = "Python"
 def vi_detail():
     vi = [channel, number, build_number, language]

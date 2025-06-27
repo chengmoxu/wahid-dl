@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_outline = "[Develop]v6.0.20250624.2-Python"
+version_outline = "[Develop]v6.0.20250627.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
