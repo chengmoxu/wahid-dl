@@ -7,9 +7,9 @@ def checking_wahiddl_folder_existed():
     elif version_info.vi_platform() == "Linux":
         path = os.path.expanduser("~/wahid-dl")
     else:
-        return False, "Unsupported OS"
+        return False
     try:
         wahiddl_folder_existed = os.path.exists(path)
         return wahiddl_folder_existed
-    except Exception as error:
-        return False, str(error)
+    except:
+        return False

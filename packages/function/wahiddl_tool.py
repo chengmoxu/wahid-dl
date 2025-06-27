@@ -38,7 +38,7 @@ def wahiddl_tool_windows_x64():
             elif userinput == "1":
                 print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
                 print ("安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
+                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
@@ -46,7 +46,7 @@ def wahiddl_tool_windows_x64():
                     os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.installer_wahiddl_install()
                 print ("安裝/更新 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
                 if ytdlp_status == True:
                     installer_ytdlp.installer_wahiddl_ytdlp_update()
                 elif ytdlp_status == False:
@@ -73,13 +73,12 @@ def wahiddl_tool_windows_x64():
                 if checking_wahiddl.checking_wahiddl_folder_existed() == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                     installer_wahiddl.installer_wahiddl_install()
-                elif checking_wahiddl.checking_wahiddl_folder_existed()[0] == False:
-                    if checking_wahiddl.checking_wahiddl_folder_existed()[1] == "Unsupported OS":
-                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
-                        continue
-                    else:
+                elif checking_wahiddl.checking_wahiddl_folder_existed() == False:
+                    try:
                         os.mkdir ('C:\\wahid-dl')
                         installer_wahiddl.installer_wahiddl_install()
+                    except:
+                        print ("不支援的平台")
                 ui.ui_complete()
                 ui.ui_exit()
                 break
@@ -113,13 +112,13 @@ def wahiddl_tool_windows_x64():
             elif userinput == "5":
                 print ("完整解除安裝 wahid-dl 及附屬依賴工具")
                 print ("解除安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
+                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                 elif wahiddl_status == False:
                     print ("wahid-dl 主程式已不存在")
                 print ("解除安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
                 if ytdlp_status == True:
                     uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
                 elif ytdlp_status == False:
@@ -137,7 +136,7 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "6":
                 print ("解除安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()[0]
+                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstaller_wahiddl_uninstall()
                 elif wahiddl_status == False:
@@ -147,7 +146,7 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "7":
                 print ("解除安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()[0]
+                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
                 if ytdlp_status == True:
                     uninstaller_ytdlp.uninstaller_wahiddl_ytdlp_uninstall()
                 elif ytdlp_status == False:
@@ -177,14 +176,12 @@ def wahiddl_tool_windows_x64():
                 if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
                     installer_wahiddl_DEV.installer_wahiddl_DEV_install()
-                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0] == False:
-                    if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1] == "Unsupported OS":
-                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
-                        continue
-                    else:
-                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
+                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == False:
+                    try:
                         os.mkdir ('C:\\wahid-dl DEV')
                         installer_wahiddl_DEV.installer_wahiddl_DEV_install()
+                    except:
+                        print ("不支援的平台")
                 print ('--------------------------------------------------')
                 print ("安裝/更新 yt-dlp in wahid-dl Develop Channel")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
@@ -199,12 +196,8 @@ def wahiddl_tool_windows_x64():
                 print ("解除安裝 wahid-dl Develop Channel")
                 if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
                     uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
-                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[0] == False:
-                    if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1] == "Unsupported OS":
-                        print (checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed()[1])
-                        continue
-                    else:
-                        print ("wahid-dl Develop Channel 已不存在")
+                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == False:
+                    print ("wahid-dl Develop Channel 已不存在")
                 print ('--------------------------------------------------')
                 print ("解除安裝 yt-dlp in wahid-dl Develop Channel")
                 if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
