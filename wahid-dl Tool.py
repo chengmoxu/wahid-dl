@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_outline = "[Stable]v6.0.20250627.1-Python"
+version_outline = "[Develop]v6.1.20250826.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
@@ -276,11 +276,11 @@ if sys.platform == "win32":
                     print ("請重新輸入正確選項！")
     current_file_path = os.path.abspath(__file__)
     if os.path.exists ("C:\\wahid-dl\\packages"):
-        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py':
+        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py': #enable or disable this line to control packages mechanism when Debugging
                 wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
                 wahiddl_tool.wahiddl_tool_windows_x64()
-        else:
-            main()
+        else: #enable or disable this line to control packages mechanism when Debugging
+            main() #enable or disable this line to control packages mechanism when Debugging
     else:
         main()
     input ()
