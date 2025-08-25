@@ -15,3 +15,28 @@ def wahiddl_ytdlp():
     return path
 def wahiddl_DEV_ytdlp():
     path = 'C:\\wahid-dl DEV\\yt-dlp.exe'
+    return path
+def wahiddl_packages():
+    path = 'C:\\wahid-dl\\packages'
+    return path
+def wahiddl_DEV_packages():
+    path = 'C:\\wahid-dl DEV\\packages'
+    return path
+def wahiddl_bat():
+    path = 'C:\\wahid-dl\\bat'
+    return path
+def wahiddl_DEV_bat():
+    path = 'C:\\wahid-dl DEV\\bat'
+    return path
+def wahiddl_tool():
+    path = 'C:\\wahid-dl\\tool'
+    return path
+def wahiddl_DEV_tool():
+    path = 'C:\\wahid-dl DEV\\tool'
+    return path
+def wahiddl_readme():
+    path = 'C:\\wahid-dl\\README.md'
+    return path
+def wahiddl_DEV_readme():
+    path = 'C:\\wahid-dl DEV\\README.md'
+    return path
