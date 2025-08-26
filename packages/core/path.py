@@ -46,3 +46,6 @@ def wahiddl_readme():
 def wahiddl_DEV_readme():
     path = 'C:\\wahid-dl DEV\\README.md'
     return path
+def wahiddl_url_list():
+    path = 'C:\\wahid-dl DEV\\url_list.txt'
+    return path
