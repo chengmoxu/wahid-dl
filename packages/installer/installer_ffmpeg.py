@@ -7,10 +7,10 @@ def installer_ffmpeg():
     os.chdir (path.ffmpeg_folder())
     os.system ('curl -L -o ffmpeg.zip ' + url.ffmpeg())
     ffmpegunzip_folder_name = 'FFmpeg-unzip'
-    if not os.path.exists (ffmpegunzip_folder_name):
+    try:
         os.mkdir (ffmpegunzip_folder_name)
         print (f"'{ffmpegunzip_folder_name}' 資料夾已建立")
-    else:
+    except:
         print (f"'{ffmpegunzip_folder_name}' 資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1.1-full_build\\bin\\"

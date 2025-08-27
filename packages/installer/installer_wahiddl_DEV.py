@@ -6,10 +6,10 @@ def installer_wahiddl_DEV_install():
     os.chdir (path.wahiddl_DEV_folder())
     os.system ('curl -L -o updates.zip ' + url.wahiddl_DEV_branch())
     updates_folder_name = 'updates'
-    if not os.path.exists (updates_folder_name):
+    try:
         os.mkdir (updates_folder_name)
         print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
-    elif os.path.exists (updates_folder_name):
+    except:
         print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
     print ('解壓縮 wahid-dl Develop Channel 更新資料')
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
