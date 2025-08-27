@@ -21,13 +21,13 @@ def installer_ffmpeg():
     #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"') 
     #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
     ffmpeg_updates_file_path = 'C:\\FFmpeg\\ffmpeg.zip'
-    if os.path.isfile (ffmpeg_updates_file_path) == True:
+    try:
         os.remove (ffmpeg_updates_file_path)
         print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
-    else:
+    except:
         print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
-    if os.path.exists (ffmpegunzip_folder_name):
+    try:
         shutil.rmtree (ffmpegunzip_folder_name)
         print (f"更新資料夾 '{ffmpegunzip_folder_name}' 已刪除")
-    else:
+    except:
         print (f"更新資料 '{ffmpegunzip_folder_name}' 已不存在")

@@ -14,7 +14,6 @@ def installer_wahiddl_DEV_install():
     print ('解壓縮 wahid-dl Develop Channel 更新資料')
     os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
     wahiddl_DEV_updatesfiles_folder = 'C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\'
-    wahiddl_DEV_folder = 'C:\\wahid-dl DEV\\'
     for item in os.listdir(wahiddl_DEV_updatesfiles_folder):
         s = os.path.join(wahiddl_DEV_updatesfiles_folder, item)
         d = os.path.join(path.wahiddl_DEV_folder(), item)
