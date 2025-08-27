@@ -85,20 +85,20 @@ def ffmpeg_installer_without_packages():
     os.chdir ("C:\\wahid-dl")
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
-    if os.path.isfile ("C:\\wahid-dl\\ffmpeg.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffmpeg.exe")
         print ("已刪除舊式舊版的 ffmpeg.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffmpeg.exe")
-    if os.path.isfile ("C:\\wahid-dl\\ffplay.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffplay.exe")
         print ("已刪除舊式舊版的 ffplay.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffplay.exe")
-    if os.path.isfile ("C:\\wahid-dl\\ffprobe.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffprobe.exe")
         print ("已刪除舊式舊版的 ffprobe.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffprobe.exe")
     # 新式FFmpeg安裝，包括系統環境變數設定
     os.chdir ("C:\\")
@@ -124,20 +124,20 @@ def ffmpeg_installer_without_packages():
                 ffmpeg_download_need = "0"
             else:
                 # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
-                if os.path.isfile ("C:\\FFmpeg\\ffmpeg.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffmpeg.exe")
                     print ("已刪除新式舊版的 ffmpeg.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffmpeg.exe")
-                if os.path.isfile ("C:\\FFmpeg\\ffplay.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffplay.exe")
                     print ("已刪除新式舊版的 ffplay.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffplay.exe")
-                if os.path.isfile ("C:\\FFmpeg\\ffprobe.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffprobe.exe")
                     print ("已刪除新式舊版的 ffprobe.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffprobe.exe")
                 ffmpeg_download_need = "1"
     while ffmpeg_download_need == "1":
@@ -159,7 +159,8 @@ def ffmpeg_installer_without_packages():
         for ffmpeg_exe_file in ffmpeg_exe_files:
             shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
         # FFmpeg系統環境變數設定
-        os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
+        #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
+        #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
         ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
         if os.path.isfile (ffmpeg_updates_file_path) == True:
             os.remove (ffmpeg_updates_file_path)
@@ -302,11 +303,11 @@ elif sys.platform == "linux":
             elif userinput_judge == False:
                 if userinput.startswith("START") == True:
                     print ("Start the installer")
-                    os.system ('sudo apt install pipx')
+                    #os.system ('sudo apt install pipx')
                     os.system ('sudo apt install opus-tools')
                     os.system ('sudo apt install ffmpeg')
-                    os.system ('pipx ensurepath')
-                    os.system ('pipx install yt-dlp --force')
+                    #os.system ('pipx ensurepath')
+                    #os.system ('pipx install yt-dlp --force')
                 else:
                     print ("Please re-enter the correct options!")
         while mode == "0":
