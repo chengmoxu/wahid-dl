@@ -13,7 +13,7 @@ def vi_platform(): #current execution platform detection function
 #Wahid-dl info
 channel = "Develop"
 number = "6.1"
-build_number = "20250825.1"
+build_number = "20250827.1"
 language = "Python"
 def vi_detail():
     vi = [channel, number, build_number, language] #vi = version info
