@@ -1,8 +1,10 @@
 import os
 import shutil
+from packages.core import path #unified path function
+from packages.core import url #unified url function
 def installer_wahiddl_install():
-    os.chdir ('C:\\wahid-dl')
-    os.system ('curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main')
+    os.chdir (path.wahiddl_folder())
+    os.system ('curl -L -o updates.zip ' + url.wahiddl_main_branch())
     updates_folder_name = 'updates'
     if not os.path.exists (updates_folder_name):
         os.mkdir (updates_folder_name)
@@ -15,7 +17,7 @@ def installer_wahiddl_install():
     wahiddl_folder = 'C:\\wahid-dl\\'
     for item in os.listdir(wahiddl_updatesfiles_folder):
         s = os.path.join(wahiddl_updatesfiles_folder, item)
-        d = os.path.join(wahiddl_folder, item)
+        d = os.path.join(path.wahiddl_folder(), item)
         if os.path.isdir(s):
             shutil.copytree(s, d, dirs_exist_ok=True)
         else:
