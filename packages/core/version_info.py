@@ -11,9 +11,9 @@ def vi_platform(): #current execution platform detection function
         system_os = "macOS"
         return system_os
 #Wahid-dl info
-channel = "Develop"
-number = "6.1"
-build_number = "20250827.2"
+channel = "Stable"
+number = "6.2"
+build_number = "20251227.1"
 language = "Python"
 def vi_detail():
     vi = [channel, number, build_number, language] #vi = version info
