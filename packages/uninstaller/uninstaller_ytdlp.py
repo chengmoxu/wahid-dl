@@ -1,17 +1,14 @@
 import os
+from packages.core import path #unified path function
 def uninstaller_wahiddl_ytdlp_uninstall():
-    os.chdir ('C:\\wahid-dl')
-    if os.path.isfile ('C:\\wahid-dl\\yt-dlp.exe') == True:
-        os.remove ('C:\\wahid-dl\\yt-dlp.exe')
+    try:
+        os.remove (path.wahiddl_ytdlp())
         print ("已刪除 yt-dlp.exe")
-    elif not os.path.isfile ('C:\\wahid-dl\\yt-dlp.exe') == True:
-        os.remove ('C:\\wahid-dl\\yt-dlp.exe')
+    except:
         print ("不存在 yt-dlp.exe")
 def uninstaller_wahiddl_DEV_ytdlp_uninstall():
-    os.chdir ('C:\\wahid-dl DEV')
-    if os.path.isfile ('C:\\wahid-dl DEV\\yt-dlp.exe') == True:
-        os.remove ('C:\\wahid-dl DEV\\yt-dlp.exe')
+    try:
+        os.remove (path.wahiddl_DEV_ytdlp())
         print ("已刪除 yt-dlp.exe")
-    elif not os.path.isfile ('C:\\wahid-dl DEV\\yt-dlp.exe') == True:
-        os.remove ('C:\\wahid-dl DEV\\yt-dlp.exe')
+    except:
         print ("不存在 yt-dlp.exe")

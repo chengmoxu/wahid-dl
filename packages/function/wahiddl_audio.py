@@ -1,5 +1,6 @@
 import os
 from packages.core import ui
+from packages.core import path #unified path function
 def main():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_audio())
@@ -19,7 +20,7 @@ def main():
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
                 ui.ui_start()
-                os.chdir ('C:\\wahid-dl')
+                os.chdir (path.wahiddl_folder())
                 downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" --ffmpeg-location "C:\\FFmpeg" ') + userinput)
                 os.system (downloadcommand)
                 ui.ui_complete()

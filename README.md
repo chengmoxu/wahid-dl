@@ -10,13 +10,34 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux/macOS Version Number: v5.4-20241230.1
-> feat: Call the new unified UI  
-> feat: Improved version information display  
-> style/fix: Removed old annotations/Removed old code  
- rename: Renamed wahid-dl Cookies Support to wahid-dl for Cookies Support  
+* For Windows/Linux Stable Version Number: v6.2.20251227.1
 
-* For Google Colab Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
+> fix: Fixed a module call error that caused a crash 
+> fix: Corrected the version judgment RE 
+> fix: Removed platform check dependency and corrected the display of version information 
+> fix: Fixed incorrect text 
+> fix: Fixed the wrong loop 
+> fix: Corrected the return value method 
+> fix: Fixed incorrect display 
+> fix: Corrected the incorrect judgment leading to incorrect execution 
+> fix: Fixed yt-dlp not installing in wahid-dl development channel 
+> fix: Modified the judgment value to Boolean value
+> fix: Fixed install and uninstall functionality 
+> fix: Fixed folders not being removed by uninstaller
+> fix: Fixed incorrect folder removal 
+> fix: Temporarily remove system variable setting 
+> fix: Updated FFmpeg version 
+> feat: Removed support for Windows based on batchfile 
+> feat: Simplified the code and adjusted the functions 
+> feat: Changed to use unified packages 
+> feat: Removed the installer build tool 
+> feat: Call the new unified UI/UX 
+> feat: Called the unified function 
+> style: Changed the display text from "DEV" to "Develop Channel"
+> perf: Optimized code and function 
+> perf: Emporarily removed system variable setting and pipx install on Linux 
+
+* For Google Colab Stable Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
 > fix: Changed the yt-dlp installation method to avoid outdated versions  
 > style: Description correction  

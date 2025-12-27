@@ -1,8 +1,9 @@
 import os
 from packages.core import ui
+from packages.core import path #unified path function
 def main():
-    print(ui.ASCII_art())
-    print(ui.ui_title_wahiddl())
+    print(ui.ASCII_art()) #unified UI function: ASCII art
+    print(ui.ui_title_wahiddl()) #unified UI function: function title
     print ('--------------------------------------------------')
     mode = ""
     while mode == "":
@@ -19,7 +20,7 @@ def main():
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
                 ui.ui_start()
-                os.chdir ('C:\\wahid-dl')
+                os.chdir (path.wahiddl_folder())
                 downloadcommand = str (('yt-dlp -c -S"quality,res,fps,hdr:12,channels,size,br,asr" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
                 os.system (downloadcommand)
                 ui.ui_complete()

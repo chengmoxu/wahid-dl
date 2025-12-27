@@ -1,6 +1,6 @@
 #Platform info
 import sys
-def vi_platform():
+def vi_platform(): #current execution platform detection function
     if sys.platform  == "win32":
         system_os = "Windows"
         return system_os
@@ -12,9 +12,9 @@ def vi_platform():
         return system_os
 #Wahid-dl info
 channel = "Stable"
-number = "6.0"
-build_number = "20250627.1"
+number = "6.2"
+build_number = "20251227.1"
 language = "Python"
 def vi_detail():
-    vi = [channel, number, build_number, language]
+    vi = [channel, number, build_number, language] #vi = version info
     return vi

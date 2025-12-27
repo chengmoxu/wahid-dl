@@ -2,6 +2,7 @@ import os
 import sys
 from packages.core import ui
 from packages.core import version_info
+from packages.core import path #unified path function
 def devmode():
     print(ui.ASCII_art())
     print(ui.ui_title_wahiddl_devmode())
@@ -22,7 +23,7 @@ def devmode():
             if userinput.startswith("yt-dlp") == True:
                 ui.ui_start()
                 if sys.platform == "win32":
-                    os.chdir ('C:\\wahid-dl')
+                    os.chdir (path.wahiddl_folder())
                 elif sys.platform == "linux":
                     os.chdir ('$HOME/wahid-dl')
                 else:

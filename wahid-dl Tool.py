@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_outline = "[Stable]v6.0.20250627.1-Python"
+version_outline = "[Stable]v6.2.20251227.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
@@ -85,20 +85,20 @@ def ffmpeg_installer_without_packages():
     os.chdir ("C:\\wahid-dl")
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
-    if os.path.isfile ("C:\\wahid-dl\\ffmpeg.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffmpeg.exe")
         print ("已刪除舊式舊版的 ffmpeg.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffmpeg.exe")
-    if os.path.isfile ("C:\\wahid-dl\\ffplay.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffplay.exe")
         print ("已刪除舊式舊版的 ffplay.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffplay.exe")
-    if os.path.isfile ("C:\\wahid-dl\\ffprobe.exe") == True:
+    try:
         os.remove ("C:\\wahid-dl\\ffprobe.exe")
         print ("已刪除舊式舊版的 ffprobe.exe")
-    else:
+    except:
         print ("已不存在舊式舊版 ffprobe.exe")
     # 新式FFmpeg安裝，包括系統環境變數設定
     os.chdir ("C:\\")
@@ -114,7 +114,7 @@ def ffmpeg_installer_without_packages():
             print (f"新式 {ffmpeg_folder_name} 資料夾已存在")
             # 檢查 FFmpeg 版本
             # FFmpeg Version Number，變動需要更新
-            ffmpeg_exact_version_number = "7.1.1"
+            ffmpeg_exact_version_number = "8.0.1"
             ffmpeg_version_org_output = subprocess.getoutput ("ffmpeg -version")
             ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
             if ffmpeg_version_detail:
@@ -124,27 +124,27 @@ def ffmpeg_installer_without_packages():
                 ffmpeg_download_need = "0"
             else:
                 # 移除新式舊版ffmpeg.exe, ffplay.exe, ffprobe.exe
-                if os.path.isfile ("C:\\FFmpeg\\ffmpeg.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffmpeg.exe")
                     print ("已刪除新式舊版的 ffmpeg.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffmpeg.exe")
-                if os.path.isfile ("C:\\FFmpeg\\ffplay.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffplay.exe")
                     print ("已刪除新式舊版的 ffplay.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffplay.exe")
-                if os.path.isfile ("C:\\FFmpeg\\ffprobe.exe") == True:
+                try:
                     os.remove ("C:\\FFmpeg\\ffprobe.exe")
                     print ("已刪除新式舊版的 ffprobe.exe")
-                else:
+                except:
                     print ("已不存在新式舊版 ffprobe.exe")
                 ffmpeg_download_need = "1"
     while ffmpeg_download_need == "1":
         print ("開始下載 FFmpeg")
         os.chdir ("C:\\FFmpeg")
         # FFmpeg Version Number，變動需要更新
-        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.1.1-full_build.zip")
+        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/8.0.1/ffmpeg-8.0.1-full_build.zip")
         FFmpegunzip_folder_name = "FFmpeg-unzip"
         if not os.path.exists (FFmpegunzip_folder_name):
             os.mkdir (FFmpegunzip_folder_name)
@@ -153,13 +153,14 @@ def ffmpeg_installer_without_packages():
             print (f"'{FFmpegunzip_folder_name}' 資料夾已存在")
         os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
         # FFmpeg Version Number，變動需要更新
-        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1.1-full_build\\bin\\"
+        ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
         ffmpeg_dst_folder = "C:\\FFmpeg\\"
         ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
         for ffmpeg_exe_file in ffmpeg_exe_files:
             shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
         # FFmpeg系統環境變數設定
-        os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
+        #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
+        #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
         ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
         if os.path.isfile (ffmpeg_updates_file_path) == True:
             os.remove (ffmpeg_updates_file_path)
@@ -276,11 +277,11 @@ if sys.platform == "win32":
                     print ("請重新輸入正確選項！")
     current_file_path = os.path.abspath(__file__)
     if os.path.exists ("C:\\wahid-dl\\packages"):
-        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py':
+        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py': #enable or disable this line to control packages mechanism when Debugging
                 wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
                 wahiddl_tool.wahiddl_tool_windows_x64()
-        else:
-            main()
+        else: #enable or disable this line to control packages mechanism when Debugging
+            main() #enable or disable this line to control packages mechanism when Debugging
     else:
         main()
     input ()
@@ -302,11 +303,11 @@ elif sys.platform == "linux":
             elif userinput_judge == False:
                 if userinput.startswith("START") == True:
                     print ("Start the installer")
-                    os.system ('sudo apt install pipx')
+                    #os.system ('sudo apt install pipx')
                     os.system ('sudo apt install opus-tools')
                     os.system ('sudo apt install ffmpeg')
-                    os.system ('pipx ensurepath')
-                    os.system ('pipx install yt-dlp --force')
+                    #os.system ('pipx ensurepath')
+                    #os.system ('pipx install yt-dlp --force')
                 else:
                     print ("Please re-enter the correct options!")
         while mode == "0":
