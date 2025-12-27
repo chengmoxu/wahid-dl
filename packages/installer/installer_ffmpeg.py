@@ -13,7 +13,7 @@ def installer_ffmpeg():
     except:
         print (f"'{ffmpegunzip_folder_name}' 資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
-    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-7.1.1-full_build\\bin\\"
+    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
     ffmpeg_dst_folder = path.ffmpeg_folder()
     ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
     for ffmpeg_exe_file in ffmpeg_exe_files:
