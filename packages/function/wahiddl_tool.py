@@ -38,7 +38,7 @@ def wahiddl_tool_windows_x64():
             elif userinput == "1":
                 print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
                 print ("安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
+                wahiddl_status = checking_wahiddl.folder()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstall()
                     installer_wahiddl.install()
@@ -46,17 +46,17 @@ def wahiddl_tool_windows_x64():
                     os.mkdir ('C:\\wahid-dl')
                     installer_wahiddl.install()
                 print ("安裝/更新 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
+                ytdlp_status = checking_ytdlp.ytdlp()
                 if ytdlp_status == True:
                     installer_ytdlp.update()
                 elif ytdlp_status == False:
                     installer_ytdlp.install()
                 print ("安裝 FFmpeg")
                 uninstaller_ffmpeg.v1()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()
+                ffmpeg_folder_status = checking_ffmpeg.folder()
                 if ffmpeg_folder_status == True:
-                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
-                        if checking_ffmpeg.checking_ffmpeg_version() == False:
+                    if checking_ffmpeg.files()[0] == True and checking_ffmpeg.files()[1] == True and checking_ffmpeg.files()[2] == True:
+                        if checking_ffmpeg.version() == False:
                             continue
                         else:
                             uninstaller_ffmpeg.v2()
@@ -71,10 +71,10 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "2":
                 print ("安裝/更新 wahid-dl 主程式")
-                if checking_wahiddl.checking_wahiddl_folder_existed() == True:
+                if checking_wahiddl.folder() == True:
                     uninstaller_wahiddl.uninstall()
                     installer_wahiddl.install()
-                elif checking_wahiddl.checking_wahiddl_folder_existed() == False:
+                elif checking_wahiddl.folder() == False:
                     try:
                         os.mkdir ('C:\\wahid-dl')
                         installer_wahiddl.install()
@@ -85,9 +85,9 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "3":
                 print ("安裝/更新 yt-dlp")
-                if checking_ytdlp.checking_wahiddl_ytdlp_existed() == True:
+                if checking_ytdlp.ytdlp() == True:
                     installer_ytdlp.update()
-                elif checking_ytdlp.checking_wahiddl_ytdlp_existed() == False:
+                elif checking_ytdlp.ytdlp() == False:
                     installer_ytdlp.install()
                 ui.ui_complete()
                 ui.ui_exit()
@@ -95,10 +95,10 @@ def wahiddl_tool_windows_x64():
             elif userinput == "4":
                 print ("安裝 FFmpeg")
                 uninstaller_ffmpeg.v1()
-                ffmpeg_folder_status = checking_ffmpeg.checking_ffmpeg_folder_existed()
+                ffmpeg_folder_status = checking_ffmpeg.folder()
                 if ffmpeg_folder_status == True:
-                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
-                        if checking_ffmpeg.checking_ffmpeg_version() == False:
+                    if checking_ffmpeg.files()[0] == True and checking_ffmpeg.files()[1] == True and checking_ffmpeg.files()[2] == True:
+                        if checking_ffmpeg.version() == False:
                             continue
                         else:
                             uninstaller_ffmpeg.v2()
@@ -114,21 +114,21 @@ def wahiddl_tool_windows_x64():
             elif userinput == "5":
                 print ("完整解除安裝 wahid-dl 及附屬依賴工具")
                 print ("解除安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
+                wahiddl_status = checking_wahiddl.folder()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstall()
                 elif wahiddl_status == False:
                     print ("wahid-dl 主程式已不存在")
                 print ("解除安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
+                ytdlp_status = checking_ytdlp.ytdlp()
                 if ytdlp_status == True:
                     uninstaller_ytdlp.uninstall()
                 elif ytdlp_status == False:
                     print ("yt-dlp 已不存在")
                 print ("解除安裝 FFmpeg")
                 uninstaller_ffmpeg.v1()
-                if checking_ffmpeg.checking_ffmpeg_folder_existed() == True:
-                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
+                if checking_ffmpeg.folder() == True:
+                    if checking_ffmpeg.files()[0] == True and checking_ffmpeg.files()[1] == True and checking_ffmpeg.files()[2] == True:
                         uninstaller_ffmpeg.v2()
                     else:
                         print ("FFmpeg 已不存在")
@@ -139,7 +139,7 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "6":
                 print ("解除安裝 wahid-dl 主程式")
-                wahiddl_status = checking_wahiddl.checking_wahiddl_folder_existed()
+                wahiddl_status = checking_wahiddl.folder()
                 if wahiddl_status == True:
                     uninstaller_wahiddl.uninstall()
                 elif wahiddl_status == False:
@@ -149,7 +149,7 @@ def wahiddl_tool_windows_x64():
                 break
             elif userinput == "7":
                 print ("解除安裝 yt-dlp")
-                ytdlp_status = checking_ytdlp.checking_wahiddl_ytdlp_existed()
+                ytdlp_status = checking_ytdlp.ytdlp()
                 if ytdlp_status == True:
                     uninstaller_ytdlp.uninstall()
                 elif ytdlp_status == False:
@@ -160,8 +160,8 @@ def wahiddl_tool_windows_x64():
             elif userinput == "8":
                 print ("解除安裝 FFmpeg")
                 uninstaller_ffmpeg.v1()
-                if checking_ffmpeg.checking_ffmpeg_folder_existed() == True:
-                    if checking_ffmpeg.checking_ffmpeg_files_existed()[0] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[1] == True and checking_ffmpeg.checking_ffmpeg_files_existed()[2] == True:
+                if checking_ffmpeg.folder() == True:
+                    if checking_ffmpeg.files()[0] == True and checking_ffmpeg.files()[1] == True and checking_ffmpeg.files()[2] == True:
                         uninstaller_ffmpeg.v2()
                     else:
                         print ("FFmpeg 已不存在")
@@ -176,10 +176,10 @@ def wahiddl_tool_windows_x64():
             if userinput == "BETAINSTALL":
                 ui.ui_start()
                 print ("安裝/更新 wahid-dl (Beta)")
-                if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
+                if checking_wahiddl_beta.folder() == True:
                     uninstaller_wahiddl_beta.uninstall()
                     installer_wahiddl_beta.install()
-                elif checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == False:
+                elif checking_wahiddl_beta.folder() == False:
                     try:
                         os.mkdir ('C:\\wahid-dl (Beta)')
                         installer_wahiddl_beta.install()
@@ -187,9 +187,9 @@ def wahiddl_tool_windows_x64():
                         print ("不支援的平台")
                 print ('--------------------------------------------------')
                 print ("安裝/更新 yt-dlp in wahid-dl (Beta)")
-                if checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == True:
+                if checking_ytdlp.beta_ytdlp() == True:
                     installer_ytdlp.beta_update()
-                elif checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == False:
+                elif checking_ytdlp.beta_ytdlp() == False:
                     installer_ytdlp.beta_install()
                 ui.ui_complete()
                 ui.ui_exit()
@@ -197,15 +197,15 @@ def wahiddl_tool_windows_x64():
             elif userinput == "BETAUNINSTALL":
                 ui.ui_start()
                 print ("解除安裝 wahid-dl (Beta)")
-                if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
+                if checking_wahiddl_beta.folder() == True:
                     uninstaller_wahiddl_beta.uninstall()
-                elif checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == False:
+                elif checking_wahiddl_beta.folder() == False:
                     print ("wahid-dl (Beta) 已不存在")
                 print ('--------------------------------------------------')
                 print ("解除安裝 yt-dlp in wahid-dl (Beta)")
-                if checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == True:
+                if checking_ytdlp.beta_ytdlp() == True:
                     uninstaller_ytdlp.beta_uninstall()
-                elif checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == False:
+                elif checking_ytdlp.beta_ytdlp() == False:
                     print ("yt-dlp in wahid-dl (Beta) 已不存在")
                 ui.ui_complete()
                 ui.ui_exit()

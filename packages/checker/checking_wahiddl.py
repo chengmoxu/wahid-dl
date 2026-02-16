@@ -1,7 +1,7 @@
 import os
 from packages.core import info
 wahiddl_folder_name = "wahid-dl"
-def checking_wahiddl_folder_existed():
+def folder():
     if info.platform() == "Windows":
         path = os.path.join("C:\\", "wahid-dl")
     elif info.platform() == "Linux":
