@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_outline = "(Alpha) 7.0.20260216.2-Python"
+version_detail = "(Alpha) 7.0.20260216.2-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
@@ -222,7 +222,7 @@ def wahiddl_beta_installer_without_packages():
     os.remove("C:\\wahid-dl (Beta)\\wahid-dl-colab.ipynb")
 def main():
     print ("wahid-dl Tool Without Packages [Windows]")
-    print (version_outline)
+    print (version_detail)
     mode = ""
     while mode == "":
         print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
@@ -268,19 +268,12 @@ def main():
                 print ("請重新輸入正確選項！")
 def exit():
     print ('--------------------------------------------------')
-    print ("--------------- 請按下 Enter 鍵結束 ---------------")
+    print ('--------------- 請按下 Enter 鍵結束 ---------------')
     print ('--------------------------------------------------')
 
-current_file_path = os.path.abspath(__file__)
-if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl (Beta)\\wahid-dl Tool.py':
-    if os.path.exists ("C:\\wahid-dl\\packages") or os.path.exists ("C:\\wahid-dl (Beta)\\packages"):
-        try:
-            wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
-            wahiddl_tool.main()
-        except:
-            main()
-    else:
-        print ("不支援的平台")
-else:
+try:
+    wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
+    wahiddl_tool.main()
+except:
     main()
-input()
+input ()
