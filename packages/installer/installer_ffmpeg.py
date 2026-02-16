@@ -18,8 +18,6 @@ def v2():
     ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
     for ffmpeg_exe_file in ffmpeg_exe_files:
         shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
-    #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"') 
-    #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
     ffmpeg_updates_file_path = 'C:\\FFmpeg\\ffmpeg.zip'
     try:
         os.remove (ffmpeg_updates_file_path)

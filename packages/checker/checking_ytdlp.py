@@ -1,4 +1,3 @@
-import subprocess
 from pathlib import Path
 def ytdlp():
     try:
