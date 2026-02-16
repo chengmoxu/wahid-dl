@@ -1,14 +1,14 @@
 import os
 from packages.checker import checking_wahiddl
-from packages.checker import checking_wahiddl_DEV
+from packages.checker import checking_wahiddl_beta
 from packages.checker import checking_ytdlp
 from packages.checker import checking_ffmpeg
 from packages.installer import installer_wahiddl
-from packages.installer import installer_wahiddl_DEV
+from packages.installer import installer_wahiddl_beta
 from packages.installer import installer_ytdlp
 from packages.installer import installer_ffmpeg
 from packages.uninstaller import uninstaller_wahiddl
-from packages.uninstaller import uninstaller_wahiddl_DEV
+from packages.uninstaller import uninstaller_wahiddl_beta
 from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import ui
@@ -26,8 +26,8 @@ def wahiddl_tool_windows_x64():
         print ("6: 解除安裝 wahid-dl 主程式")
         print ("7: 解除安裝 yt-dlp")
         print ("8: 解除安裝 FFmpeg")
-        print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
-        print ("DEVUNINSTALL: 解除安裝 wahid-dl Develop Channel")
+        print ("DEVINSTALL: 安裝/更新 wahid-dl (Beta)")
+        print ("DEVUNINSTALL: 解除安裝 wahid-dl (Beta)")
         print ("0: 離開程式")
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
@@ -175,38 +175,38 @@ def wahiddl_tool_windows_x64():
         elif userinput_judge == False:
             if userinput == "DEVINSTALL":
                 ui.ui_start()
-                print ("安裝/更新 wahid-dl Develop Channel")
-                if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
-                    uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
-                    installer_wahiddl_DEV.installer_wahiddl_DEV_install()
-                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == False:
+                print ("安裝/更新 wahid-dl (Beta)")
+                if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
+                    uninstaller_wahiddl_beta.uninstaller_wahiddl_beta_uninstall()
+                    installer_wahiddl_beta.installer_wahiddl_beta_install()
+                elif checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == False:
                     try:
-                        os.mkdir ('C:\\wahid-dl DEV')
-                        installer_wahiddl_DEV.installer_wahiddl_DEV_install()
+                        os.mkdir ('C:\\wahid-dl (Beta)')
+                        installer_wahiddl_beta.installer_wahiddl_beta_install()
                     except:
                         print ("不支援的平台")
                 print ('--------------------------------------------------')
-                print ("安裝/更新 yt-dlp in wahid-dl Develop Channel")
-                if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
-                    installer_ytdlp.installer_wahiddl_DEV_ytdlp_update()
-                elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
-                    installer_ytdlp.installer_wahiddl_DEV_ytdlp_install()
+                print ("安裝/更新 yt-dlp in wahid-dl (Beta)")
+                if checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == True:
+                    installer_ytdlp.installer_wahiddl_beta_ytdlp_update()
+                elif checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == False:
+                    installer_ytdlp.installer_wahiddl_beta_ytdlp_install()
                 ui.ui_complete()
                 ui.ui_exit()
                 break
             elif userinput == "DEVUNINSTALL":
                 ui.ui_start()
-                print ("解除安裝 wahid-dl Develop Channel")
-                if checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == True:
-                    uninstaller_wahiddl_DEV.uninstaller_wahiddl_DEV_uninstall()
-                elif checking_wahiddl_DEV.checking_wahiddl_DEV_folder_existed() == False:
-                    print ("wahid-dl Develop Channel 已不存在")
+                print ("解除安裝 wahid-dl (Beta)")
+                if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
+                    uninstaller_wahiddl_beta.uninstaller_wahiddl_beta_uninstall()
+                elif checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == False:
+                    print ("wahid-dl (Beta) 已不存在")
                 print ('--------------------------------------------------')
-                print ("解除安裝 yt-dlp in wahid-dl Develop Channel")
-                if checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == True:
-                    uninstaller_ytdlp.uninstaller_wahiddl_DEV_ytdlp_uninstall()
-                elif checking_ytdlp.checking_wahiddl_DEV_ytdlp_existed() == False:
-                    print ("yt-dlp in wahid-dl Develop Channel 已不存在")
+                print ("解除安裝 yt-dlp in wahid-dl (Beta)")
+                if checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == True:
+                    uninstaller_ytdlp.uninstaller_wahiddl_beta_ytdlp_uninstall()
+                elif checking_ytdlp.checking_wahiddl_beta_ytdlp_existed() == False:
+                    print ("yt-dlp in wahid-dl (Beta) 已不存在")
                 ui.ui_complete()
                 ui.ui_exit()
                 break

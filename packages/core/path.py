@@ -4,8 +4,8 @@ def root():
 def wahiddl_folder():
     path = 'C:\\wahid-dl'
     return path
-def wahiddl_DEV_folder():
-    path = 'C:\\wahid-dl DEV'
+def wahiddl_beta_folder():
+    path = 'C:\\wahid-dl (Beta)'
     return path
 def old_ffmpeg_files():
     path = ['C:\\wahid-dl\\ffmpeg.exe', 'C:\\wahid-dl\\ffplay.exe', 'C:\\wahid-dl\\ffprobe.exe']
@@ -19,33 +19,33 @@ def ffmpeg_files():
 def wahiddl_ytdlp():
     path = 'C:\\wahid-dl\\yt-dlp.exe'
     return path
-def wahiddl_DEV_ytdlp():
-    path = 'C:\\wahid-dl DEV\\yt-dlp.exe'
+def wahiddl_beta_ytdlp():
+    path = 'C:\\wahid-dl (Beta)\\yt-dlp.exe'
     return path
 def wahiddl_packages():
     path = 'C:\\wahid-dl\\packages'
     return path
-def wahiddl_DEV_packages():
-    path = 'C:\\wahid-dl DEV\\packages'
+def wahiddl_beta_packages():
+    path = 'C:\\wahid-dl (Beta)\\packages'
     return path
 def wahiddl_bat():
     path = 'C:\\wahid-dl\\bat'
     return path
-def wahiddl_DEV_bat():
-    path = 'C:\\wahid-dl DEV\\bat'
+def wahiddl_beta_bat():
+    path = 'C:\\wahid-dl (Beta)\\bat'
     return path
 def wahiddl_tool():
     path = 'C:\\wahid-dl\\tool'
     return path
-def wahiddl_DEV_tool():
-    path = 'C:\\wahid-dl DEV\\tool'
+def wahiddl_beta_tool():
+    path = 'C:\\wahid-dl (Beta)\\tool'
     return path
 def wahiddl_readme():
     path = 'C:\\wahid-dl\\README.md'
     return path
-def wahiddl_DEV_readme():
-    path = 'C:\\wahid-dl DEV\\README.md'
+def wahiddl_beta_readme():
+    path = 'C:\\wahid-dl (Beta)\\README.md'
     return path
 def wahiddl_url_list():
-    path = 'C:\\wahid-dl DEV\\url_list.txt'
+    path = 'C:\\wahid-dl (Beta)\\url_list.txt'
     return path

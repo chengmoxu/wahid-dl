@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_outline = "[Stable]v6.2.20251227.1-Python"
+version_outline = "(Beta) 7.0.20260216.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
@@ -63,8 +63,8 @@ def DEV_ytdlp_installer_without_packages():
     print ("開始安裝/更新 yt-dlp")
     print ('--------------------------------------------------')
     print ("開始下載最新版本 yt-dlp")
-    os.chdir ("C:\\wahid-dl DEV")
-    yt_dlp_path = "C:\\wahid-dl DEV\\yt-dlp.exe"
+    os.chdir ("C:\\wahid-dl (Beta)")
+    yt_dlp_path = "C:\\wahid-dl (Beta)\\yt-dlp.exe"
     if not os.path.exists (yt_dlp_path):
         print ("yt-dlp不存在，開始下載 yt-dlp")
         os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
@@ -73,7 +73,7 @@ def DEV_ytdlp_installer_without_packages():
         os.system ("yt-dlp -U")
     print ('--------------------------------------------------')
     # yt-dlp Install Checking
-    os.chdir ("C:\\wahid-dl DEV")
+    os.chdir ("C:\\wahid-dl (Beta)")
     if os.path.exists (yt_dlp_path):
         print ("安裝/更新 yt-dlp 完成")
     else:
@@ -193,36 +193,36 @@ def ffmpeg_installer_without_packages():
             break
     while ffmpeg_download_need == "0":
         break
-def wahiddl_DEV_installer_without_packages():
-    if os.path.exists ("C:\\wahid-dl DEV"):
-        os.chdir ("C:\\wahid-dl DEV")
-        if os.path.exists ("C:\\wahid-dl DEV\\packages"):
-            shutil.rmtree("C:\\wahid-dl DEV\\packages")
-    if not os.path.exists ("C:\\wahid-dl DEV"):
-        os.mkdir ("C:\\wahid-dl DEV")
-        os.chdir ("C:\\wahid-dl DEV")
-    os.system ("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/develop")
+def wahiddl_beta_installer_without_packages():
+    if os.path.exists ("C:\\wahid-dl (Beta)"):
+        os.chdir ("C:\\wahid-dl (Beta)")
+        if os.path.exists ("C:\\wahid-dl (Beta)\\packages"):
+            shutil.rmtree("C:\\wahid-dl (Beta)\\packages")
+    if not os.path.exists ("C:\\wahid-dl (Beta)"):
+        os.mkdir ("C:\\wahid-dl (Beta)")
+        os.chdir ("C:\\wahid-dl (Beta)")
+    os.system ("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/beta")
     updates_folder_name = "updates"
     if not os.path.exists (updates_folder_name):
         os.mkdir (updates_folder_name)
         print (f"{updates_folder_name} 更新資料之暫存資料夾已建立")
     elif os.path.exists (updates_folder_name):
         print (f"{updates_folder_name} 更新資料之暫存資料夾已存在")
-    print ("解壓縮 wahid-dl Develop Channel 更新資料")
-    os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl DEV\\updates"')
-    wahiddl_DEV_updatesfiles_folder = "C:\\wahid-dl DEV\\updates\\wahid-dl-develop\\"
-    wahiddl_DEV_folder = "C:\\wahid-dl DEV\\"
-    for item in os.listdir(wahiddl_DEV_updatesfiles_folder):
-        s = os.path.join(wahiddl_DEV_updatesfiles_folder, item)
-        d = os.path.join(wahiddl_DEV_folder, item)
+    print ("解壓縮 wahid-dl (Beta) 更新資料")
+    os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl (Beta)\\updates"')
+    wahiddl_beta_updatesfiles_folder = "C:\\wahid-dl (Beta)\\updates\\wahid-dl-beta\\"
+    wahiddl_beta_folder = "C:\\wahid-dl (Beta)\\"
+    for item in os.listdir(wahiddl_beta_updatesfiles_folder):
+        s = os.path.join(wahiddl_beta_updatesfiles_folder, item)
+        d = os.path.join(wahiddl_beta_folder, item)
         if os.path.isdir(s):
             shutil.copytree(s, d, dirs_exist_ok=True)
         else:
             shutil.copy2(s, d)
-    shutil.rmtree("C:\\wahid-dl DEV\\updates")
-    os.remove("C:\\wahid-dl DEV\\updates.zip")
-    os.remove("C:\\wahid-dl DEV\\.gitignore")
-    os.remove("C:\\wahid-dl DEV\\wahid-dl-colab.ipynb")
+    shutil.rmtree("C:\\wahid-dl (Beta)\\updates")
+    os.remove("C:\\wahid-dl (Beta)\\updates.zip")
+    os.remove("C:\\wahid-dl (Beta)\\.gitignore")
+    os.remove("C:\\wahid-dl (Beta)\\wahid-dl-colab.ipynb")
 def exit():
     print ('--------------------------------------------------')
     print ("即將結束程式")
@@ -238,7 +238,7 @@ if sys.platform == "win32":
             print ("2: 安裝/更新 wahid-dl 主程式")
             print ("3: 安裝/更新 yt-dlp")
             print ("4: 安裝/更新 FFmpeg")
-            print ("DEVINSTALL: 安裝/更新 wahid-dl Develop Channel")
+            print ("DEVINSTALL: 安裝/更新 wahid-dl (Beta)")
             print ("0: 離開程式")
             userinput = input ("請選擇執行項目: ")
             userinput_judge = str.isdigit(userinput)
@@ -269,7 +269,7 @@ if sys.platform == "win32":
                     print ("請重新輸入正確選項！")
             elif userinput_judge == False:
                 if userinput == "DEVINSTALL":
-                    wahiddl_DEV_installer_without_packages()
+                    wahiddl_beta_installer_without_packages()
                     DEV_ytdlp_installer_without_packages()
                     exit()
                     break
@@ -277,7 +277,7 @@ if sys.platform == "win32":
                     print ("請重新輸入正確選項！")
     current_file_path = os.path.abspath(__file__)
     if os.path.exists ("C:\\wahid-dl\\packages"):
-        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl DEV\\wahid-dl Tool.py': #enable or disable this line to control packages mechanism when Debugging
+        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl (Beta)\\wahid-dl Tool.py': #enable or disable this line to control packages mechanism when Debugging
                 wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
                 wahiddl_tool.wahiddl_tool_windows_x64()
         else: #enable or disable this line to control packages mechanism when Debugging

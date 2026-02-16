@@ -6,9 +6,9 @@ def uninstaller_wahiddl_ytdlp_uninstall():
         print ("已刪除 yt-dlp.exe")
     except:
         print ("不存在 yt-dlp.exe")
-def uninstaller_wahiddl_DEV_ytdlp_uninstall():
+def uninstaller_wahiddl_beta_ytdlp_uninstall():
     try:
-        os.remove (path.wahiddl_DEV_ytdlp())
+        os.remove (path.wahiddl_beta_ytdlp())
         print ("已刪除 yt-dlp.exe")
     except:
         print ("不存在 yt-dlp.exe")

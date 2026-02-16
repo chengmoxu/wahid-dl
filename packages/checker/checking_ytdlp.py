@@ -6,10 +6,10 @@ def checking_wahiddl_ytdlp_existed():
         return wahiddl_ytdlp_path.is_file()
     except Exception:
         return False
-def checking_wahiddl_DEV_ytdlp_existed():
+def checking_wahiddl_beta_ytdlp_existed():
     try:
-        wahiddl_DEV_ytdlp_path = Path("C:\\wahid-dl DEV\\yt-dlp.exe")
-        return wahiddl_DEV_ytdlp_path.is_file()
+        wahiddl_beta_ytdlp_path = Path("C:\\wahid-dl (Beta)\\yt-dlp.exe")
+        return wahiddl_beta_ytdlp_path.is_file()
     except Exception:
         return False
 def checking_linux_ytdlp_existed():
