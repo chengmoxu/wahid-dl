@@ -1,6 +1,6 @@
-from packages.function import wahiddl_list
 try:
+    from packages.function import wahiddl_list
     wahiddl_list.main()
 except:
-    print ("不支援的平台")
+    print ("不支援的平台或wahid-dl安裝不完整")
 input()
