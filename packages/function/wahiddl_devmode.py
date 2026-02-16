@@ -1,7 +1,7 @@
 import os
 import sys
 from packages.core import ui
-from packages.core import version_info
+from packages.core import info
 from packages.core import path #unified path function
 def devmode():
     print(ui.ASCII_art())
@@ -33,7 +33,7 @@ def devmode():
                 ui.ui_complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print ("Channel: " + version_info.vi_detail()[0] + "\n" + "Version Number: " + version_info.vi_detail()[1] + "\n" + "Build Number: " + version_info.vi_detail()[2] + "\n" + "Language: " + version_info.vi_detail()[3])
+                print ("Channel: " + info.version_detail()[0] + "\n" + "Version Number: " + info.version_detail()[1] + "\n" + "Build Number: " + info.version_detail()[2] + "\n" + "Programming Language: " + info.version_detail()[3])
                 ui.ui_complete()
                 mode = ""
             else:

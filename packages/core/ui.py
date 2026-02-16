@@ -1,15 +1,15 @@
-from packages.core import version_info
+from packages.core import info
 #ASCII art
 def ASCII_art():
-    return("      ###       ###        ###         ###     ###         #######      ########             #########       ###\n"
+    return("      ###       ###        ###         ###     ###     ###########      ########             #########       ###\n"
            "     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###\n"
            "    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###\n"
            "   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>\n"
            "  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###\n"
            " #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###\n"
-           "####      ##     ###      ##     ###     ###     #######          #########            #########       ###")
+           "####      ##     ###      ##     ###     ###     ###########      #########            #########       ###")
 #Title with version info
-vi=" [" + version_info.vi_platform() + "] [" + version_info.vi_detail()[0] + "]v" + version_info.vi_detail()[1] + "." + version_info.vi_detail()[2] + "-" + version_info.vi_detail()[3]
+vi=" [" + info.platform() + "] (" + info.version_detail()[0] + ") " + info.version_detail()[1] + "." + info.version_detail()[2] + "-" + info.version_detail()[3]
 def ui_title_wahiddl():
     title_wahiddl = "wahid-dl" + vi
     return title_wahiddl
