@@ -238,7 +238,7 @@ if sys.platform == "win32":
             print ("2: 安裝/更新 wahid-dl 主程式")
             print ("3: 安裝/更新 yt-dlp")
             print ("4: 安裝/更新 FFmpeg")
-            print ("DEVINSTALL: 安裝/更新 wahid-dl (Beta)")
+            print ("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
             print ("0: 離開程式")
             userinput = input ("請選擇執行項目: ")
             userinput_judge = str.isdigit(userinput)
@@ -268,7 +268,7 @@ if sys.platform == "win32":
                 else:
                     print ("請重新輸入正確選項！")
             elif userinput_judge == False:
-                if userinput == "DEVINSTALL":
+                if userinput == "BETAINSTALL":
                     wahiddl_beta_installer_without_packages()
                     DEV_ytdlp_installer_without_packages()
                     exit()

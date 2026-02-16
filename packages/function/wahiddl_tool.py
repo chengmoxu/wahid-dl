@@ -26,8 +26,8 @@ def wahiddl_tool_windows_x64():
         print ("6: 解除安裝 wahid-dl 主程式")
         print ("7: 解除安裝 yt-dlp")
         print ("8: 解除安裝 FFmpeg")
-        print ("DEVINSTALL: 安裝/更新 wahid-dl (Beta)")
-        print ("DEVUNINSTALL: 解除安裝 wahid-dl (Beta)")
+        print ("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
+        print ("BETAUNINSTALL: 解除安裝 wahid-dl (Beta)")
         print ("0: 離開程式")
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
@@ -173,7 +173,7 @@ def wahiddl_tool_windows_x64():
             else:
                 print ("請重新輸入正確選項！")
         elif userinput_judge == False:
-            if userinput == "DEVINSTALL":
+            if userinput == "BETAINSTALL":
                 ui.ui_start()
                 print ("安裝/更新 wahid-dl (Beta)")
                 if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
@@ -194,7 +194,7 @@ def wahiddl_tool_windows_x64():
                 ui.ui_complete()
                 ui.ui_exit()
                 break
-            elif userinput == "DEVUNINSTALL":
+            elif userinput == "BETAUNINSTALL":
                 ui.ui_start()
                 print ("解除安裝 wahid-dl (Beta)")
                 if checking_wahiddl_beta.checking_wahiddl_beta_folder_existed() == True:
