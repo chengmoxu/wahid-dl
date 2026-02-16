@@ -12,7 +12,7 @@ from packages.uninstaller import uninstaller_wahiddl_beta
 from packages.uninstaller import uninstaller_ytdlp
 from packages.uninstaller import uninstaller_ffmpeg
 from packages.core import ui
-def wahiddl_tool_windows_x64():
+def main():
     print (ui.ASCII_art())
     print (ui.title_wahiddl_tool())
     print ('--------------------------------------------------')
