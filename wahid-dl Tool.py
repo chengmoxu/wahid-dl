@@ -58,7 +58,7 @@ def ytdlp_installer_without_packages():
         print ("安裝/更新 yt-dlp 完成")
     else:
         print ("安裝/更新 yt-dlp 失敗")
-def DEV_ytdlp_installer_without_packages():
+def beta_ytdlp_installer_without_packages():
     print ('--------------------------------------------------')
     print ("開始安裝/更新 yt-dlp")
     print ('--------------------------------------------------')
@@ -115,7 +115,7 @@ def ffmpeg_installer_without_packages():
             # 檢查 FFmpeg 版本
             # FFmpeg Version Number，變動需要更新
             ffmpeg_exact_version_number = "8.0.1"
-            ffmpeg_version_org_output = subprocess.getoutput ("ffmpeg -version")
+            ffmpeg_version_org_output = subprocess.getoutput ("cd C:\\FFmpeg & ffmpeg -version")
             ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
             if ffmpeg_version_detail:
                 ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
@@ -158,9 +158,6 @@ def ffmpeg_installer_without_packages():
         ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
         for ffmpeg_exe_file in ffmpeg_exe_files:
             shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
-        # FFmpeg系統環境變數設定
-        #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"')
-        #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
         ffmpeg_updates_file_path = "C:\\FFmpeg\\ffmpeg.zip"
         if os.path.isfile (ffmpeg_updates_file_path) == True:
             os.remove (ffmpeg_updates_file_path)
@@ -223,98 +220,67 @@ def wahiddl_beta_installer_without_packages():
     os.remove("C:\\wahid-dl (Beta)\\updates.zip")
     os.remove("C:\\wahid-dl (Beta)\\.gitignore")
     os.remove("C:\\wahid-dl (Beta)\\wahid-dl-colab.ipynb")
+def main():
+    print ("wahid-dl Tool Without Packages [Windows]")
+    print (version_outline)
+    mode = ""
+    while mode == "":
+        print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
+        print ("2: 安裝/更新 wahid-dl 主程式")
+        print ("3: 安裝/更新 yt-dlp")
+        print ("4: 安裝/更新 FFmpeg")
+        print ("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
+        print ("0: 離開程式")
+        userinput = input ("請選擇執行項目: ")
+        userinput_judge = str.isdigit(userinput)
+        if userinput_judge == True: 
+            if userinput == "0":
+                exit()
+                break
+            elif userinput == "1":
+                print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
+                wahiddl_installer_without_packages()
+                ytdlp_installer_without_packages()
+                ffmpeg_installer_without_packages()
+                exit()
+                break
+            elif userinput == "2":
+                wahiddl_installer_without_packages()
+                exit()
+                break
+            elif userinput == "3":
+                ytdlp_installer_without_packages()
+                exit()
+                break
+            elif userinput == "4":
+                ffmpeg_installer_without_packages()
+                exit()
+                break
+            else:
+                print ("請重新輸入正確選項！")
+        elif userinput_judge == False:
+            if userinput == "BETAINSTALL":
+                wahiddl_beta_installer_without_packages()
+                beta_ytdlp_installer_without_packages()
+                exit()
+                break
+            else:
+                print ("請重新輸入正確選項！")
 def exit():
     print ('--------------------------------------------------')
-    print ("即將結束程式")
+    print ("--------------- 請按下 Enter 鍵結束 ---------------")
     print ('--------------------------------------------------')
 
-if sys.platform == "win32":
-    def main():
-        print ("wahid-dl Tool Without Packages [Windows]")
-        print (version_outline)
-        mode = ""
-        while mode == "":
-            print ("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
-            print ("2: 安裝/更新 wahid-dl 主程式")
-            print ("3: 安裝/更新 yt-dlp")
-            print ("4: 安裝/更新 FFmpeg")
-            print ("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
-            print ("0: 離開程式")
-            userinput = input ("請選擇執行項目: ")
-            userinput_judge = str.isdigit(userinput)
-            if userinput_judge == True: 
-                if userinput == "0":
-                    exit()
-                    break
-                elif userinput == "1":
-                    print ("完整安裝/更新 wahid-dl 及附屬依賴工具")
-                    wahiddl_installer_without_packages()
-                    ytdlp_installer_without_packages()
-                    ffmpeg_installer_without_packages()
-                    exit()
-                    break
-                elif userinput == "2":
-                    wahiddl_installer_without_packages()
-                    exit()
-                    break
-                elif userinput == "3":
-                    ytdlp_installer_without_packages()
-                    exit()
-                    break
-                elif userinput == "4":
-                    ffmpeg_installer_without_packages()
-                    exit()
-                    break
-                else:
-                    print ("請重新輸入正確選項！")
-            elif userinput_judge == False:
-                if userinput == "BETAINSTALL":
-                    wahiddl_beta_installer_without_packages()
-                    DEV_ytdlp_installer_without_packages()
-                    exit()
-                    break
-                else:
-                    print ("請重新輸入正確選項！")
-    current_file_path = os.path.abspath(__file__)
-    if os.path.exists ("C:\\wahid-dl\\packages"):
-        if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl (Beta)\\wahid-dl Tool.py': #enable or disable this line to control packages mechanism when Debugging
-                wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
-                wahiddl_tool.wahiddl_tool_windows_x64()
-        else: #enable or disable this line to control packages mechanism when Debugging
-            main() #enable or disable this line to control packages mechanism when Debugging
+current_file_path = os.path.abspath(__file__)
+if current_file_path == 'C:\\wahid-dl\\wahid-dl Tool.py' or current_file_path == 'C:\\wahid-dl (Beta)\\wahid-dl Tool.py':
+    if os.path.exists ("C:\\wahid-dl\\packages") or os.path.exists ("C:\\wahid-dl (Beta)\\packages"):
+        try:
+            wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
+            wahiddl_tool.main()
+        except:
+            main()
     else:
-        main()
-    input ()
-elif sys.platform == "linux":
-    if not os.path.exists ("$HOME/wahid-dl/packages"):
-        print ("wahid-dl Tool Without Packages [Linux]")
-        print (version_outline)
-        mode = ""
-        while mode == "":
-            print ("Enter 'START' to start the installer")
-            print ("Or enter '0' to end this program\n")
-            userinput = input ("Please enter:")
-            userinput_judge = str.isdigit(userinput)
-            if userinput_judge == True: 
-                if  userinput == "0":
-                    mode = "0"
-                else:
-                    print ("Please re-enter the correct options!")
-            elif userinput_judge == False:
-                if userinput.startswith("START") == True:
-                    print ("Start the installer")
-                    #os.system ('sudo apt install pipx')
-                    os.system ('sudo apt install opus-tools')
-                    os.system ('sudo apt install ffmpeg')
-                    #os.system ('pipx ensurepath')
-                    #os.system ('pipx install yt-dlp --force')
-                else:
-                    print ("Please re-enter the correct options!")
-        while mode == "0":
-            exit()
-            break
-    input ()
-elif sys.platform == "darwin":
-    print ("暫時不支援")
+        print ("不支援的平台")
 else:
-    print ("不支援的平台")
+    main()
+input()
