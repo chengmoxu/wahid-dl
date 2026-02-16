@@ -27,7 +27,7 @@ def files():
     return (ffmpeg_exe_existed, ffplay_exe_existed, ffprobe_exe_existed)
 def version():
     ffmpeg_exact_version_number = '8.0.1'
-    ffmpeg_version_org_output = subprocess.getoutput ('ffmpeg -version')
+    ffmpeg_version_org_output = subprocess.getoutput ('cd C:\\FFmpeg & ffmpeg -version')
     ffmpeg_version_detail = re.search(r'ffmpeg version (\d+\.\d+(?:\.\d+)?)', ffmpeg_version_org_output)
     if ffmpeg_version_detail:
         ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
