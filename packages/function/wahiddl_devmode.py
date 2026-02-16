@@ -5,7 +5,7 @@ from packages.core import info
 from packages.core import path #unified path function
 def devmode():
     print(ui.ASCII_art())
-    print(ui.ui_title_wahiddl_devmode())
+    print(ui.title_wahiddl_devmode())
     print ('--------------------------------------------------')
     mode = ""
     while mode == "":

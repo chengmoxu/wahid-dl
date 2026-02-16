@@ -1,7 +1,7 @@
 import os
 import glob
 import shutil
-def uninstaller_wahiddl_uninstall():
+def uninstall():
     os.chdir ("C:\\wahid-dl")
     wahiddl_old_bat_files = glob.glob ("*.bat")
     for bat_file in wahiddl_old_bat_files:

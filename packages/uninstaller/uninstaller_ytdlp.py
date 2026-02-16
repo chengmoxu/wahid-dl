@@ -1,12 +1,12 @@
 import os
 from packages.core import path #unified path function
-def uninstaller_wahiddl_ytdlp_uninstall():
+def uninstall():
     try:
         os.remove (path.wahiddl_ytdlp())
         print ("已刪除 yt-dlp.exe")
     except:
         print ("不存在 yt-dlp.exe")
-def uninstaller_wahiddl_beta_ytdlp_uninstall():
+def beta_uninstall():
     try:
         os.remove (path.wahiddl_beta_ytdlp())
         print ("已刪除 yt-dlp.exe")

@@ -2,7 +2,7 @@ import os
 import glob
 import shutil
 from packages.core import path #unified path function
-def uninstaller_wahiddl_beta_uninstall():
+def uninstall():
     os.chdir (path.wahiddl_beta_folder())
     wahiddl_beta_old_bat_files = glob.glob ("*.bat")
     for bat_file in wahiddl_beta_old_bat_files:

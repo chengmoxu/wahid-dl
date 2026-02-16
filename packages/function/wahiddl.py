@@ -3,7 +3,7 @@ from packages.core import ui
 from packages.core import path #unified path function
 def main():
     print(ui.ASCII_art()) #unified UI function: ASCII art
-    print(ui.ui_title_wahiddl()) #unified UI function: function title
+    print(ui.title_wahiddl()) #unified UI function: function title
     print ('--------------------------------------------------')
     mode = ""
     while mode == "":

@@ -3,7 +3,7 @@ import glob
 import shutil
 from packages.core import path #unified path function
 from packages.core import url #unified url function
-def installer_ffmpeg():
+def v2():
     os.chdir (path.ffmpeg_folder())
     os.system ('curl -L -o ffmpeg.zip ' + url.ffmpeg())
     ffmpegunzip_folder_name = 'FFmpeg-unzip'

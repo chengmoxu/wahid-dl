@@ -2,7 +2,7 @@ import os
 import shutil
 from packages.core import path #unified path function
 from packages.core import url #unified url function
-def installer_wahiddl_beta_install():
+def install():
     os.chdir (path.wahiddl_beta_folder())
     os.system ('curl -L -o updates.zip ' + url.wahiddl_beta_branch())
     updates_folder_name = 'updates'
