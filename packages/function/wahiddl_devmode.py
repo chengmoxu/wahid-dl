@@ -5,23 +5,23 @@ from packages.core import info
 from packages.core import path #unified path function
 def devmode():
     print(ui.ASCII_art())
-    print(ui.title_wahiddl_devmode())
-    print ('--------------------------------------------------')
+    print(ui.detail_wahiddl_devmode())
+    print(ui.divider())
     mode = ""
     while mode == "":
-        print ("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
-        print ("或者，請輸入0結束程式\n")
+        print("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
+        print("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True:
             if  userinput == "0":
                 mode = "0"
             else:
-                print ("請重新輸入正確選項！")
+                print("請重新輸入正確選項！")
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("yt-dlp") == True:
-                ui.ui_start()
+                ui.start()
                 if sys.platform == "win32":
                     os.chdir (path.wahiddl_folder())
                 elif sys.platform == "linux":
@@ -30,18 +30,18 @@ def devmode():
                     continue
                 command = str (('yt-dlp ') + userinput)
                 os.system (command)
-                ui.ui_complete()
+                ui.complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
-                print ("Channel: " + info.version_detail()[0] + "\n" + "Version Number: " + info.version_detail()[1] + "\n" + "Build Number: " + info.version_detail()[2] + "\n" + "Programming Language: " + info.version_detail()[3])
-                ui.ui_complete()
+                print("Channel: " + info.version_detail()[0] + "\n" + "Version Number: " + info.version_detail()[1] + "\n" + "Build Number: " + info.version_detail()[2] + "\n" + "Programming Language: " + info.version_detail()[3])
+                ui.complete()
                 mode = ""
             else:
-                print ("請重新輸入正確命令！")
+                print("請重新輸入正確命令！")
                 mode = ""    
         else:
-            print ("請重新輸入正確命令！")
+            print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        ui.ui_exit()
+        ui.exit()
         break

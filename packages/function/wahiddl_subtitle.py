@@ -3,39 +3,39 @@ from packages.core import ui
 from packages.core import path #unified path function
 def main():
     print(ui.ASCII_art())
-    print(ui.title_wahiddl_subtitle())
-    print ('--------------------------------------------------')
+    print(ui.detail_wahiddl_subtitle())
+    print(ui.divider())
     mode = ""
     while mode == "":
-        print ("請輸入欲下載影片字幕之網址")
-        print ("或者，請輸入0結束程式\n")
+        print("請輸入欲下載影片字幕之網址")
+        print("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True:
             if  userinput == "0":
                 mode = "0"
             else:
-                print ("請重新輸入正確選項！")
+                print("請重新輸入正確選項！")
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
-                ui.ui_start()
+                ui.start()
                 os.chdir (path.wahiddl_folder())
                 testcommand = str (('yt-dlp --list-subs ') + userinput)
                 os.system (testcommand)
-                print ('請記下您想要下載的影片字幕Language，並於下方輸入')
-                print ('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
+                print('請記下您想要下載的影片字幕Language，並於下方輸入')
+                print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_sub_id = str(input('請輸入影片字幕Language:'))
                 downloadcommand = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
                 os.system (downloadcommand)
-                ui.ui_complete()
+                ui.complete()
             elif userinput.startswith("http") == False:
-                print ("請重新輸入正確網址！")
+                print("請重新輸入正確網址！")
             else:
-                print ("請重新輸入正確網址！") 
+                print("請重新輸入正確網址！") 
         else:
-            print ("請重新輸入正確命令！")
+            print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        ui.ui_exit()
+        ui.exit()
         break
