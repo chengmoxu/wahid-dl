@@ -9,9 +9,9 @@ def v2():
     ffmpegunzip_folder_name = 'FFmpeg-unzip'
     try:
         os.mkdir (ffmpegunzip_folder_name)
-        print (f"'{ffmpegunzip_folder_name}' 資料夾已建立")
+        print(f"'{ffmpegunzip_folder_name}' 資料夾已建立")
     except:
-        print (f"'{ffmpegunzip_folder_name}' 資料夾已存在")
+        print(f"'{ffmpegunzip_folder_name}' 資料夾已存在")
     os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
     ffmpeg_dst_folder = path.ffmpeg_folder()
@@ -21,11 +21,11 @@ def v2():
     ffmpeg_updates_file_path = 'C:\\FFmpeg\\ffmpeg.zip'
     try:
         os.remove (ffmpeg_updates_file_path)
-        print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
+        print(f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
     except:
-        print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
+        print(f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
     try:
         shutil.rmtree (ffmpegunzip_folder_name)
-        print (f"更新資料夾 '{ffmpegunzip_folder_name}' 已刪除")
+        print(f"更新資料夾 '{ffmpegunzip_folder_name}' 已刪除")
     except:
-        print (f"更新資料 '{ffmpegunzip_folder_name}' 已不存在")
+        print(f"更新資料 '{ffmpegunzip_folder_name}' 已不存在")

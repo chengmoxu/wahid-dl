@@ -32,7 +32,7 @@ def version():
     if ffmpeg_version_detail:
         ffmpeg_check_version = str(ffmpeg_version_detail.group(1))
     if ffmpeg_check_version == ffmpeg_exact_version_number:
-        print ("FFmpeg 已是v" + ffmpeg_exact_version_number + "，不需要更新")
+        print("FFmpeg 已是v" + ffmpeg_exact_version_number + "，不需要更新")
         ffmpeg_download_need = False
         return ffmpeg_download_need
     else:
