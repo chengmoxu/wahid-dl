@@ -3,7 +3,7 @@ def wahiddl():
 def wahiddl_FCT():
     return('yt-dlp -F ')
 def wahiddl_subtitle():
-    return('yt-dlp --list-subs ')
+    return('yt-dlp --list-subs ','yt-dlp -c --sub-lang ',' --write-subs --skip-download ')
 def wahiddl_QS():
     return('yt-dlp -F ','yt-dlp -c -f "','+bestaudio[ext=m4a]" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ')
 def wahiddl_live():
