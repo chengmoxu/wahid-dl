@@ -6,7 +6,7 @@ import glob
 import re
 import importlib
 
-version_detail = "(Alpha) 7.0.20260217.1-Python"
+version_detail = "(Alpha) 7.0.20260218.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
