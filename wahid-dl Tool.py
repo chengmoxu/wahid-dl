@@ -231,6 +231,7 @@ def main():
         print("4: 安裝/更新 FFmpeg")
         print("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
         print("0: 離開程式")
+        print('==================================================')
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
@@ -268,12 +269,13 @@ def main():
                 print("請重新輸入正確選項！")
 def exit():
     print('==================================================')
-    print('========= 請 按 下 輸 入 鍵 以 離 開 程 式 =========')
+    print('======== 請 按 下 輸 入 鍵 以 離 開 程 式 ========')
     print('==================================================')
+    input ()
 
 try:
     wahiddl_tool = importlib.import_module("packages.function.wahiddl_tool")
     wahiddl_tool.main()
 except:
     main()
-input ()
+exit()

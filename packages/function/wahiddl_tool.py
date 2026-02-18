@@ -29,6 +29,7 @@ def main():
         print("BETAINSTALL: 安裝/更新 wahid-dl (Beta)")
         print("BETAUNINSTALL: 解除安裝 wahid-dl (Beta)")
         print("0: 離開程式")
+        print(ui.divider())
         userinput = input ("請選擇執行項目: ")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
