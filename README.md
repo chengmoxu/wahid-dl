@@ -8,7 +8,7 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux Stable Version Number: 7.0.20260218.2
+* For Windows* Version Number: 7.0.20260218.2
 > branch: Renamed "Develop" to "Beta"  
 > branch: Added branch "Alpha"  
 > feat: Changed function name  
@@ -21,8 +21,9 @@ Making video and audio download easily
 > refactor: Restructured function  
 > perf: Removed unused code  
 > style: Code cleanup  
+> *The Linux version is currently in development.  
 
-* For Google Colab Stable Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
+* For Google Colab Stable Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
 > fix: Changed the yt-dlp installation method to avoid outdated versions  
 > style: Description correction  
