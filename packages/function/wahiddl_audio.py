@@ -1,6 +1,7 @@
 import os
 from packages.core import ui
 from packages.core import path #unified path function
+from packages.core import command
 def main():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_audio())
@@ -9,7 +10,7 @@ def main():
         print(ui.divider())
         print("請輸入欲下載音訊之網址")
         print("或者，請輸入0結束程式\n")
-        userinput = input ("請輸入：")
+        userinput = input("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True:
             if  userinput == "0":
@@ -20,9 +21,9 @@ def main():
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
                 ui.start()
-                os.chdir (path.wahiddl_folder())
-                downloadcommand = str (('yt-dlp -c --throttled-rate 100K --extract-audio -f "bestaudio[ext=m4a]" --ffmpeg-location "C:\\FFmpeg" ') + userinput)
-                os.system (downloadcommand)
+                os.chdir(path.wahiddl_folder())
+                downloadcommand = str(command.wahiddl_audio() + userinput)
+                os.system(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")

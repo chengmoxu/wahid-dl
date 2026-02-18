@@ -27,7 +27,7 @@ def main():
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_quality_id = str(input('請輸入影片畫質ID:'))
                 downloadcommand = str (('yt-dlp -c -f "') + video_quality_id + ('+bestaudio[ext=m4a]" --throttled-rate 100K --merge-output-format mp4 --ffmpeg-location "C:\\FFmpeg" ') + userinput)
-                os.system (downloadcommand)
+                os.system(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")

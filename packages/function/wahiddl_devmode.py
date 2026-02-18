@@ -29,7 +29,7 @@ def devmode():
                 else:
                     continue
                 command = str (('yt-dlp ') + userinput)
-                os.system (command)
+                os.system(command)
                 ui.complete()
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:

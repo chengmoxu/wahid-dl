@@ -23,7 +23,7 @@ def main():
                 ui.start()
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = str(command.wahiddl() + userinput)
-                os.system (downloadcommand)
+                os.system(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")

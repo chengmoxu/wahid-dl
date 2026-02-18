@@ -1,6 +1,7 @@
 import os
 from packages.core import ui
 from packages.core import path #unified path function
+from packages.core import command
 def main():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_subtitle())
@@ -9,7 +10,7 @@ def main():
         print(ui.divider())
         print("請輸入欲下載影片字幕之網址")
         print("或者，請輸入0結束程式\n")
-        userinput = input ("請輸入：")
+        userinput = input("請輸入：")
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True:
             if  userinput == "0":
@@ -20,14 +21,14 @@ def main():
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
                 ui.start()
-                os.chdir (path.wahiddl_folder())
-                testcommand = str (('yt-dlp --list-subs ') + userinput)
+                os.chdir(path.wahiddl_folder())
+                testcommand = str(command.wahiddl_subtitle() + userinput)
                 os.system (testcommand)
                 print('請記下您想要下載的影片字幕Language，並於下方輸入')
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_sub_id = str(input('請輸入影片字幕Language:'))
                 downloadcommand = str (('yt-dlp -c --sub-lang ') + video_sub_id + (' --write-subs --skip-download ') + userinput)
-                os.system (downloadcommand)
+                os.system(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
