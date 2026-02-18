@@ -54,5 +54,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        ui.exit()
+        print(ui.exit())
         break
