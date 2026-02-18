@@ -4,9 +4,9 @@ from packages.core import path #unified path function
 def main():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_list())
-    print(ui.divider())
     mode = ""
     while mode == "":
+        print(ui.divider())
         print("開始請輸入1")
         print("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")

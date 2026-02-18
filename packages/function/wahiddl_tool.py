@@ -15,9 +15,9 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_tool())
-    print(ui.divider())
     mode = "start"
     while mode == "start":
+        print(ui.divider())
         print("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
         print("2: 安裝/更新 wahid-dl 主程式")
         print("3: 安裝/更新 yt-dlp")

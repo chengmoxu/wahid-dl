@@ -6,9 +6,9 @@ from packages.core import path #unified path function
 def devmode():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_devmode())
-    print(ui.divider())
     mode = ""
     while mode == "":
+        print(ui.divider())
         print("wahid-dl Dev Mode，請直接輸入wahid-dl命令或是yt-dlp命令")
         print("或者，請輸入0結束程式\n")
         userinput = input ("請輸入：")
