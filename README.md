@@ -10,18 +10,19 @@
 ```
 Making video and audio download easily
 
-* For Windows/Linux Stable Version Number: 7.0.20260217.1
-
-> branch: Renamed "Develop" to "Beta"
-> branch: Added branch "Alpha"
-> feat: Changed function name
-> feat: Simplified function name
-> feat: Changed function name and added unified UI
-> fix: Fixed FFmpeg version checking
-> fix: Fixed packages judgment
-> refactor: Restructured function
-> perf: Removed unused code
-> style: Code cleanup
+* For Windows/Linux Stable Version Number: 7.0.20260218.2
+> branch: Renamed "Develop" to "Beta"  
+> branch: Added branch "Alpha"  
+> feat: Changed function name  
+> feat: Simplified function name  
+> feat: Changed function name and added unified UI  
+> feat: Call the unified command  
+> fix: Fixed FFmpeg version checking  
+> fix: Fixed packages judgment  
+> fix: Fixed UI  
+> refactor: Restructured function  
+> perf: Removed unused code  
+> style: Code cleanup  
 
 * For Google Colab Stable Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
