@@ -21,13 +21,13 @@ def main():
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
                 ui.start()
-                os.chdir (path.wahiddl_folder())
+                os.chdir(path.wahiddl_folder())
                 testcommand = str (('yt-dlp -F ') + userinput)
-                os.system (testcommand)
+                os.system(testcommand)
                 print('請記下您想要下載的影片畫質ID，並於下方輸入')
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 說明文件')
                 video_quality_id = str(input('請輸入影片畫質ID:'))
-                downloadcommand = str (command.wahiddl_QS()[0] + video_quality_id + command.wahiddl_QS()[1] + userinput)
+                downloadcommand = str(command.wahiddl_QS()[0] + video_quality_id + command.wahiddl_QS()[1] + userinput)
                 os.system(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:

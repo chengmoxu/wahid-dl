@@ -10,13 +10,13 @@ version_detail = "(Alpha) 7.0.20260218.1-Python"
 
 def wahiddl_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl"):
-        os.chdir ("C:\\wahid-dl")
+        os.chdir("C:\\wahid-dl")
         if os.path.exists ("C:\\wahid-dl\\packages"):
             shutil.rmtree("C:\\wahid-dl\\packages")
     if not os.path.exists ("C:\\wahid-dl"):
         os.mkdir ("C:\\wahid-dl")
-        os.chdir ("C:\\wahid-dl")
-    os.system ("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main")
+        os.chdir("C:\\wahid-dl")
+    os.system("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/main")
     updates_folder_name = "updates"
     if not os.path.exists (updates_folder_name):
         os.mkdir (updates_folder_name)
@@ -24,7 +24,7 @@ def wahiddl_installer_without_packages():
     elif os.path.exists (updates_folder_name):
         print(f"{updates_folder_name} 更新資料之暫存資料夾已存在")
     print("解壓縮 wahid-dl 更新資料")
-    os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl\\updates"')
+    os.system('tar -zxvf updates.zip -C "C:\\wahid-dl\\updates"')
     wahiddl_updatesfiles_folder = "C:\\wahid-dl\\updates\\wahid-dl-main\\"
     wahiddl_folder = "C:\\wahid-dl\\"
     for item in os.listdir(wahiddl_updatesfiles_folder):
@@ -43,17 +43,17 @@ def ytdlp_installer_without_packages():
     print("開始安裝/更新 yt-dlp")
     print('==================================================')
     print("開始下載最新版本 yt-dlp")
-    os.chdir ("C:\\wahid-dl")
+    os.chdir("C:\\wahid-dl")
     yt_dlp_path = "C:\\wahid-dl\\yt-dlp.exe"
     if not os.path.exists (yt_dlp_path):
         print("yt-dlp不存在，開始下載 yt-dlp")
-        os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
+        os.system("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
     elif os.path.exists (yt_dlp_path):
         print("yt-dlp已存在，開始更新 yt-dlp")
-        os.system ("yt-dlp -U")
+        os.system("yt-dlp -U")
     print('==================================================')
     # yt-dlp Install Checking
-    os.chdir ("C:\\wahid-dl")
+    os.chdir("C:\\wahid-dl")
     if os.path.exists (yt_dlp_path):
         print("安裝/更新 yt-dlp 完成")
     else:
@@ -63,17 +63,17 @@ def beta_ytdlp_installer_without_packages():
     print("開始安裝/更新 yt-dlp")
     print('==================================================')
     print("開始下載最新版本 yt-dlp")
-    os.chdir ("C:\\wahid-dl (Beta)")
+    os.chdir("C:\\wahid-dl (Beta)")
     yt_dlp_path = "C:\\wahid-dl (Beta)\\yt-dlp.exe"
     if not os.path.exists (yt_dlp_path):
         print("yt-dlp不存在，開始下載 yt-dlp")
-        os.system ("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
+        os.system("curl -L -o yt-dlp.exe https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe")
     elif os.path.exists (yt_dlp_path):
         print("yt-dlp已存在，開始更新 yt-dlp")
-        os.system ("yt-dlp -U")
+        os.system("yt-dlp -U")
     print('==================================================')
     # yt-dlp Install Checking
-    os.chdir ("C:\\wahid-dl (Beta)")
+    os.chdir("C:\\wahid-dl (Beta)")
     if os.path.exists (yt_dlp_path):
         print("安裝/更新 yt-dlp 完成")
     else:
@@ -82,7 +82,7 @@ def ffmpeg_installer_without_packages():
     print('==================================================')
     print("開始安裝/更新 FFmpeg")
     print('==================================================')
-    os.chdir ("C:\\wahid-dl")
+    os.chdir("C:\\wahid-dl")
     # 移除舊有ffmpeg安裝方式之檔案
     # 移除舊式FFmpeg安裝之舊版
     try:
@@ -101,7 +101,7 @@ def ffmpeg_installer_without_packages():
     except:
         print("已不存在舊式舊版 ffprobe.exe")
     # 新式FFmpeg安裝，包括系統環境變數設定
-    os.chdir ("C:\\")
+    os.chdir("C:\\")
     # 移除新式FFmpeg安裝之舊版
     ffmpeg_folder_name = "FFmpeg"
     ffmpeg_download_need = ""
@@ -142,16 +142,16 @@ def ffmpeg_installer_without_packages():
                 ffmpeg_download_need = "1"
     while ffmpeg_download_need == "1":
         print("開始下載 FFmpeg")
-        os.chdir ("C:\\FFmpeg")
+        os.chdir("C:\\FFmpeg")
         # FFmpeg Version Number，變動需要更新
-        os.system ("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/8.0.1/ffmpeg-8.0.1-full_build.zip")
+        os.system("curl -L -o ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/8.0.1/ffmpeg-8.0.1-full_build.zip")
         FFmpegunzip_folder_name = "FFmpeg-unzip"
         if not os.path.exists (FFmpegunzip_folder_name):
             os.mkdir (FFmpegunzip_folder_name)
             print(f"'{FFmpegunzip_folder_name}' 資料夾已建立")
         else:
             print(f"'{FFmpegunzip_folder_name}' 資料夾已存在")
-        os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
+        os.system('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
         # FFmpeg Version Number，變動需要更新
         ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
         ffmpeg_dst_folder = "C:\\FFmpeg\\"
@@ -169,7 +169,7 @@ def ffmpeg_installer_without_packages():
             shutil.rmtree (ffmpeg_unzip_folder_path)
         print('==================================================')
         # FFmpeg Installation Check
-        os.chdir ("C:\\FFmpeg\\")
+        os.chdir("C:\\FFmpeg\\")
         if os.path.isfile ("C:\\FFmpeg\\ffmpeg.exe") == True:
             ffmpeg_exist = "1"
         else: 
@@ -192,13 +192,13 @@ def ffmpeg_installer_without_packages():
         break
 def wahiddl_beta_installer_without_packages():
     if os.path.exists ("C:\\wahid-dl (Beta)"):
-        os.chdir ("C:\\wahid-dl (Beta)")
+        os.chdir("C:\\wahid-dl (Beta)")
         if os.path.exists ("C:\\wahid-dl (Beta)\\packages"):
             shutil.rmtree("C:\\wahid-dl (Beta)\\packages")
     if not os.path.exists ("C:\\wahid-dl (Beta)"):
         os.mkdir ("C:\\wahid-dl (Beta)")
-        os.chdir ("C:\\wahid-dl (Beta)")
-    os.system ("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/beta")
+        os.chdir("C:\\wahid-dl (Beta)")
+    os.system("curl -L -o updates.zip https://codeload.github.com/chengmoxu/wahid-dl/zip/refs/heads/beta")
     updates_folder_name = "updates"
     if not os.path.exists (updates_folder_name):
         os.mkdir (updates_folder_name)
@@ -206,7 +206,7 @@ def wahiddl_beta_installer_without_packages():
     elif os.path.exists (updates_folder_name):
         print(f"{updates_folder_name} 更新資料之暫存資料夾已存在")
     print("解壓縮 wahid-dl (Beta) 更新資料")
-    os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl (Beta)\\updates"')
+    os.system('tar -zxvf updates.zip -C "C:\\wahid-dl (Beta)\\updates"')
     wahiddl_beta_updatesfiles_folder = "C:\\wahid-dl (Beta)\\updates\\wahid-dl-beta\\"
     wahiddl_beta_folder = "C:\\wahid-dl (Beta)\\"
     for item in os.listdir(wahiddl_beta_updatesfiles_folder):

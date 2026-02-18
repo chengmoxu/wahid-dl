@@ -23,9 +23,9 @@ def devmode():
             if userinput.startswith("yt-dlp") == True:
                 ui.start()
                 if sys.platform == "win32":
-                    os.chdir (path.wahiddl_folder())
+                    os.chdir(path.wahiddl_folder())
                 elif sys.platform == "linux":
-                    os.chdir ('$HOME/wahid-dl')
+                    os.chdir('$HOME/wahid-dl')
                 else:
                     continue
                 command = str (('yt-dlp ') + userinput)

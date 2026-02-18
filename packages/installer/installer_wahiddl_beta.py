@@ -3,8 +3,8 @@ import shutil
 from packages.core import path #unified path function
 from packages.core import url #unified url function
 def install():
-    os.chdir (path.wahiddl_beta_folder())
-    os.system ('curl -L -o updates.zip ' + url.wahiddl_beta_branch())
+    os.chdir(path.wahiddl_beta_folder())
+    os.system('curl -L -o updates.zip ' + url.wahiddl_beta_branch())
     updates_folder_name = 'updates'
     try:
         os.mkdir (updates_folder_name)
@@ -12,7 +12,7 @@ def install():
     except:
         print(f"{updates_folder_name} 更新資料之暫存資料夾已存在")
     print('解壓縮 wahid-dl (Beta) 更新資料')
-    os.system ('tar -zxvf updates.zip -C "C:\\wahid-dl (Beta)\\updates"')
+    os.system('tar -zxvf updates.zip -C "C:\\wahid-dl (Beta)\\updates"')
     wahiddl_beta_updatesfiles_folder = 'C:\\wahid-dl (Beta)\\updates\\wahid-dl-beta\\'
     for item in os.listdir(wahiddl_beta_updatesfiles_folder):
         s = os.path.join(wahiddl_beta_updatesfiles_folder, item)

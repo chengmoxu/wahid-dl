@@ -3,7 +3,7 @@ import subprocess
 import re
 ffmpeg_folder_name = 'FFmpeg'
 def folder():
-    os.chdir ('C:\\')
+    os.chdir('C:\\')
     if os.path.exists (ffmpeg_folder_name):
         ffmpeg_folder_existed = True
         return ffmpeg_folder_existed
@@ -11,7 +11,7 @@ def folder():
         ffmpeg_folder_existed = False
         return ffmpeg_folder_existed
 def files():
-    os.chdir ('C:\\FFmpeg\\')
+    os.chdir('C:\\FFmpeg\\')
     if os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe'):
         ffmpeg_exe_existed = True
     elif not os.path.isfile ('C:\\FFmpeg\\ffmpeg.exe'):

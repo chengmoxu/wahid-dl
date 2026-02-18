@@ -4,15 +4,15 @@ import shutil
 from packages.core import path #unified path function
 from packages.core import url #unified url function
 def v2():
-    os.chdir (path.ffmpeg_folder())
-    os.system ('curl -L -o ffmpeg.zip ' + url.ffmpeg())
+    os.chdir(path.ffmpeg_folder())
+    os.system('curl -L -o ffmpeg.zip ' + url.ffmpeg())
     ffmpegunzip_folder_name = 'FFmpeg-unzip'
     try:
         os.mkdir (ffmpegunzip_folder_name)
         print(f"'{ffmpegunzip_folder_name}' 資料夾已建立")
     except:
         print(f"'{ffmpegunzip_folder_name}' 資料夾已存在")
-    os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
+    os.system('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
     ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
     ffmpeg_dst_folder = path.ffmpeg_folder()
     ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
