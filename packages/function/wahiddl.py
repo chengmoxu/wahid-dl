@@ -5,9 +5,9 @@ from packages.core import command
 def main():
     print(ui.ASCII_art()) #unified UI function: ASCII art
     print(ui.detail_wahiddl()) #unified UI function: function title
-    print(ui.divider())
     mode = ""
     while mode == "":
+        print(ui.divider())
         print("請輸入欲下載影片之網址")
         print("或者，請輸入0結束程式\n")
         userinput = input("請輸入：")
