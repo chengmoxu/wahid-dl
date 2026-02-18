@@ -28,7 +28,7 @@ def devmode():
                     os.chdir('$HOME/wahid-dl')
                 else:
                     continue
-                command = str (('yt-dlp ') + userinput)
+                command = str(('yt-dlp ') + userinput)
                 os.system(command)
                 ui.complete()
                 mode = ""
