@@ -30,11 +30,11 @@ def devmode():
                     continue
                 command = str(('yt-dlp ') + userinput)
                 os.system(command)
-                ui.complete()
+                print(ui.complete())
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
                 print("Channel: " + info.version_detail()[0] + "\n" + "Version Number: " + info.version_detail()[1] + "\n" + "Build Number: " + info.version_detail()[2] + "\n" + "Programming Language: " + info.version_detail()[3])
-                ui.complete()
+                print(ui.complete())
                 mode = ""
             else:
                 print("請重新輸入正確命令！")

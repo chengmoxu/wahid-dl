@@ -20,11 +20,11 @@ def main():
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
-                ui.start()
+                print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 testcommand = str(command.wahiddl_FCT() + userinput)
                 os.system(testcommand)
-                ui.complete()
+                print(ui.complete())
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
             else:

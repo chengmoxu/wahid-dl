@@ -42,11 +42,11 @@ def main():
                         print('請在對於url_list.txt編輯完成後再按下任一鍵以進行下載')
                         os.system('pause')
                         break
-                ui.start()
+                print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = str(command.wahiddl_list())
                 os.system(downloadcommand)
-                ui.complete()
+                print(ui.complete())
             else:
                 print("請重新輸入正確選項！")
                 mode = ""

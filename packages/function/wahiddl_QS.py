@@ -20,7 +20,7 @@ def main():
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
-                ui.start()
+                print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 testcommand = str(command.wahiddl_QS()[0] + userinput)
                 os.system(testcommand)
@@ -29,7 +29,7 @@ def main():
                 video_quality_id = str(input('請輸入影片畫質ID:'))
                 downloadcommand = str(command.wahiddl_QS()[1] + video_quality_id + command.wahiddl_QS()[2] + userinput)
                 os.system(downloadcommand)
-                ui.complete()
+                print(ui.complete())
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
             else:
