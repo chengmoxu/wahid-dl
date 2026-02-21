@@ -8,7 +8,7 @@
 ```
 Making video and audio download easily
 
-* For Windows* Version Number: 7.0.20260218.2
+* For Windows* Version Number: 7.0.20260221.1
 > branch: Renamed "Develop" to "Beta"  
 > branch: Added branch "Alpha"  
 > feat: Changed function name  
