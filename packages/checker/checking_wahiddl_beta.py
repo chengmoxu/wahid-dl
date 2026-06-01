@@ -1,7 +1,7 @@
 import os
 from packages.core import info
 wahiddl_beta_folder_name = "wahid-dl (Beta)"
-def checking_wahiddl_beta_folder_existed():
+def folder():
     if info.platform() == "Windows":
         path = os.path.join("C:\\", "wahid-dl (Beta)")
     elif info.platform() == "Linux":

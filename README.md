@@ -1,20 +1,33 @@
 # wahid-dl
 ```
-      ###       ###        ###         ###     ###         #######      ########             #########       ###
-     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
-    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###
-   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>
-  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
- #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
-####      ##     ###      ##     ###     ###     #######          #########            #########       ###
+     ##      ##     ###     ##    ##     ####   ######       ######    ##
+    ##      ##   ##   ##   ##    ##     ##     #    ##      #    ##   ##
+   >>  >  >>    >>>>>>>   >>>>>>>>     >>     >    >>  >>  >    >>   >>
+  ## # # ##   ##    ##   ##    ##     ##     #    ##      #    ##   ##
+ ###   ###   ##    ##   ##    ##   ####     ######       ######    ##
 ```
 Making video and audio download easily
 
-* For Windows/Linux Stable Version Number: v7.0.20260216.1
+* For Windows Version Number: 7.0.20260601.1
+> branch: rename "Develop" to "Beta"  
+> branch: add branch "Alpha"  
+> feat: change function name  
+> feat: simplify function name  
+> feat: change function name and added unified UI  
+> feat: call the unified command  
+> fix: fix FFmpeg version checking  
+> fix: fix packages judgment  
+> fix: fix UI/UX  
+> fix: update FFmpeg version
+> fix: fix curl command argument passing  
+> fix: fix the input type for processing choice to integer  
+> refactor: restructure function  
+> refactor: replace deprecated os.system with subprocess.run  
+> refactor: remove standalone fallback functions in wahid-dl Tool.py  
+> perf: remove unused code  
+> style: code cleanup  
 
-> branch: Renamed "Develop" to "Beta"
-
-* For Google Colab Stable Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
+* For Google Colab Stable Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
 > fix: Changed the yt-dlp installation method to avoid outdated versions  
 > style: Description correction  

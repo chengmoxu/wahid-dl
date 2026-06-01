@@ -1,6 +1,5 @@
-from packages.function import wahiddl
 try:
-    wahiddl.main() # from packages.function import the 'wahiddl' and execute its function main()
+    from packages.function import wahiddl
+    wahiddl.main() #from packages.function import the 'wahiddl' and execute its function main()
 except:
-    print ("不支援的平台")
-input()
+    print("執行終止：經使用者終止，或為不支援的平台、wahid-dl安裝不完整或程式發生問題")

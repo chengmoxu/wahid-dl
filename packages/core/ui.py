@@ -1,49 +1,66 @@
 from packages.core import info
 #ASCII art
 def ASCII_art():
-    return("      ###       ###        ###         ###     ###     ###########      ########             #########       ###\n"
-           "     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###\n"
-           "    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###\n"
-           "   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>\n"
-           "  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###\n"
-           " #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###\n"
-           "####      ##     ###      ##     ###     ###     ###########      #########            #########       ###")
-#Title with version info
+    return("     ##      ##     ###     ##    ##     ####   ######       ######    ##\n"
+           "    ##      ##   ##   ##   ##    ##     ##     #    ##      #    ##   ##\n"
+           "   >>  >  >>    >>>>>>>   >>>>>>>>     >>     >    >>  >>  >    >>   >>\n"
+           "  ## # # ##   ##    ##   ##    ##     ##     #    ##      #    ##   ##\n"
+           " ###   ###   ##    ##   ##    ##   ####     ######       ######    ##")
+
+#title
+def title_wahiddl():
+    return "wahid-dl"
+def title_wahiddl_beta():
+    return "wahid-dl (Beta)"
+def title_wahiddl_tool():
+    return "wahid-dl Tool"
+def title_wahiddl_devmode():
+    return "wahid-dl Dev Mode"
+def title_wahiddl_FCT():
+    return "wahid-dl Format Checking Tool"
+def title_wahiddl_subtitle():
+    return "wahid-dl for wahid-dl for Subtitle"
+def title_wahiddl_QS():
+    return "wahid-dl for Quality Selection"
+def title_wahiddl_live():
+    return "wahid-dl for Live"
+def title_wahiddl_list():
+    return "wahid-dl for List"
+def title_wahiddl_audio():
+    return "wahid-dl for Audio"
+def title_wahiddl_CS():
+    return "wahid-dl for Cookies Support"
+
+#detail = title with version info
 vi=" [" + info.platform() + "] (" + info.version_detail()[0] + ") " + info.version_detail()[1] + "." + info.version_detail()[2] + "-" + info.version_detail()[3]
-def ui_title_wahiddl():
-    title_wahiddl = "wahid-dl" + vi
-    return title_wahiddl
-def ui_title_wahiddl_tool():
-    title_wahiddl_tool = "wahid-dl Tool" + vi
-    return title_wahiddl_tool
-def ui_title_wahiddl_devmode():
-    title_wahiddl_devmode = "wahid-dl Dev Mode" + vi
-    return title_wahiddl_devmode
-def ui_title_wahiddl_FCT():
-    title_wahiddl_format_checking_tool = "wahid-dl Format Checking Tool" + vi
-    return title_wahiddl_format_checking_tool
-def ui_title_wahiddl_subtitle():
-    title_wahiddl_S = "wahid-dl for wahid-dl for Subtitle" + vi
-    return title_wahiddl_S
-def ui_title_wahiddl_QS():
-    title_wahiddl_QS = "wahid-dl for Quality Selection" + vi
-    return title_wahiddl_QS
-def ui_title_wahiddl_live():
-    title_wahiddl_live = "wahid-dl for Live" + vi
-    return title_wahiddl_live
-def ui_title_wahiddl_list():
-    title_wahiddl_list = "wahid-dl for List" + vi
-    return title_wahiddl_list
-def ui_title_wahiddl_audio():
-    title_wahiddl_audio = "wahid-dl for Audio" + vi
-    return title_wahiddl_audio
-def ui_title_wahiddl_CS():
-    title_wahiddl_CS = "wahid-dl for Cookies Support" + vi
-    return title_wahiddl_CS
-#Unified UI for task execution status
-def ui_start():
-    print ('-------------------- 開始執行 --------------------')
-def ui_exit():
-    print ('--------------- 請按下 Enter 鍵結束 ---------------')
-def ui_complete():
-    print ('-------------------- 執行結束 --------------------')
+def detail_wahiddl():
+    return "wahid-dl" + vi
+def detail_wahiddl_tool():
+    return "wahid-dl Tool" + vi
+def detail_wahiddl_devmode():
+    return "wahid-dl Dev Mode" + vi
+def detail_wahiddl_FCT():
+    return "wahid-dl Format Checking Tool" + vi
+def detail_wahiddl_subtitle():
+    return "wahid-dl for wahid-dl for Subtitle" + vi
+def detail_wahiddl_QS():
+    return "wahid-dl for Quality Selection" + vi
+def detail_wahiddl_live():
+    return "wahid-dl for Live" + vi
+def detail_wahiddl_list():
+    return "wahid-dl for List" + vi
+def detail_wahiddl_audio():
+    return "wahid-dl for Audio" + vi
+def detail_wahiddl_CS():
+    return "wahid-dl for Cookies Support" + vi
+
+#unified UI for task execution status
+def divider():
+    return('==================================================')
+def start():
+    return('================== 開 始 執 行 ===================')
+def exit():
+    print('======== 請 按 下 輸 入 鍵 以 離 開 程 式 ========')
+    input()
+def complete():
+    return('================== 執 行 結 束 ===================')
