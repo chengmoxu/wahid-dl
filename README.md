@@ -8,20 +8,24 @@
 ```
 Making video and audio download easily
 
-* For Windows* Version Number: 7.0.20260221.1
-> branch: Renamed "Develop" to "Beta"  
-> branch: Added branch "Alpha"  
-> feat: Changed function name  
-> feat: Simplified function name  
-> feat: Changed function name and added unified UI  
-> feat: Call the unified command  
-> fix: Fixed FFmpeg version checking  
-> fix: Fixed packages judgment  
-> fix: Fixed UI  
-> refactor: Restructured function  
-> perf: Removed unused code  
-> style: Code cleanup  
-> *The Linux version is currently in development.  
+* For Windows Version Number: 7.0.20260601.1
+> branch: rename "Develop" to "Beta"  
+> branch: add branch "Alpha"  
+> feat: change function name  
+> feat: simplify function name  
+> feat: change function name and added unified UI  
+> feat: call the unified command  
+> fix: fix FFmpeg version checking  
+> fix: fix packages judgment  
+> fix: fix UI/UX  
+> fix: update FFmpeg version
+> fix: fix curl command argument passing  
+> fix: fix the input type for processing choice to integer  
+> refactor: restructure function  
+> refactor: replace deprecated os.system with subprocess.run  
+> refactor: remove standalone fallback functions in wahid-dl Tool.py  
+> perf: remove unused code  
+> style: code cleanup  
 
 * For Google Colab Stable Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
