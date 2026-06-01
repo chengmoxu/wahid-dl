@@ -14,7 +14,7 @@ def platform(): #current execution platform detection function
 #wahid-dl version info
 channel = "Alpha" #channel[branch] = Stable[main], Beta[beta], Alpha[alpha]
 number = "7.0" #number = x.x
-build_number = "20260520.1" #build_number = xxxxxxxx.x
+build_number = "20260601.1" #build_number = xxxxxxxx.x
 pl = "Python" #pl[programming language] = Batchfile[bat](Discard), Python[python](Current), Rust[rust]
 def version_detail():
     vi = [channel, number, build_number, pl]
