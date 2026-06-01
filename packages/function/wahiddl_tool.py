@@ -186,7 +186,7 @@ def main():
             else:
                 print("請重新輸入正確選項！")
                 mode = ""
-        elif userinput_judge == False:
+        elif not userinput_judge:
             if userinput == "BETAINSTALL":
                 print(ui.start())
                 print("安裝/更新 wahid-dl (Beta)")

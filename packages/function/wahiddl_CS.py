@@ -19,8 +19,8 @@ def main():
             else:
                 print("請重新輸入正確選項！")
                 mode = ""
-        elif userinput_judge == False:
-            if userinput.startswith("http") == True:
+        elif not userinput_judge:
+            if userinput.startswith("http"):
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = command.wahiddl_CS() + [userinput]
