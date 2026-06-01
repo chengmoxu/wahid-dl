@@ -23,12 +23,12 @@ def main():
             if userinput.startswith("http") == True:
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
-                testcommand = str(command.wahiddl_subtitle()[0] + userinput)
-                os.system(testcommand)
+                testcommand = [command.wahiddl_subtitle()[0], command.wahiddl_subtitle()[1], userinput]
+                subprocess.run(testcommand)
                 print('請記下您想要下載的影片字幕Language，並於下方輸入')
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 或 https://github.com/yt-dlp/yt-dlp 說明文件')
                 video_sub_id = str(input('請輸入影片字幕Language:'))
-                downloadcommand = str(command.wahiddl_subtitle()[1] + video_sub_id + command.wahiddl_subtitle()[2] + userinput)
+                downloadcommand = [command.wahiddl_subtitle()[2:5], video_sub_id, command.wahiddl_subtitle()[5:7], userinput]
                 subprocess.run(downloadcommand)
                 print(ui.complete())
             elif userinput.startswith("http") == False:
@@ -39,5 +39,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break

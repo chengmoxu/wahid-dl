@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from packages.core import ui
 from packages.core import info
 from packages.core import path #unified path function
@@ -28,8 +29,8 @@ def devmode():
                     os.chdir('$HOME/wahid-dl')
                 else:
                     continue
-                command = str(('yt-dlp ') + userinput)
-                os.system(command)
+                command = ['yt-dlp', userinput]
+                subprocess.run(command)
                 print(ui.complete())
                 mode = ""
             if userinput.startswith("wahid-dl -V") == True:
@@ -43,5 +44,5 @@ def devmode():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break

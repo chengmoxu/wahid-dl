@@ -23,12 +23,12 @@ def main():
             if userinput.startswith("http") == True:
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
-                testcommand = str(command.wahiddl_QS()[0] + userinput)
-                os.system(testcommand)
+                testcommand = command.wahiddl_QS()[0:2] + [userinput]
+                subprocess.run(testcommand)
                 print('請記下您想要下載的影片畫質ID，並於下方輸入')
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 或 https://github.com/yt-dlp/yt-dlp 說明文件')
                 video_quality_id = str(input('請輸入影片畫質ID:'))
-                downloadcommand = str(command.wahiddl_QS()[1] + video_quality_id + command.wahiddl_QS()[2] + userinput)
+                downloadcommand = command.wahiddl_QS()[2:5] + [video_quality_id] + command.wahiddl_QS()[6:12] + [userinput]
                 subprocess.run(downloadcommand)
                 print(ui.complete())
             elif userinput.startswith("http") == False:
@@ -39,5 +39,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break

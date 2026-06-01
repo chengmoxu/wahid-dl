@@ -15,8 +15,8 @@ from packages.core import ui
 def main():
     print(ui.ASCII_art())
     print(ui.detail_wahiddl_tool())
-    mode = "start"
-    while mode == "start":
+    mode = ""
+    while mode == "":
         print(ui.divider())
         print("1: 完整安裝/更新 wahid-dl 及附屬依賴工具")
         print("2: 安裝/更新 wahid-dl 主程式")
@@ -34,8 +34,7 @@ def main():
         userinput_judge = str.isdigit(userinput)
         if userinput_judge == True: 
             if userinput == "0":
-                print(ui.exit())
-                break
+                mode = "0"
             elif userinput == "1":
                 print(ui.start())
                 print("完整安裝/更新 wahid-dl 及附屬依賴工具")
@@ -72,8 +71,7 @@ def main():
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.v2()
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "2":
                 print(ui.start())
                 print("安裝/更新 wahid-dl 主程式")
@@ -87,8 +85,7 @@ def main():
                     except:
                         print("不支援的平台")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "3":
                 print(ui.start())
                 print("安裝/更新 yt-dlp")
@@ -97,8 +94,7 @@ def main():
                 elif checking_ytdlp.ytdlp() == False:
                     installer_ytdlp.install()
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "4":
                 print(ui.start())
                 print("安裝 FFmpeg")
@@ -109,16 +105,22 @@ def main():
                         if checking_ffmpeg.version() == False:
                             continue
                         else:
-                            uninstaller_ffmpeg.v2()
-                            installer_ffmpeg.v2()
+                            try:
+                                uninstaller_ffmpeg.v2()
+                                installer_ffmpeg.v2()
+                            except:
+                                uninstaller_ffmpeg.v2()
+                                installer_ffmpeg.v2()
                     else:
-                        installer_ffmpeg.v2()
+                        try:
+                            installer_ffmpeg.v2()
+                        except:
+                                installer_ffmpeg.v2()
                 elif ffmpeg_folder_status == False:
                     os.mkdir ('C:\\FFmpeg')
                     installer_ffmpeg.v2()
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "5":
                 print(ui.start())
                 print("完整解除安裝 wahid-dl 及附屬依賴工具")
@@ -147,8 +149,7 @@ def main():
                 else:
                     print("FFmpeg 已不存在")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "6":
                 print(ui.start())
                 print("解除安裝 wahid-dl 主程式")
@@ -158,8 +159,7 @@ def main():
                 elif wahiddl_status == False:
                     print("wahid-dl 主程式已不存在")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "7":
                 print(ui.start())
                 print("解除安裝 yt-dlp")
@@ -169,8 +169,7 @@ def main():
                 elif ytdlp_status == False:
                     print("yt-dlp 已不存在")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "8":
                 print(ui.start())
                 print("解除安裝 FFmpeg")
@@ -183,10 +182,10 @@ def main():
                 else:
                     print("FFmpeg 已不存在")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             else:
                 print("請重新輸入正確選項！")
+                mode = ""
         elif userinput_judge == False:
             if userinput == "BETAINSTALL":
                 print(ui.start())
@@ -207,8 +206,7 @@ def main():
                 elif checking_ytdlp.beta_ytdlp() == False:
                     installer_ytdlp.beta_install()
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             elif userinput == "BETAUNINSTALL":
                 print(ui.start())
                 print("解除安裝 wahid-dl (Beta)")
@@ -223,7 +221,10 @@ def main():
                 elif checking_ytdlp.beta_ytdlp() == False:
                     print("yt-dlp in wahid-dl (Beta) 已不存在")
                 print(ui.complete())
-                print(ui.exit())
-                break
+                mode = ""
             else:
                 print("請重新輸入正確選項！")
+                mode = ""
+    while mode == "0":
+        ui.exit()
+        break

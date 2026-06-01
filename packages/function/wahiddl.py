@@ -23,7 +23,7 @@ def main():
             if userinput.startswith("http") == True:
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
-                downloadcommand = str(command.wahiddl() + userinput)
+                downloadcommand = command.wahiddl()+ [userinput]
                 subprocess.run(downloadcommand)
                 print(ui.complete())
             elif userinput.startswith("http") == False:
@@ -34,5 +34,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break

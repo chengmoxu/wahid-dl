@@ -1,4 +1,5 @@
 import os
+import subprocess
 from packages.core import ui
 from packages.core import path #unified path function
 from packages.core import command
@@ -22,8 +23,8 @@ def main():
             if userinput.startswith("http") == True:
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
-                testcommand = str(command.wahiddl_FCT() + userinput)
-                os.system(testcommand)
+                testcommand = command.wahiddl_FCT() + [userinput]
+                subprocess.run(testcommand)
                 print(ui.complete())
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
@@ -33,5 +34,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break

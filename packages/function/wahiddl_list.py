@@ -45,8 +45,7 @@ def main():
                         break
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
-                downloadcommand = str(command.wahiddl_list())
-                subprocess.run(downloadcommand)
+                subprocess.run(command.wahiddl_list())
                 print(ui.complete())
             else:
                 print("請重新輸入正確選項！")
@@ -55,5 +54,5 @@ def main():
             print("請重新輸入正確命令！")
             mode = ""
     while mode == "0":
-        print(ui.exit())
+        ui.exit()
         break
