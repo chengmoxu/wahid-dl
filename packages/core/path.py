@@ -55,9 +55,3 @@ def wahiddl_beta_readme():
 def wahiddl_url_list():
     path = str('C:\\wahid-dl (Beta)\\url_list.txt')
     return path
-def wahiddl_venv():
-    path = str('C:\\wahid-dl\\venv')
-    return path
-def wahiddl_beta_venv():
-    path = str('C:\\wahid-dl\\venv')
-    return path
