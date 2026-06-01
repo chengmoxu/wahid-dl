@@ -5,7 +5,7 @@ from packages.core import path #unified path function
 from packages.core import url #unified url function
 def install():
     os.chdir(path.wahiddl_folder())
-    subprocess.run('curl', '-L', '-o', 'updates.zip' + url.wahiddl_main_branch())
+    subprocess.run(['curl', '-L', '-o', 'updates.zip', url.wahiddl_main_branch()[0]])
     updates_folder_name = 'updates'
     try:
         os.mkdir (updates_folder_name)
