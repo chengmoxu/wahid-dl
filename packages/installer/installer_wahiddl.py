@@ -8,12 +8,12 @@ def install():
     subprocess.run(['curl', '-L', '-o', 'updates.zip', url.wahiddl_main_branch()[0]])
     updates_folder_name = 'updates'
     try:
-        os.mkdir (updates_folder_name)
+        os.mkdir(updates_folder_name)
         print(f"{updates_folder_name} 更新資料之暫存資料夾已建立")
     except:
         print(f"{updates_folder_name} 更新資料之暫存資料夾已存在")
     print('解壓縮 wahid-dl 更新資料')
-    subprocess.run('tar', '-zxvf', 'updates.zip', '-C', 'C:\\wahid-dl\\updates')
+    subprocess.run(['tar', '-zxvf', 'updates.zip', '-C', 'C:\\wahid-dl\\updates'])
     wahiddl_updatesfiles_folder = 'C:\\wahid-dl\\updates\\wahid-dl-main\\'
     for item in os.listdir(wahiddl_updatesfiles_folder):
         s = os.path.join(wahiddl_updatesfiles_folder, item)
