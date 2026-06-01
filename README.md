@@ -8,7 +8,7 @@
 ```
 Making video and audio download easily
 
-* For Windows Version Number: 7.0.20260601.1
+* For Windows Version Number: 7.0.20260601.2
 > branch: rename "Develop" to "Beta"  
 > branch: add branch "Alpha"  
 > feat: change function name  
