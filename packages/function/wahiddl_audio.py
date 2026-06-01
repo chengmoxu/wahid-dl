@@ -21,11 +21,11 @@ def main():
                 mode = ""
         elif userinput_judge == False:
             if userinput.startswith("http") == True:
-                ui.start()
+                print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = command.wahiddl_audio() + [userinput]
                 subprocess.run(downloadcommand)
-                ui.complete()
+                print(ui.complete())
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
             else:
