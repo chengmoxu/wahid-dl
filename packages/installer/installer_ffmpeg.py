@@ -1,33 +1,30 @@
 import os
 import glob
 import shutil
+import subprocess
 from packages.core import path #unified path function
 from packages.core import url #unified url function
-def installer_ffmpeg():
-    os.chdir (path.ffmpeg_folder())
-    os.system ('curl -L -o ffmpeg.zip ' + url.ffmpeg())
-    ffmpegunzip_folder_name = 'FFmpeg-unzip'
+def v2(): #v2.20260520.2
+    os.chdir(path.ffmpeg_folder())
+    subprocess.run(['curl', '-L', '-o', 'ffmpeg.zip', url.ffmpeg()])
     try:
-        os.mkdir (ffmpegunzip_folder_name)
-        print (f"'{ffmpegunzip_folder_name}' 資料夾已建立")
+        os.mkdir(path.ffmpeg_update_unzip_folder())
+        print("更新資料夾已建立")
     except:
-        print (f"'{ffmpegunzip_folder_name}' 資料夾已存在")
-    os.system ('tar -zxvf ffmpeg.zip -C "C:\\FFmpeg\\FFmpeg-unzip"')
-    ffmpeg_updatesfiles_folder = "C:\\FFmpeg\\FFmpeg-unzip\\ffmpeg-8.0.1-full_build\\bin\\"
-    ffmpeg_dst_folder = path.ffmpeg_folder()
-    ffmpeg_exe_files = glob.glob (ffmpeg_updatesfiles_folder + "*.exe")
+        print("更新資料夾已存在")
+        if os.path.exists(path.ffmpeg_update_file()):
+            os.remove(path.ffmpeg_update_file())
+    subprocess.run(['tar', '-zxvf', 'ffmpeg.zip', '-C', path.ffmpeg_update_unzip_folder()])
+    ffmpeg_exe_files = glob.glob(path.ffmpeg_update_unzip_folder() + "ffmpeg-8.1.1-full_build\\bin\\" + "*.exe")
     for ffmpeg_exe_file in ffmpeg_exe_files:
-        shutil.move (ffmpeg_exe_file, ffmpeg_dst_folder)
-    #os.system ('setx PATH "FFmpeg;C:\\FFmpeg\\"') 
-    #NOTICE: A severe flaw exists that could potentially lead to the removal of all system environment variables.
-    ffmpeg_updates_file_path = 'C:\\FFmpeg\\ffmpeg.zip'
+        shutil.move (ffmpeg_exe_file, path.ffmpeg_folder())
     try:
-        os.remove (ffmpeg_updates_file_path)
-        print (f"更新資料 '{ffmpeg_updates_file_path}' 已刪除")
+        os.remove(path.ffmpeg_update_file())
+        print(f"更新資料 '{path.ffmpeg_update_file()}' 已刪除")
     except:
-        print (f"更新資料 '{ffmpeg_updates_file_path}' 已不存在")
+        print(f"更新資料 '{path.ffmpeg_update_file()}' 已不存在")
     try:
-        shutil.rmtree (ffmpegunzip_folder_name)
-        print (f"更新資料夾 '{ffmpegunzip_folder_name}' 已刪除")
+        shutil.rmtree(path.ffmpeg_update_unzip_folder())
+        print("更新資料夾已刪除")
     except:
-        print (f"更新資料 '{ffmpegunzip_folder_name}' 已不存在")
+        print("更新資料夾已不存在")

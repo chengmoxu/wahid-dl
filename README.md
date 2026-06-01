@@ -1,43 +1,33 @@
 # wahid-dl
 ```
-      ###       ###        ###         ###     ###         #######      ########             #########       ###
-     ###       ###      ###   ##      ###     ###         ###          ###    ###           ###    ###      ###
-    ###       ###     ###    ##      ###     ###         ###          ###    ###           ###    ###      ###
-   >>>  >>>  >>>    >>>>>>>>>>>     >>>>>>>>>>>         >>>          >>>    >>>   >>>>>   >>>    >>>      >>>
-  ### ##  # ###    ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
- #####    ###     ###      ##     ###     ###         ###          ###    ###           ###    ###      ###
-####      ##     ###      ##     ###     ###     #######          #########            #########       ###
+     ##      ##     ###     ##    ##     ####   ######       ######    ##
+    ##      ##   ##   ##   ##    ##     ##     #    ##      #    ##   ##
+   >>  >  >>    >>>>>>>   >>>>>>>>     >>     >    >>  >>  >    >>   >>
+  ## # # ##   ##    ##   ##    ##     ##     #    ##      #    ##   ##
+ ###   ###   ##    ##   ##    ##   ####     ######       ######    ##
 ```
 Making video and audio download easily
 
-* For Windows/Linux Stable Version Number: v6.2.20251227.1
+* For Windows Version Number: 7.0.20260601.1
+> branch: rename "Develop" to "Beta"  
+> branch: add branch "Alpha"  
+> feat: change function name  
+> feat: simplify function name  
+> feat: change function name and added unified UI  
+> feat: call the unified command  
+> fix: fix FFmpeg version checking  
+> fix: fix packages judgment  
+> fix: fix UI/UX  
+> fix: update FFmpeg version
+> fix: fix curl command argument passing  
+> fix: fix the input type for processing choice to integer  
+> refactor: restructure function  
+> refactor: replace deprecated os.system with subprocess.run  
+> refactor: remove standalone fallback functions in wahid-dl Tool.py  
+> perf: remove unused code  
+> style: code cleanup  
 
-> fix: Fixed a module call error that caused a crash  
-> fix: Corrected the version judgment RE  
-> fix: Removed platform check dependency and corrected the display of version information  
-> fix: Fixed incorrect text  
-> fix: Fixed the wrong loop  
-> fix: Corrected the return value method  
-> fix: Fixed incorrect display  
-> fix: Corrected the incorrect judgment leading to incorrect execution  
-> fix: Fixed yt-dlp not installing in wahid-dl development channel  
-> fix: Modified the judgment value to Boolean value  
-> fix: Fixed install and uninstall functionality  
-> fix: Fixed folders not being removed by uninstaller  
-> fix: Fixed incorrect folder removal  
-> fix: Temporarily remove system variable setting  
-> fix: Updated FFmpeg version  
-> feat: Removed support for Windows based on batchfile  
-> feat: Simplified the code and adjusted the functions  
-> feat: Changed to use unified packages  
-> feat: Removed the installer build tool  
-> feat: Call the new unified UI/UX  
-> feat: Called the unified function  
-> style: Changed the display text from "DEV" to "Develop Channel"  
-> perf: Optimized code and function  
-> perf: Emporarily removed system variable setting and pipx install on Linux  
-
-* For Google Colab Stable Version Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
+* For Google Colab Stable Number: wahid-dl-colab.v5.1.20240906.googlecolab.1
 > fix: Fixed video wrong format issues  
 > fix: Changed the yt-dlp installation method to avoid outdated versions  
 > style: Description correction  
@@ -53,7 +43,7 @@ The name wahid-dl comes from Arabic واحد, the intention is to hope that this
 
 ### Third. Instructions for use
 #### For Windows and Linux
-1. [Install or update wahid-dl, wahid-dl Develop Channel, yt-flp or FFmpeg] Execute wahid-dl Tool.py  
+1. [Install or update wahid-dl, wahid-dl (Beta), yt-flp or FFmpeg] Execute wahid-dl Tool.py  
 2. [Using] Choose the function which you want to use
 
 *Notice: Please check for yt-dlp updates when prompted with an error message*  
