@@ -1,4 +1,5 @@
 import os
+import subprocess
 from packages.core import ui
 from packages.core import path #unified path function
 from packages.core import command
@@ -28,7 +29,7 @@ def main():
                 print('若有疑問，請參閱 https://github.com/chengmoxu/wahid-dl 或 https://github.com/yt-dlp/yt-dlp 說明文件')
                 video_quality_id = str(input('請輸入影片畫質ID:'))
                 downloadcommand = str(command.wahiddl_QS()[1] + video_quality_id + command.wahiddl_QS()[2] + userinput)
-                os.system(downloadcommand)
+                subprocess.run(downloadcommand)
                 print(ui.complete())
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")

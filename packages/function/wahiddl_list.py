@@ -1,4 +1,5 @@
 import os
+import subprocess
 from packages.core import ui
 from packages.core import path #unified path function
 from packages.core import command
@@ -45,7 +46,7 @@ def main():
                 print(ui.start())
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = str(command.wahiddl_list())
-                os.system(downloadcommand)
+                subprocess.run(downloadcommand)
                 print(ui.complete())
             else:
                 print("請重新輸入正確選項！")

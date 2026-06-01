@@ -1,4 +1,5 @@
 import os
+import subprocess
 from packages.core import ui
 from packages.core import path #unified path function
 from packages.core import command
@@ -23,7 +24,7 @@ def main():
                 ui.start()
                 os.chdir(path.wahiddl_folder())
                 downloadcommand = str(command.wahiddl_audio() + userinput)
-                os.system(downloadcommand)
+                subprocess.run(downloadcommand)
                 ui.complete()
             elif userinput.startswith("http") == False:
                 print("請重新輸入正確網址！")
