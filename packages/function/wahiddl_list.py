@@ -23,7 +23,7 @@ def main():
                         print("存在url_list.txt")
                         print('刪除存在的url_list.txt，並自動建立新的url_list.txt，請輸入1')
                         print('保留存在的url_list.txt，並以此清單進行下載，請輸入2')
-                        choice = input('請選擇處理方式：')
+                        choice = int(input('請選擇處理方式：'))
                         if choice == 1:
                             os.remove(path.wahiddl_url_list())
                             os.open(path.wahiddl_url_list(), os.O_RDWR|os.O_CREAT)
