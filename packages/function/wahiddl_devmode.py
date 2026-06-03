@@ -25,10 +25,8 @@ def devmode():
                 ui.start()
                 if sys.platform == "win32":
                     os.chdir(path.wahiddl_folder())
-                elif sys.platform == "linux":
-                    os.chdir('$HOME/wahid-dl')
                 else:
-                    continue
+                    print("不支援的平台")
                 command = ['yt-dlp', userinput]
                 subprocess.run(command)
                 print(ui.complete())
